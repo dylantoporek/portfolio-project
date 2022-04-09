@@ -1,9 +1,11 @@
 import React from "react";
+import ProjectItem from "../ProjectItem";
+import Contact from "../Contact";
 
 function Portfolio(){
     return (
         <div id='portfolio-container'>
-          <h1> Hi From Portfolio</h1>
+          <ProjectItem/>
         </div>
       );
 }
