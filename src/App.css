@@ -93,7 +93,7 @@
   height: 25%;
   top: -15%;
   right: 5%;
-  background-color: yellowgreen;
+  background-color: lightseagreen;
 }
 
 #home-projects{
@@ -123,7 +123,22 @@
   flex-direction: column;
   width: 100%;
   height: 70%;
-  top: 10%;
+  top: 2%;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-item{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 40%;
+  background-color: violet;
+  top: 2%;
+  margin: 2%;
+  justify-content: center;
+  align-items: center;
 }
 
 /* /////////////////////////////         ABOUT            ///////////////////////////////////////// */

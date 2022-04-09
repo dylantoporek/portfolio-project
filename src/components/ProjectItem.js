@@ -22,13 +22,16 @@ function ProjectItem(){
 
     const projectDisplay = projects.map((project)=>{
         return (
-            <div>
+            <div className="project-item">
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
                 <div>
                     <a href={project.link}>Demo</a>
                     <a href={project.frontend}>Frontend Repo</a>
                     <a href={project.backend}>Backend Repo</a>
+                </div>
+                <div>
+                    in development
                 </div>
             </div>
         )

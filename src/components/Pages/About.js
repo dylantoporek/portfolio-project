@@ -4,7 +4,13 @@ import Contact from "../Contact";
 function About(){
     return (
         <div id='about-container'>
-          <h1> Hi From About</h1>
+          <div>
+              about paragraph....blahblahblha....
+          </div>
+
+          <div>
+              hobbies paragraph....blahblahblha....
+          </div>
         </div>
       );
 }
