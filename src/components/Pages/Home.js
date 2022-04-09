@@ -15,6 +15,14 @@ function Home(){
             <div id='home-projects'>
                 Project snippit placeholder
             </div>
+
+            <div id='home-blogs'>
+                Blog snippit placeholder
+            </div>
+
+            <div id='contact-bar'>
+                <Contact/>
+            </div>
             
         </div>
       );

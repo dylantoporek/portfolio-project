@@ -6,6 +6,9 @@ function Portfolio(){
     return (
         <div id='portfolio-container'>
           <ProjectItem/>
+            <div id='contact-bar'>
+                <Contact/>
+            </div>
         </div>
       );
 }

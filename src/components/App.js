@@ -16,9 +16,7 @@ function App() {
         <Route path='/about' element={<About/>}/>
         <Route path='/' element={<Home/>}/>
       </Routes>
-      <div id='contact-bar'>
-        <Contact/>
-      </div>
+      
     </div>
   );
 }
