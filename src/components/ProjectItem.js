@@ -20,15 +20,25 @@ function ProjectItem(){
             backend: 'https://github.com/dylantoporek/Board-Game-Backend',
             stage: 'Development',    
         },
-        // {
-        //     title: 'Pokelympics',
-        //     gif: 'TBD',
-        //     description: 'A collection of Pokemon themed mini-games. Race on the track or battle in the arena!',
-        //     link: 'TBD',
-        //     frontend: 'TBD', 
-        //     backend: 'TBD',
-        //     stage: 'Development',  
-        // } 
+        {
+            title: 'Pokelympics',
+            gif: 'TBD',
+            description: 'A collection of Pokemon themed mini-games. Race on the track or battle in the arena!',
+            link: 'TBD',
+            frontend: 'TBD', 
+            backend: 'TBD',
+            stage: 'Development',  
+        },
+        {
+            title: 'Enduracne Lactate Analyzer',
+            gif: 'TBD',
+            description: 'A conceptual fitness app for althetes to track and measure their blood lactate levels while training.',
+            link: 'TBD',
+            frontend: 'TBD', 
+            backend: 'TBD',
+            stage: 'Development',  
+        }
+
     ])
 
     const projectDisplay = projects.map((project)=>{
