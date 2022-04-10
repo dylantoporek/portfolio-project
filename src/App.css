@@ -96,6 +96,10 @@
   top: 15%;
   left: 5%;
   background-color: lightseagreen;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #home-projects{
@@ -106,6 +110,10 @@
   top: 25%;
   left: 5%;
   background-color: orchid;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #home-blogs{
@@ -116,6 +124,10 @@
   right: 5%;
   background-color: blueviolet;
   top: 35%;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* /////////////////////////////        PORTFOLIO           ////////////////////////////////////// */
@@ -160,5 +172,24 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
+}
 
+#about-me{
+  position: relative;
+  display: flex;
+  top: 30%;
+  width: 80%;
+  height: 25%;
+  left: 5%;
+  background-color: cornflowerblue;
+}
+
+#about-hobbies{
+  position: relative;
+  display: flex;
+  width: 80%;
+  height: 25%;
+  top: 50%;
+  left: 5%;
+  background-color: blueviolet;
 }

@@ -1,7 +1,11 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Contact from "../Contact";
 
 function Home(){
+
+    useEffect(()=>{
+        window.scrollTo(0, 0)
+    }, [])
     return (
         <div id='home-container'>
             <div id='home-page-img'>
@@ -19,8 +23,8 @@ function Home(){
             </div>
 
             <div id='home-blogs'>
-                <p>Blog snippit placeholder....To check out the blogs I have written please follow this link:</p>
-                <a href='https://medium.com/@dylantoporek'>https://medium.com/@dylantoporek</a>
+                <p>Blog snippit placeholder....for more information follow this link:</p>
+                <a href='https://medium.com/@dylantoporek'>Medium</a>
             </div>
 
             <div id='contact-bar'>
