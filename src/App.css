@@ -182,6 +182,20 @@
   height: 25%;
   left: 5%;
   background-color: cornflowerblue;
+  justify-content: center;
+  align-items: center;
+}
+
+#about-work{
+  position: relative;
+  display: flex;
+  width: 80%;
+  height: 25%;
+  top: 40%;
+  left: 5%;
+  background-color: blueviolet;
+  justify-content: center;
+  align-items: center;
 }
 
 #about-hobbies{
@@ -192,4 +206,6 @@
   top: 50%;
   left: 5%;
   background-color: blueviolet;
+  justify-content: center;
+  align-items: center;
 }

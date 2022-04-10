@@ -3,9 +3,9 @@ import Contact from "../Contact";
 
 function Home(){
 
-    useEffect(()=>{
-        window.scrollTo(0, 0)
-    }, [])
+    // useEffect(()=>{
+    //     window.scrollTo(0, 0)
+    // }, [])
     return (
         <div id='home-container'>
             <div id='home-page-img'>
