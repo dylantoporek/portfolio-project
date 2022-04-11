@@ -13,8 +13,9 @@ function Home({changePage}){
             </div>
 
             <div id='home-about'>
-                About snippit placeholder... for more information:
+               Hi, my name is Dylan Toporek. I am a fullstack software engineer focusing on developing and designing exceptional web experiences. Currently, I am honing my skills using React and Ruby on Rails. For more information:
                 <a href="/about">To About</a>
+                
             </div>
 
             <div id='home-projects'>
