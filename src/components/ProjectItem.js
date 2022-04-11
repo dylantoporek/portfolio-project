@@ -38,7 +38,6 @@ function ProjectItem(){
             backend: 'TBD',
             stage: 'Development',  
         }
-
     ])
 
     const projectDisplay = projects.map((project)=>{
@@ -46,10 +45,12 @@ function ProjectItem(){
             <div className="project-item">
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
-                <div>
-                    <a href={project.link}>Demo</a>
-                    <a href={project.frontend}>Frontend Repo</a>
-                    <a href={project.backend}>Backend Repo</a>
+                <div id='project-links-container'>
+                    <a className="project-link" href={project.link}>Demo</a>
+                    <p>|</p>
+                    <a className="project-link" href={project.frontend}>Frontend Repo</a>
+                    <p>|</p>
+                    <a className="project-link" href={project.backend}>Backend Repo</a>
                 </div>
                 <div>
                     Stage: {project.stage}

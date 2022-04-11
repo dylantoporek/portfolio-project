@@ -1,7 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-function Navbar(){
+function Navbar({selectedPage}){
+    
 
     function handleScrollToTop(){
         window.scrollTo(0, 0)
@@ -9,9 +10,18 @@ function Navbar(){
 
     return (
         <div id='navbar-container'>
-            <NavLink className='navLink' to='/' onClick={handleScrollToTop}>Home</NavLink>
-            <NavLink className='navLink' to='/portfolio' onClick={handleScrollToTop}>Portfolio</NavLink>
-            <NavLink className='navLink' to='/about' onClick={handleScrollToTop}>About</NavLink>
+            {selectedPage === 'http://localhost:3000/' ? 
+            <NavLink id='selected-to-home' to='/' onClick={handleScrollToTop}>Home</NavLink>
+            :
+            <NavLink className='navLink' to='/' onClick={handleScrollToTop}>Home</NavLink>}
+            {selectedPage === 'http://localhost:3000/portfolio' ? 
+            <NavLink id='selected-to-portfolio' to='/portfolio' onClick={handleScrollToTop}>Portfolio</NavLink>
+            :
+            <NavLink className='navLink' to='/portfolio' onClick={handleScrollToTop}>Portfolio</NavLink>}
+            {selectedPage === 'http://localhost:3000/about' ?
+            <NavLink id='selected-to-about' to='/about' onClick={handleScrollToTop}>About</NavLink>
+            :
+            <NavLink className='navLink' to='/about' onClick={handleScrollToTop}>About</NavLink>}
         </div>
     )
 }

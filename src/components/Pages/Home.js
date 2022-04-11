@@ -1,11 +1,11 @@
 import React, {useEffect} from "react";
 import Contact from "../Contact";
 
-function Home(){
+function Home({changePage}){
 
-    // useEffect(()=>{
-    //     window.scrollTo(0, 0)
-    // }, [])
+    useEffect(()=>{
+        changePage(window.location.href)
+    }, [])
     return (
         <div id='home-container'>
             <div id='home-page-img'>

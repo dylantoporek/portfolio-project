@@ -1,7 +1,11 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Contact from "../Contact";
 
-function About(){
+function About({changePage}){
+
+    useEffect(()=>{
+        changePage(window.location.href)
+    }, [])
     return (
         <div id='about-container'>
             <div id='about-me'>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Navbar from './Navbar';
 import About from './Pages/About';
@@ -8,13 +8,18 @@ import '../../src/App.css';
 import Contact from './Contact';
 
 function App() {
+  const[selectedPage, setSelectedPage] = useState(null)
+
+  function changePage(str){
+    setSelectedPage(str)
+  }
   return (
     <div id='app-container'>
-      <Navbar/>
+      <Navbar selectedPage={selectedPage}/>
       <Routes>
-        <Route path='/portfolio' element={<Portfolio/>}/>
-        <Route path='/about' element={<About/>}/>
-        <Route path='/' element={<Home/>}/>
+        <Route path='/portfolio' element={<Portfolio changePage={changePage}/>}/>
+        <Route path='/about' element={<About changePage={changePage}/>}/>
+        <Route path='/' element={<Home changePage={changePage}/>}/>
       </Routes>
       
     </div>

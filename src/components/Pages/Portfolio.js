@@ -1,8 +1,13 @@
-import React from "react";
+import React, {useEffect} from "react";
 import ProjectItem from "../ProjectItem";
 import Contact from "../Contact";
 
-function Portfolio(){
+function Portfolio({changePage}){
+
+    useEffect(()=>{
+        changePage(window.location.href)
+    }, [])
+    
     return (
         <div id='portfolio-container'>
           <ProjectItem/>
