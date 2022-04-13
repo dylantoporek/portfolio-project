@@ -122,8 +122,8 @@
   width: 30%;
   height: 25%;
   top: 20%;
-  /* left: 5%; */
-  background-color: #434961;
+  left: 5%;
+  background-color: #9BA9E0;
   font-weight: bold;
   display: flex;
   flex-direction: column;
@@ -140,7 +140,7 @@
   height: 250px;
   top: 30%;
   /* left: 5%; */
-  background-color: #434961;;
+  background-color: #7088E6;;
   font-weight: bold;
   display: flex;
   flex-direction: column;
@@ -156,7 +156,7 @@
   width: 50%;
   height: 25%;
   /* left: 5%; */
-  background-color: #434961;;
+  background-color: #1A2966;;
   top: 40%;
   font-weight: bold;
   display: flex;
@@ -168,7 +168,7 @@
 }
 
 .home-link{
-  color: white;
+  color: lightgreen;
   position: relative;
 
 }
@@ -200,7 +200,7 @@
   flex-direction: column;
   width: 80%;
   height: 100%;
-  background-color: violet;
+  background-color: #7088E6;
   top: 6%;
   margin: 3%;
   justify-content: center;

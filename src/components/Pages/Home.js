@@ -2,6 +2,7 @@ import React, {useEffect} from "react";
 import Contact from "../Contact";
 
 function Home({changePage}){
+    
 
     useEffect(()=>{
         changePage(window.location.href)
