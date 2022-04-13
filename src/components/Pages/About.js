@@ -9,7 +9,7 @@ function About({changePage}){
     return (
         <div id='about-container'>
             <div id='about-me'>
-              I was born and raised in New York City, in Manhattan. Attended Umass Amherst, graduating with a Major in economics and a minor in philosophy. 
+              I was born and raised in New York City, on the upper west side of Manhattan. Later, I attended Umass Amherst, graduating with a Major in economics and a minor in philosophy. 
             </div>
 
             <div id='about-work'>
@@ -17,7 +17,7 @@ function About({changePage}){
             </div>
 
             <div id='about-hobbies'>
-              Some of my favortie things to do are playing games, enjoy the outdoors, and spend time with my dog Lily! Some of my all-time favorites games are Chess, Halo, Settlers of Catan, Red Dead Redemption, The Elder Scrolls series, and The Legend of Zelda Series!
+              Some of my favortie things to do are playing games, enjoy the outdoors, and spend time with my dog Lily! Some of my all-time favorites games are Chess, Halo, Settlers of Catan, Red Dead Redemption, The Elder Scrolls series, and The Legend of Zelda Series. My passion for games has inspiried many of my projects thus far, and has allowed me to learn a couple programming languages in a fun and creative way.
             </div>
 
           

@@ -42,7 +42,7 @@ function ProjectItem(){
 
     const projectDisplay = projects.map((project)=>{
         return (
-            <div className="project-item">
+            <div className="project-item" key={project.title}>
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
                 <div id='project-links-container'>

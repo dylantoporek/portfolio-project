@@ -29,14 +29,14 @@ function Home({changePage}){
 
     const featuredProjectDisplay = featuredProjects.map((project)=>{
         return (
-            <div id='home-featured-project-item'>
+            <div id='home-featured-project-item' key={project.title}>
                 <h4>{project.title}</h4>
                 <div id='project-links-container'>
-                    <a className="project-link" href={project.link}>Demo</a>
-                    <p>|</p>
-                    <a className="project-link" href={project.frontend}>Frontend Repo</a>
-                    <p>|</p>
-                    <a className="project-link" href={project.backend}>Backend Repo</a>
+                    <a className="home-project-link" href={project.link}>Demo</a>
+                    <p className="home-project-link">|</p>
+                    <a className="home-project-link" href={project.frontend}>Frontend Repo</a>
+                    <p className="home-project-link">|</p>
+                    <a className="home-project-link" href={project.backend}>Backend Repo</a>
                 </div>
                 <div>
                     Stage: {project.stage}

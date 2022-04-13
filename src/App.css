@@ -166,13 +166,23 @@
 #home-featured-project-item{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   position: relative;
-  width: 250px;
-  height: 250px;
+  width: 275px;
+  height: 275px;
   background-color: #1A2966;
   margin: 2%;
+}
+
+.home-project-link{
+  position: relative;
+  font-size: small;
+  margin-left: 3%;
+  margin-right: 2%;
+  margin-top: 25%;
+  margin-bottom: 10%;
+  color: white
 }
 
 #home-blogs{
@@ -276,7 +286,7 @@
   width: 80%;
   height: 25%;
   /* left: 5%; */
-  background-color: cornflowerblue;
+  background-color: #7088E6;
   justify-content: center;
   align-items: center;
   padding: 2%;
@@ -291,7 +301,7 @@
   height: 25%;
   top: 40%;
   /* left: 5%; */
-  background-color: blueviolet;
+  background-color: #7088E6;
   justify-content: center;
   align-items: center;
   padding: 2%;
@@ -306,7 +316,7 @@
   height: 25%;
   top: 60%;
   /* left: 5%; */
-  background-color: blueviolet;
+  background-color: #7088E6;
   justify-content: center;
   align-items: center;
   padding: 2%;
