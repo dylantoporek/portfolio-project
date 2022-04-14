@@ -84,7 +84,7 @@ function Home({changePage}){
 
             <div id='home-projects'>
                 <h4>Here are a few things I have made. To see more follow this link:</h4>
-                <a className='home-link' href="/portfolio">To Portfolio</a>
+                <a className='home-link' href="https://dylantoporek.netlify.app/portfolio">To Portfolio</a>
                 <div id='home-featured-projects-container'>
                     {featuredProjectDisplay}
                 </div>

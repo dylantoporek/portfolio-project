@@ -9,7 +9,7 @@ function About({changePage}){
     return (
         
       <div>
-        <img src={resume}/>
+        {resume}
       </div>
 
       );
