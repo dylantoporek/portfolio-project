@@ -58,17 +58,21 @@ function Home({changePage}){
             </div>
 
             <div id='home-about'>
-                <div id='home-about-text'>
-                    I was born and raised in New York City, on the upper west side of Manhattan. Later, I attended Umass Amherst, graduating with a Major in economics and a minor in philosophy. Before learning about software enginnering, I taught math to middle and high school students. I transitioned into this field as I always found developing software to be interesting, I never had the tools to actually turn that interest into a reality though, until now! During the pandemic, many people deciced that it could be a perfect time for a career change, me among them. Flatiron School's software engineering program suited my needs perfectly, and after 5 months of hard work, I feel ready to begin my journey as a developer. Some of my favortie things to do are playing games, enjoy the outdoors, and spend time with my dog Lily! My passion for games has inspiried many of my projects thus far, and has allowed me to learn a couple programming languages in a fun and creative way.
+                <h4>About me:</h4>
+                <div id='home-about-container'>
+                    <div id='home-page-img'>
+                        Img placeholder
+                    </div>
+                    <div id='home-about-text'>
+                        I was born and raised in New York City, on the upper west side of Manhattan. Later, I attended Umass Amherst, graduating with a Major in economics and a minor in philosophy. Before learning about software enginnering, I taught math to middle and high school students. I transitioned into this field as I always found developing software to be interesting, I never had the tools to actually turn that interest into a reality though, until now! During the pandemic, many people deciced that it could be a perfect time for a career change, me among them. Flatiron School's software engineering program suited my needs perfectly, and after 5 months of hard work, I feel ready to begin my journey as a developer. Some of my favortie things to do are playing games, enjoy the outdoors, and spend time with my dog Lily! My passion for games has inspiried many of my projects thus far, and has allowed me to learn a couple programming languages in a fun and creative way.
+                    </div>
                 </div>
-                <div id='home-page-img'>
-                    Img placeholder
-                </div>  
+                  
             </div>
             
 
             <div id='home-experience'>
-                Experience:
+                <h4>Experience:</h4>
                 <div id='home-experience-container'>
                     <li>Contractor at Expedience Software</li>
                     <li>Flatiron School Software Engineering Bootcamp</li>
@@ -79,7 +83,7 @@ function Home({changePage}){
             </div>
 
             <div id='home-projects'>
-                <p>Here are a few things I have made. To see more follow this link:</p>
+                <h4>Here are a few things I have made. To see more follow this link:</h4>
                 <a className='home-link' href="/portfolio">To Portfolio</a>
                 <div id='home-featured-projects-container'>
                     {featuredProjectDisplay}

@@ -108,7 +108,6 @@
   position: relative;
   align-self: flex-start;
   width: 80%;
-  height: 35%;
   top: 30%;
   left: 5%;
   background-color: #9BA9E0;
@@ -127,7 +126,6 @@
   align-self: flex-start;
   word-wrap: normal;
   width: 80%;
-  height: 55%;
   top: 60%;
   left: 5%;
   background-color: #9BA9E0;
@@ -141,22 +139,29 @@
   font-size: 50;
 }
 
+#home-about-container{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 #home-about-text{
   position: relative;
   align-self: flex-start;
   width: 60%;
   height: 100%;
-  padding: 0%;
   font-size: smaller;
-  margin: 0%;
+  top: 15%;
 }
 
 #home-page-img{
-  position: absolute;
+  position: relative;
   align-self: flex-end;
   display: flex;
   right: 2%;
-  top: 5%;
+  top: 0%;
   height: 250px;
   width: 175px;
   background-color: aliceblue;
@@ -168,7 +173,6 @@
   position: relative;
   align-self: flex-start;
   width: 80%;
-  height: 35%;
   top: 90%;
   left: 5%;
   background-color: #9BA9E0;
@@ -192,7 +196,6 @@
   position: relative;
   align-self: center;
   width: 80%;
-  height: 45%;
   top: 140%;
   /* left: 5%; */
   background-color: #7088E6;;
@@ -264,7 +267,7 @@
 
 #home-contact-bar{
   position: absolute;
-  bottom: -2500px;
+  bottom: -3000px;
   flex-grow: 1;
   justify-content: 'flex-end';
   width: 100%;
