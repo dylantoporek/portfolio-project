@@ -18,10 +18,10 @@ function Navbar({selectedPage}){
             <NavLink id='selected-to-portfolio' to='/portfolio' onClick={handleScrollToTop}>Portfolio</NavLink>
             :
             <NavLink className='navLink' to='/portfolio' onClick={handleScrollToTop}>Portfolio</NavLink>}
-            {/* {selectedPage === 'http://localhost:3000/about' ?
+            {selectedPage === 'http://localhost:3000/about' ?
             <NavLink id='selected-to-about' to='/about' onClick={handleScrollToTop}>About</NavLink>
             :
-            <NavLink className='navLink' to='/about' onClick={handleScrollToTop}>About</NavLink>} */}
+            <NavLink className='navLink' to='/about' onClick={handleScrollToTop}>About</NavLink>}
         </div>
     )
 }
