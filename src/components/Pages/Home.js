@@ -50,15 +50,22 @@ function Home({changePage}){
             
 
             <div id='home-intro'>
-               Hi, my name is Dylan Toporek. I am a fullstack software engineer focusing on developing and designing exceptional web experiences. Currently, I am honing my skills using React and Ruby on Rails. For more information:    
+               <h4>Hi, my name is </h4>
+               <h1>Dylan Toporek.</h1>
+                <p>
+                    I am a fullstack software engineer focusing on developing and designing exceptional web experiences. Currently, I am honing my skills using React and Ruby on Rails.
+                </p>    
             </div>
 
             <div id='home-about'>
-            I was born and raised in New York City, on the upper west side of Manhattan. Later, I attended Umass Amherst, graduating with a Major in economics and a minor in philosophy. Before learning about software enginnering, I taught math to middle and high school students. I transitioned into this field as I always found developing software to be interesting, I never had the tools to actually turn that interest into a reality though, until now! During the pandemic, many people deciced that it could be a perfect time for a career change, me among them. Flatiron School's software engineering program suited my needs perfectly, and after 5 months of hard work, I feel ready to begin my journey as a developer. Some of my favortie things to do are playing games, enjoy the outdoors, and spend time with my dog Lily! Some of my all-time favorites games are Chess, Halo, Settlers of Catan, Red Dead Redemption, The Elder Scrolls series, and The Legend of Zelda Series. My passion for games has inspiried many of my projects thus far, and has allowed me to learn a couple programming languages in a fun and creative way.  
+                <div id='home-about-text'>
+                    I was born and raised in New York City, on the upper west side of Manhattan. Later, I attended Umass Amherst, graduating with a Major in economics and a minor in philosophy. Before learning about software enginnering, I taught math to middle and high school students. I transitioned into this field as I always found developing software to be interesting, I never had the tools to actually turn that interest into a reality though, until now! During the pandemic, many people deciced that it could be a perfect time for a career change, me among them. Flatiron School's software engineering program suited my needs perfectly, and after 5 months of hard work, I feel ready to begin my journey as a developer. Some of my favortie things to do are playing games, enjoy the outdoors, and spend time with my dog Lily! My passion for games has inspiried many of my projects thus far, and has allowed me to learn a couple programming languages in a fun and creative way.
+                </div>
+                <div id='home-page-img'>
+                    Img placeholder
+                </div>  
             </div>
-            <div id='home-page-img'>
-                Img placeholder
-            </div>
+            
 
             <div id='home-experience'>
                 Experience:

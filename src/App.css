@@ -125,8 +125,9 @@
 #home-about{
   position: relative;
   align-self: flex-start;
-  width: 50%;
-  height: 35%;
+  word-wrap: normal;
+  width: 80%;
+  height: 55%;
   top: 60%;
   left: 5%;
   background-color: #9BA9E0;
@@ -137,16 +138,27 @@
   align-items: center;
   padding: 4%;
   color: white;
+  font-size: 50;
+}
+
+#home-about-text{
+  position: relative;
+  align-self: flex-start;
+  width: 60%;
+  height: 100%;
+  padding: 0%;
+  font-size: smaller;
+  margin: 0%;
 }
 
 #home-page-img{
   position: absolute;
   align-self: flex-end;
   display: flex;
-  right: 5%;
-  top: 50%;
-  height: 350px;
-  width: 350px;
+  right: 2%;
+  top: 5%;
+  height: 250px;
+  width: 175px;
   background-color: aliceblue;
   justify-content: center;
   align-items: center;
@@ -157,7 +169,7 @@
   align-self: flex-start;
   width: 80%;
   height: 35%;
-  top: 110%;
+  top: 90%;
   left: 5%;
   background-color: #9BA9E0;
   font-weight: bold;
@@ -252,7 +264,7 @@
 
 #home-contact-bar{
   position: absolute;
-  bottom: -2000px;
+  bottom: -2500px;
   flex-grow: 1;
   justify-content: 'flex-end';
   width: 100%;
