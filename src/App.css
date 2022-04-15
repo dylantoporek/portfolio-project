@@ -226,7 +226,7 @@
   display: flex;
   flex-direction: column;
   align-self: flex-start;
-  margin: 5%;
+  margin-right: 3%;
 }
 
 #resume-container{
@@ -246,15 +246,45 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  margin: 2%;
+  margin: 1%;
 }
 
 #work-details{
   position: relative;
-  width: 50%;
+  width: 60%;
+  min-width: 200px;
   background-color: aliceblue;
   color: #1A2966;
-  padding: 1%;
+  padding: 0%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#work-details-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-button{
+  width: 150px;
+  height: 40px;
+  font-size: 11px;
+  margin-bottom: 4%;
+  border: none;
+  cursor: pointer;
+}
+
+#work-title{
+  align-self: center;
+  justify-self: center;
+}
+
+.work-details{
+  align-self: flex-start;
+  margin: 2%;
 }
 
 /* ////////////////////////////////////////////////////////// */

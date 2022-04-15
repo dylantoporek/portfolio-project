@@ -1,10 +1,10 @@
 import React, {useState} from "react";
 
 function InteractiveResume(){
-    const [showExperienceDetails, setShowExperienceDetials] = useState('Expedience')
+    const [showExperienceDetails, setShowExperienceDetials] = useState('Expedience Software')
     const experienceDetails = [
         {
-            company: 'Expedience',
+            company: 'Expedience Software',
             jobTitle: 'Contractor',
             details: [
                 'detail 1',
@@ -33,7 +33,7 @@ function InteractiveResume(){
             dates: '09/2017 - Present'
         },
         {
-            company: 'Mathnasiun',
+            company: 'Mathnasium',
             jobTitle: 'Instructor',
             details: [
                 'Math instructor at busy after school mathematics instruction company',
@@ -65,19 +65,19 @@ function InteractiveResume(){
     }
 
     const workButtonsDisplay = experienceDetails.map((experience)=>{
-        return <button value={experience.company} onClick={handleResumeClick}>{experience.company}</button>
+        return <button className='work-button' value={experience.company} onClick={handleResumeClick}>{experience.company}</button>
     })
 
     const targetedExperience = experienceDetails.find((experience) => {
         return experience.company === showExperienceDetails
     })
 
-    const workDetailsDisplay = <div>
-        <h4>{targetedExperience.jobTitle}</h4>
-        {targetedExperience.details[0] ? <li>{targetedExperience.details[0]}</li> : null}
-        {targetedExperience.details[1] ? <li>{targetedExperience.details[1]}</li> : null}
-        {targetedExperience.details[2] ? <li>{targetedExperience.details[2]}</li> : null}
-        <p>{targetedExperience.dates}</p>
+    const workDetailsDisplay = <div id='work-details-container'>
+        <h4 id='work-title'>{targetedExperience.jobTitle}</h4>
+        {targetedExperience.details[0] ? <li className='work-details'>{targetedExperience.details[0]}</li> : null}
+        {targetedExperience.details[1] ? <li className='work-details'>{targetedExperience.details[1]}</li> : null}
+        {targetedExperience.details[2] ? <li className='work-details'>{targetedExperience.details[2]}</li> : null}
+        <p id='work-dates'>{targetedExperience.dates}</p>
     </div>
 
     return (
