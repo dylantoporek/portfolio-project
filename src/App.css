@@ -299,7 +299,7 @@
 .home-link{
   color: lightgreen;
   position: relative;
-
+  cursor: pointer;
 }
 
 #home-contact-bar{

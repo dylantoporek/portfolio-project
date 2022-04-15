@@ -1,8 +1,10 @@
 import React, {useState, useEffect} from "react";
 import Contact from "../Contact";
 import InteractiveResume from "../InteracticeResume";
+import {useNavigate} from 'react-router-dom'
 
 function Home({changePage}){
+    const navigate = useNavigate()
     const [featuredProjects, setFeaturedProjects] = useState([
         {
              title: 'Breath of the Wild Cooking App',
@@ -78,7 +80,7 @@ function Home({changePage}){
 
             <div id='home-projects'>
                 <h4>Here are a few things I have made. To see more follow this link:</h4>
-                <a className='home-link' href="/portfolio">To Portfolio</a>
+                <a className='home-link' onClick={()=> navigate('/portfolio')}>To Portfolio</a>
                 <div id='home-featured-projects-container'>
                     {featuredProjectDisplay}
                 </div>
