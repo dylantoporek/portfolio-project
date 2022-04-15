@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import Contact from "../Contact";
+import InteractiveResume from "../InteracticeResume";
 
 function Home({changePage}){
     const [featuredProjects, setFeaturedProjects] = useState([
@@ -72,14 +73,7 @@ function Home({changePage}){
             
 
             <div id='home-experience'>
-                <h4>Experience:</h4>
-                <div id='home-experience-container'>
-                    <li>Contractor at Expedience Software</li>
-                    <li>Flatiron School Software Engineering Bootcamp</li>
-                    <li>Math Teacher</li>
-                </div> 
-                Check out my full resume here:
-                <a href=''>To Resume</a>
+                <InteractiveResume/>
             </div>
 
             <div id='home-projects'>

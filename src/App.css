@@ -146,6 +146,14 @@
   font-size: 50;
 }
 
+#home-experience{
+  position: relative;
+  width: 80%;
+  top: 90%;
+  align-self: center;
+  right: 5%;
+}
+
 #home-about-container{
   position: relative;
   display: flex;
@@ -176,27 +184,44 @@
   align-items: center;
 }
 
-#home-experience{
+
+
+/* /////////////////////////////                INTERACTIVE RESUME        ////////////////////////////////////////////// */
+
+#home-experience-container{
   position: relative;
+  display: flex;
+  flex-direction: column;
   align-self: flex-start;
-  width: 80%;
-  top: 90%;
-  left: 5%;
+  margin: 5%;
+}
+
+#resume-container{
+  position: relative;
+  align-self: center;
   background-color: #9BA9E0;
   font-weight: bold;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   align-items: center;
   padding: 5%;
   color: white;
+  width: 100%;
 }
 
-#home-experience-container{
+#work-container{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 2%;
+}
+
+#work-details{
   position: relative;
-  top: 10%;
-  margin: 3%;
-  padding: 3%;
+  width: 50%;
+  background-color: aliceblue;
+  color: #1A2966;
+  padding: 1%;
 }
 
 #home-projects{
