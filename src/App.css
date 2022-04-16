@@ -66,11 +66,11 @@
 
 #contact-bar{
   position: absolute;
-  bottom: -600px;
+  bottom: -605px;
   flex-grow: 1;
   justify-content: 'flex-end';
   width: 100%;
-  height: 10%;
+  height: 11%;
   background-color: #1A2966;
 }
 
@@ -95,7 +95,7 @@
   position: relative;
   width: 50px;
   height: 50px;
-  top: -10px;
+  top: 0px;
 }
 
 /* ///////////////////////      HOME          //////////////////////////////////// */
@@ -150,7 +150,8 @@
   width: 80%;
   top: 90%;
   align-self: center;
-  right: 5%;
+  display: flex;
+  flex-direction: column;
 }
 
 #home-projects{
@@ -255,7 +256,6 @@
   min-width: 200px;
   background-color: aliceblue;
   color: #1A2966;
-  padding: 0%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -308,18 +308,25 @@
   /* justify-content: center; */
   align-items: center;
   position: relative;
-  width: 275px;
+  width: 300px;
   height: 275px;
   background-color: #1A2966;
   margin: 2%;
+  font-size: 12px;
+}
+
+#home-project-title{
+  position: relative;
+  font-size: 14px;
+  top: 4%;
 }
 
 .home-project-link{
   position: relative;
-  font-size: small;
+  font-size: 10px;
   margin-left: 3%;
   margin-right: 2%;
-  margin-top: 25%;
+  margin-top: 20%;
   margin-bottom: 10%;
   color: white
 }
@@ -338,7 +345,7 @@
   flex-grow: 1;
   justify-content: 'flex-end';
   width: 100%;
-  height: 10%;
+  height: 11%;
   background-color: #1A2966;
 }
 

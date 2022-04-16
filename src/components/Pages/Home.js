@@ -16,7 +16,7 @@ function Home({changePage}){
              stage: 'Development',   
          }, 
          {
-             title: 'Nintendo-Land',
+             title: 'Nintendo Land',
              gif: 'TBD',
              description: 'A board game where you race to the finish against three computer opponents.',
              link: 'https://frozen-eyrie-81829.herokuapp.com/',
@@ -33,7 +33,7 @@ function Home({changePage}){
     const featuredProjectDisplay = featuredProjects.map((project)=>{
         return (
             <div id='home-featured-project-item' key={project.title}>
-                <h4>{project.title}</h4>
+                <h4 id='home-project-title'>{project.title}</h4>
                 <div id='project-links-container'>
                     <a className="home-project-link" href={project.link}>Demo</a>
                     <p className="home-project-link">|</p>
@@ -80,7 +80,7 @@ function Home({changePage}){
 
             <div id='home-projects'>
                 <h4>Here are a few things I have made. To see more follow this link:</h4>
-                <a className='home-link' onClick={()=> navigate('/portfolio')}>To Portfolio</a>
+                <p className='home-link' onClick={()=> navigate('/portfolio')}>To Portfolio</p>
                 <div id='home-featured-projects-container'>
                     {featuredProjectDisplay}
                 </div>
