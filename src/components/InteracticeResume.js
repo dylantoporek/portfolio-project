@@ -98,7 +98,7 @@ function InteractiveResume(){
 
                 
                 Check out my full resume here:
-                <a href=''>To Resume</a>
+                <a href='https://drive.google.com/file/d/1APNgek--JsLy05tjixRrRFtrf09HVQsY/view?usp=sharing'>To Resume</a>
             </div>
     )
 }

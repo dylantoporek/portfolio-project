@@ -80,7 +80,9 @@ function Home({changePage}){
 
             <div id='home-projects'>
                 <h4>Here are a few things I have made. To see more follow this link:</h4>
-                <p className='home-link' onClick={()=> navigate('/portfolio')}>To Portfolio</p>
+                <p className='home-link' onClick={()=> navigate('/portfolio')} style={{
+                    textDecoration: 'underline'
+                }}>To Portfolio</p>
                 <div id='home-featured-projects-container'>
                     {featuredProjectDisplay}
                 </div>
