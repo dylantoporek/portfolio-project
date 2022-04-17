@@ -82,7 +82,9 @@ function InteractiveResume(){
 
     return (
         <div id='resume-container'>
-                <h4>Experience:</h4>
+                <h2>Experience:</h2>
+                Check out my full resume here:
+                <a className="home-link" href='https://drive.google.com/file/d/1APNgek--JsLy05tjixRrRFtrf09HVQsY/view?usp=sharing'>To Resume</a>
                 
                 <div id='work-container'>
                 <div id='home-experience-container'>
@@ -94,11 +96,7 @@ function InteractiveResume(){
                 </div> 
 
                 </div>
-                
-
-                
-                Check out my full resume here:
-                <a href='https://drive.google.com/file/d/1APNgek--JsLy05tjixRrRFtrf09HVQsY/view?usp=sharing'>To Resume</a>
+                     
             </div>
     )
 }

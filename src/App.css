@@ -248,6 +248,7 @@
   flex-direction: row;
   width: 100%;
   margin: 1%;
+  justify-content: center;
 }
 
 #work-details{
