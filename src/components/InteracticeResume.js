@@ -2,6 +2,7 @@ import React, {useState} from "react";
 
 function InteractiveResume(){
     const [showExperienceDetails, setShowExperienceDetials] = useState('Expedience Software')
+    const [isShown, setIsShown] = useState('');
     const experienceDetails = [
         {
             company: 'Expedience Software',
@@ -62,11 +63,29 @@ function InteractiveResume(){
 
     function handleResumeClick(e){
         setShowExperienceDetials(e.target.value)
+        e.target.style.backgroundColor = 'blue'
     }
 
-    const workButtonsDisplay = experienceDetails.map((experience)=>{
-        return <button className='work-button' value={experience.company} onClick={handleResumeClick}>{experience.company}</button>
+    function handleResumeHover(companyName){
+        setIsShown(companyName)
+    }
+
+    
+    
+
+    const workButtonsDisplay = experienceDetails.map((experience)=>{ 
+            return <button 
+            className='work-button' 
+            value={experience.company}
+            onClick={handleResumeClick}
+            onMouseEnter={()=> handleResumeHover(experience.company)}
+            onMouseLeave={()=> handleResumeHover('')}
+            style={isShown === experience.company ? {backgroundColor: 'darkblue'} : {backgroundColor: 'aliceblue'}}>
+                {experience.company}
+            </button>   
     })
+
+
 
     const targetedExperience = experienceDetails.find((experience) => {
         return experience.company === showExperienceDetails

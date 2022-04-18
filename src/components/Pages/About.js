@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import resume from '../../resume/Resume.pdf'
+
 
 function About({changePage}){
 
@@ -9,7 +9,7 @@ function About({changePage}){
     return (
         
       <div>
-        {resume}
+        Hi From About
       </div>
 
       );
