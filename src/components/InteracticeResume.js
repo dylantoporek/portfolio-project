@@ -18,7 +18,7 @@ function InteractiveResume(){
             company: 'Flatiron School Software Engineering Bootcamp',
             jobTitle: 'Student',
             details: [
-                'Full Stack Web Development, Ruby on Rails and JavaScript programming',
+                'Full Stack Web Development, Ruby on Rails, and JavaScript programming',
                 'Experience with React for frontend development and Ruby on Rails for backend development',
             ],
             dates: '09/2021 - 03/2022'
@@ -29,7 +29,6 @@ function InteractiveResume(){
             details: [
                 'Offered academic support in various subjects',
                 'Facilitated contact with school teachers and administration to ensure seamless schooling experience',
-                'Ensured maintenance of school work in students unable to attend due to illness',
             ],
             dates: '09/2017 - Present'
         },
@@ -37,7 +36,7 @@ function InteractiveResume(){
             company: 'Mathnasium',
             jobTitle: 'Instructor',
             details: [
-                'Math instructor at busy after school mathematics instruction company',
+                'Math instructor at after school mathematics instruction company',
             ],
             dates: '09/2016 - Present'
         },
@@ -54,8 +53,8 @@ function InteractiveResume(){
             company: 'The Birch Wathen Lenox School',
             jobTitle: 'Assistant Teacher',
             details: [
-                'Assistant math teacher / permanent substitute for maternity leave teacher',
-                'Assisted with four sections by crafting lessons, maintaining classroom order, and graded assignments',
+                'Assistant math teacher / permanent substitute',
+                'Assisted with four sections by crafting lessons, maintaining classroom order, and grading assignments',
             ],
             dates: '01/2017 - 06/2017'
         }, 

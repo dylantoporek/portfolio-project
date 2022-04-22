@@ -67,7 +67,17 @@ function Home({changePage}){
                         Img placeholder
                     </div>
                     <div id='home-about-text'>
-                        I was born and raised in New York City, on the upper west side of Manhattan. Later, I attended Umass Amherst, graduating with a Major in economics and a minor in philosophy. Before learning about software enginnering, I taught math to middle and high school students. I transitioned into this field as I always found developing software to be interesting, I never had the tools to actually turn that interest into a reality though, until now! During the pandemic, many people deciced that it could be a perfect time for a career change, me among them. Flatiron School's software engineering program suited my needs perfectly, and after 5 months of hard work, I feel ready to begin my journey as a developer. Some of my favortie things to do are playing games, enjoy the outdoors, and spend time with my dog Lily! My passion for games has inspiried many of my projects thus far, and has allowed me to learn a couple programming languages in a fun and creative way.
+                        <p className='about-text-blurb'>
+                            I was born and raised in the Upper West Side of New York City. For my undergraduate studies, I attended UMass Amherst and graduated with a major in economics and a minor in philosophy. After graduation, I taught math to middle and high school students for a while before transitioning to software engineering.
+                        </p>
+                        
+                        <p className='about-text-blurb'>
+                        My interest in software engineering has always been there. Only recently, however, have I been able to pursue that interest. Flatiron School's software engineering program gave me the foundation I needed to begin my journey as a developer. During the course, I found satisfaction in learning how to build webpages from scratch, systematically resolving errors in my code, and being able utilize all aspects of creativity to shape my personal projects. 
+                        </p>
+                    
+                        <p className='about-text-blurb'>
+                        Outside of work-related activities, my hobbies include playing games (which may be evident in my portfolio!), trying out new cooking recipes, hiking, and spending time with my dog, Lily.
+                        </p>
                     </div>
                 </div>
                   
