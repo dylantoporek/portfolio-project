@@ -101,8 +101,11 @@ function InteractiveResume(){
     return (
         <div id='resume-container'>
                 <h2>Experience:</h2>
-                Check out my full resume here:
-                <a className="home-link" href='https://drive.google.com/file/d/1APNgek--JsLy05tjixRrRFtrf09HVQsY/view?usp=sharing'>To Resume</a>
+                <p>
+                    To check out my full resume, <a className="home-link" href='https://drive.google.com/file/d/1APNgek--JsLy05tjixRrRFtrf09HVQsY/view?usp=sharing'>click here:</a>
+                </p>
+                
+                
                 
                 <div id='work-container'>
                 <div id='home-experience-container'>
