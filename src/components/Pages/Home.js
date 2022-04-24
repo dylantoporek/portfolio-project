@@ -89,10 +89,17 @@ function Home({changePage}){
             </div>
 
             <div id='home-projects'>
-                <h4>Here are a few things I have made. To see more follow this link:</h4>
-                <p className='home-link' onClick={()=> navigate('/portfolio')} style={{
-                    textDecoration: 'underline'
-                }}>To Portfolio</p>
+                <h4>Projects</h4>
+                <div id='project-text-container'>
+                <p>
+                    Here are a few things I have made. To see more 
+                    <p className='portfolio-home-link' 
+                    onClick={()=> navigate('portfolio')}>
+                        click here:
+                    </p>
+                </p>
+                </div>
+                
                 <div id='home-featured-projects-container'>
                     {featuredProjectDisplay}
                 </div>
@@ -100,8 +107,9 @@ function Home({changePage}){
             </div>
 
             <div id='home-blogs'>
-                <p>As a tool to better learn to code, I chose to write a few blog posts about technical topics. If you want to read my blogs follow this link:</p>
-                <a className='home-link' href='https://medium.com/@dylantoporek'>Medium</a>
+                <p>As a tool to better learn to code, I chose to write a few blog posts about technical topics. If you want to read my blogs 
+                <a className='home-link' href='https://medium.com/@dylantoporek'>click here:</a>
+                </p>
             </div>
 
             <div id='home-contact-bar'>
