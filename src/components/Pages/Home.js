@@ -61,7 +61,7 @@ function Home({changePage}){
             </div>
 
             <div id='home-about'>
-                <h4>About me:</h4>
+                <h2>About me:</h2>
                 <div id='home-about-container'>
                     <div id='home-page-img'>
                         Img placeholder
@@ -89,7 +89,7 @@ function Home({changePage}){
             </div>
 
             <div id='home-projects'>
-                <h4>Projects</h4>
+                <h2>Projects</h2>
                 <div id='project-text-container'>
                 <p>
                     Here are a few things I have made. To see more 
