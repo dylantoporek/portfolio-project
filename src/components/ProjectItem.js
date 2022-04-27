@@ -20,6 +20,15 @@ function ProjectItem(){
             backend: 'https://github.com/dylantoporek/Board-Game-Backend',
             stage: 'Development',    
         },
+        {
+            title: 'Enduracne Lactate Analyzer',
+            gif: 'TBD',
+            description: 'A conceptual fitness app for althetes to track and measure their blood lactate levels while training.',
+            link: 'https://serene-spire-65012.herokuapp.com/',
+            frontend: 'https://github.com/jonathonmcclen/endurance-lactate-analyzer-client', 
+            backend: 'https://github.com/jonathonmcclen/endurance-lactate-analyzer-API',
+            stage: 'Development',  
+        }
         // {
         //     title: 'Pokelympics',
         //     gif: 'TBD',
@@ -29,15 +38,7 @@ function ProjectItem(){
         //     backend: 'TBD',
         //     stage: 'Development',  
         // },
-        // {
-        //     title: 'Enduracne Lactate Analyzer',
-        //     gif: 'TBD',
-        //     description: 'A conceptual fitness app for althetes to track and measure their blood lactate levels while training.',
-        //     link: 'TBD',
-        //     frontend: 'TBD', 
-        //     backend: 'TBD',
-        //     stage: 'Development',  
-        // }
+        
     ])
 
     const projectDisplay = projects.map((project)=>{
