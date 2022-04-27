@@ -28,16 +28,16 @@ function ProjectItem(){
             frontend: 'https://github.com/jonathonmcclen/endurance-lactate-analyzer-client', 
             backend: 'https://github.com/jonathonmcclen/endurance-lactate-analyzer-API',
             stage: 'Development',  
-        }
-        // {
-        //     title: 'Pokelympics',
-        //     gif: 'TBD',
-        //     description: 'A collection of Pokemon themed mini-games. Race on the track or battle in the arena!',
-        //     link: 'TBD',
-        //     frontend: 'TBD', 
-        //     backend: 'TBD',
-        //     stage: 'Development',  
-        // },
+        },
+        {
+            title: 'Pokemon Minigame App',
+            gif: 'TBD',
+            description: 'A collection of Pokemon themed mini-games. Race on the track or battle in the arena!',
+            link: 'https://tranquil-scrubland-82540.herokuapp.com/',
+            frontend: 'https://github.com/dylantoporek/pokemon-mini-game-project', 
+            backend: 'https://github.com/dylantoporek/pokemon-minigame-backend',
+            stage: 'Development',  
+        },
         
     ])
 
