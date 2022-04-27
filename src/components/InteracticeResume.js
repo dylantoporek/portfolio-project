@@ -8,11 +8,10 @@ function InteractiveResume(){
             company: 'Expedience Software',
             jobTitle: 'Contractor',
             details: [
-                'detail 1',
-                'detail 2',
-                'detail 3',
+                'Assisted with updating RFP Inspection software',
+                'React based development within Microsoft Office Addins',
             ],
-            dates: '04/2022 - finish mm/year'
+            dates: '04/2022 -  Present'
         },
         {
             company: 'Flatiron School Software Engineering Bootcamp',
