@@ -142,7 +142,7 @@
   align-items: center;
   padding: 4%;
   color: white;
-  font-size: medium;
+  font-size: 20px;
 }
 
 #home-experience{
@@ -165,7 +165,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 4%;
+  padding: 2%;
   color: white;
   
 }
@@ -217,8 +217,8 @@
   position: relative;
   display: flex;
   right: 2%;
-  top: -5%;
-  height: 250px;
+  top: -2%;
+  height: 290px;
   width: 175px;
   background-color: aliceblue;
   justify-content: center;
@@ -241,7 +241,7 @@
 #resume-container{
   position: relative;
   align-self: center;
-  background-color: #9BA9E0;
+  background-color: #7088E6;
   font-weight: bold;
   display: flex;
   flex-direction: column;
@@ -307,7 +307,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 5%;
+  top: -1%;
 
 }
 
@@ -352,8 +352,8 @@
 .portfolio-home-link{
   color: lightgreen;
   position: relative;
-  top: -36px;
-  left: 101%;
+  top: -17px;
+  left: 5px;
   cursor: pointer;
   text-decoration: underline;
 }

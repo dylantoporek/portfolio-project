@@ -91,13 +91,13 @@ function Home({changePage}){
             <div id='home-projects'>
                 <h2>Projects</h2>
                 <div id='project-text-container'>
-                <p>
+                
                     Here are a few things I have made. To see more, 
                     <p className='portfolio-home-link' 
                     onClick={()=> navigate('portfolio')}>
                         click here:
                     </p>
-                </p>
+                
                 </div>
                 
                 <div id='home-featured-projects-container'>
