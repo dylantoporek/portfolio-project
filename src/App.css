@@ -384,7 +384,7 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
-  top: 30%;
+  top: 35%;
   justify-content: center;
   align-items: center;
 }
@@ -398,7 +398,7 @@
   background-color: #7088E6;
   color: white;
   top: 6%;
-  margin: 3%;
+  margin: 1.5%;
   justify-content: center;
   align-items: center;
   padding: 2%;
