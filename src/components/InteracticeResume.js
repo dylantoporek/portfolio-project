@@ -104,7 +104,8 @@ function InteractiveResume(){
             onClick={handleResumeClick}
             onMouseEnter={handleResumeHover}
             onMouseLeave={handleResumeLeave}
-            >
+            style={{backgroundColor: showExperienceDetails === experience.company ? 'lightgreen' : 'aliceblue' 
+            }}>
                 {experience.company}
             </button>   
     })

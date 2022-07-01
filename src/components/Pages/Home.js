@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import Contact from "../Contact";
 import InteractiveResume from "../InteracticeResume";
 import {useNavigate} from 'react-router-dom'
+import photo from '../../images/photo.jpeg'
 
 function Home({changePage}){
     const navigate = useNavigate()
@@ -64,7 +65,7 @@ function Home({changePage}){
                 <h2>About me:</h2>
                 <div id='home-about-container'>
                     <div id='home-page-img'>
-                        Img placeholder
+                        <img id='self-photo' src={photo}/>
                     </div>
                     <div id='home-about-text'>
                         <p className='about-text-blurb'>
