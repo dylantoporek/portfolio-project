@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { $CombinedState } from "redux";
 
 function InteractiveResume(){
     const [showExperienceDetails, setShowExperienceDetials] = useState('Expedience Software')
@@ -59,17 +60,41 @@ function InteractiveResume(){
         }, 
     ]
 
+    function handleChangeDetials(e){
+        if (showExperienceDetails !== e.target.value){
+            
+        }
+    }
     function handleResumeClick(e){
-        setShowExperienceDetials(e.target.value)
-        e.target.style.backgroundColor = 'lightgreen'
+        if (showExperienceDetails !== e.target.value){
+           let wasSelected = document.getElementById(`${showExperienceDetails}`)
+           wasSelected.style.backgroundColor = 'aliceblue'
+           e.target.style.backgroundColor = 'lightgreen'
+           setShowExperienceDetials(e.target.value)
+        } else {
+           return null
+        }
     }
 
-    function handleResumeHover(companyName){
-        setIsShown(companyName)
+    function handleResumeHover(e){
+        setIsShown(e.target.value)
+        if(showExperienceDetails === e.target.value){
+            e.target.style.backgroundColor = 'lightgreen'
+        }
+        else {
+            e.target.style.backgroundColor = 'lightblue'
+        }
+        
+
     }
 
-    function handleResumeLeave(prop){
-        setIsShown(prop)
+    function handleResumeLeave(e){
+        if(showExperienceDetails === e.target.value){
+            e.target.style.backgroundColor = 'lightgreen'
+        }
+        else {
+            e.target.style.backgroundColor = 'aliceblue'
+        }
     }
 
    
@@ -78,12 +103,13 @@ function InteractiveResume(){
     const workButtonsDisplay = experienceDetails.map((experience)=>{ 
             return <button 
             className='work-button'
-            key={experience.company} 
+            key={experience.company}
+            id={experience.company} 
             value={experience.company}
             onClick={handleResumeClick}
-            onMouseEnter={()=> handleResumeHover(experience.company)}
-            onMouseLeave={()=> handleResumeLeave(isShown)}
-            style={isShown === experience.company ? {backgroundColor: 'lightblue'} : {backgroundColor: 'aliceblue'}}>
+            onMouseEnter={handleResumeHover}
+            onMouseLeave={handleResumeLeave}
+            >
                 {experience.company}
             </button>   
     })
