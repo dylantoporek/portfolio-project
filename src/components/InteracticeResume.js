@@ -60,11 +60,6 @@ function InteractiveResume(){
         }, 
     ]
 
-    function handleChangeDetials(e){
-        if (showExperienceDetails !== e.target.value){
-            
-        }
-    }
     function handleResumeClick(e){
         if (showExperienceDetails !== e.target.value){
            let wasSelected = document.getElementById(`${showExperienceDetails}`)
