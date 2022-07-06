@@ -117,7 +117,7 @@ function InteractiveResume(){
     })
 
     const workDetailsDisplay = <div id='work-details-container'>
-        <h4 id='work-title'>{targetedExperience.jobTitle}</h4>
+        <h3 id='work-title'>{targetedExperience.jobTitle}</h3>
         {targetedExperience.details[0] ? <li className='work-details'>{targetedExperience.details[0]}</li> : null}
         {targetedExperience.details[1] ? <li className='work-details'>{targetedExperience.details[1]}</li> : null}
         {targetedExperience.details[2] ? <li className='work-details'>{targetedExperience.details[2]}</li> : null}
