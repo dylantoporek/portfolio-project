@@ -66,7 +66,7 @@
 
 #contact-bar{
   position: absolute;
-  bottom: -605px;
+  bottom: -600px;
   flex-grow: 1;
   justify-content: 'flex-end';
   width: 100%;
@@ -113,47 +113,43 @@
 
 #home-intro{
   position: relative;
-  align-self: flex-start;
-  width: 80%;
-  top: 30%;
-  left: 5%;
-  background-color: #9BA9E0;
+  align-self: center;
+  width: 50%;
+  top: 10%;
   font-weight: bold;
   font-size: large;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 4%;
-  color: white;
 }
 
 #home-about{
   position: relative;
-  align-self: center;
+  align-self: flex-start;
   word-wrap: normal;
   width: 80%;
-  top: 60%;
-  background-color: #9BA9E0;
+  top: 5%;
   font-weight: bold;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   padding: 4%;
-  color: white;
   font-size: 20px;
 }
 
 #self-photo{
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 150px;
+  max-height: 150px;
+  border-radius: 50%;
 }
 
 #home-experience{
   position: relative;
-  width: 83%;
-  top: 90%;
+  width: 80%;
+  top: 10%;
   align-self: center;
   display: flex;
   flex-direction: column;
@@ -162,15 +158,14 @@
 #home-projects{
   position: relative;
   align-self: center;
-  width: 80%;
-  top: 120%;
+  width: 85%;
+  top: 20%;
   background-color: #7088E6;;
   font-weight: bold;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2%;
   color: white;
   
 }
@@ -181,28 +176,23 @@
 
 #home-blogs{
   position: relative;
-  align-self: flex-start;
+  align-self: center;
   width: 80%;
   height: 25%;
-  left: 5%;
-  background-color: #1A2966;;
-  top: 150%;
+  top: 30%;
   font-weight: bold;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 5%;
-  color: white;
 }
 
 #home-about-container{
   position: relative;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin: 2%;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 #home-about-text{
@@ -364,7 +354,7 @@
 
 #home-contact-bar{
   position: absolute;
-  bottom: -2800px;
+  bottom: -1550px;
   flex-grow: 1;
   justify-content: 'flex-end';
   width: 100%;

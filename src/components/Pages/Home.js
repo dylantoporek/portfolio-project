@@ -52,21 +52,22 @@ function Home({changePage}){
     return (
         <div id='home-container'>
             
-
             <div id='home-intro'>
-               <h4>Hi, my name is </h4>
-               <h1>Dylan Toporek.</h1>
-                <p>
-                    I am a fullstack software engineer focusing on developing and designing exceptional web experiences. Currently, I am honing my skills using React and Ruby on Rails.
-                </p>    
+                <div id='home-page-img'>
+                    <img id='self-photo' src={photo}/>
+                </div>
+                <div id='intro-text'>
+                    <h2>Hi, my name is Dylan Toporek</h2>
+                    <p>
+                     I am a fullstack software engineer focusing on developing and designing exceptional web experiences. Currently, I am honing my skills using React and Ruby on Rails.
+                    </p> 
+                </div>   
             </div>
 
             <div id='home-about'>
-                <h2>About me:</h2>
+                <h3>About me:</h3>
                 <div id='home-about-container'>
-                    <div id='home-page-img'>
-                        <img id='self-photo' src={photo}/>
-                    </div>
+                    
                     <div id='home-about-text'>
                         <p className='about-text-blurb'>
                             I was born and raised in the Upper West Side of New York City. For my undergraduate studies, I attended UMass Amherst and graduated with a major in economics and a minor in philosophy. After graduation, I taught math to middle and high school students for a while before transitioning to software engineering.
@@ -107,11 +108,11 @@ function Home({changePage}){
                 
             </div>
 
-            <div id='home-blogs'>
+            {/* <div id='home-blogs'>
                 <p>As a tool to better learn to code, I chose to write a few blog posts about technical topics. If you want to read my blogs, 
                 <a className='home-link' href='https://medium.com/@dylantoporek'>click here:</a>
                 </p>
-            </div>
+            </div> */}
 
             <div id='home-contact-bar'>
                 <Contact/>
