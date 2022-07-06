@@ -113,7 +113,7 @@
 
 #home-intro{
   position: relative;
-  align-self: center;
+  align-self: flex-start;
   width: 70%;
   top: 10%;
   display: flex;
