@@ -65,13 +65,13 @@
 /* ////////////////////////      CONTACT BAR         ///////////////////////////////// */
 
 #contact-bar{
-  position: absolute;
-  bottom: -1000px;
+  position: relative;
+  top: 175%;
   flex-grow: 1;
   justify-content: 'flex-end';
   width: 100%;
   height: 11%;
-  background-color: #1A2966;
+  background-color: #1A2966;;
 }
 
 #contact-container{
@@ -114,21 +114,26 @@
 #home-intro{
   position: relative;
   align-self: flex-start;
-  width: 70%;
+  width: 80%;
   top: 10%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  padding: 4%;
   font-size: medium;
+  padding-left: 4%;
+}
+
+#intro-text{
+  position: relative;
+  width: 50%;
 }
 
 #home-about{
   position: relative;
   align-self: flex-start;
   word-wrap: normal;
-  width: 80%;
+  width: 100%;
   top: 0%;
   display: flex;
   flex-direction: column;
@@ -254,8 +259,8 @@
   position: relative;
   width: 60%;
   min-width: 200px;
-  background-color: aliceblue;
-  color: #1A2966;
+  background-color: #1A2966;
+  color: white;
   display: flex;
   flex-direction: column;
 }
@@ -375,24 +380,34 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
-  top: 60%;
+  top: 90%;
   justify-content: center;
   align-items: center;
+}
+
+.project-item-row{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  height: 100%;
+  background-color: #7088E6;
+  color: white;
+  margin: 2%;
+  padding: 2%;
 }
 
 .project-item{
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 80%;
-  height: 100%;
   background-color: #7088E6;
   color: white;
-  top: 6%;
   margin: 1.5%;
   justify-content: center;
   align-items: center;
   padding: 2%;
+  width: 40%;
 }
 
 #project-links-container{
@@ -411,8 +426,10 @@
 }
 
 .project-image{
-  max-width: 200px;
-  max-height: 200px;
+  position: relative;
+  max-width: 70%;
+  max-height: 70%;
+  align-self: center;
 }
 
 /* /////////////////////////////         ABOUT            ///////////////////////////////////////// */

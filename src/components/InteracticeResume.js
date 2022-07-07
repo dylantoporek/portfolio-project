@@ -11,6 +11,7 @@ function InteractiveResume(){
             details: [
                 'Assisted with updating RFP Inspection software',
                 'React based development within Microsoft Office Addins',
+                'Created custom explorations and reports with Google Analytics',
             ],
             dates: '04/2022 -  Present'
         },

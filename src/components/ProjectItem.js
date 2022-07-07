@@ -48,9 +48,9 @@ function ProjectItem(){
 
     const projectDisplay = projects.map((project)=>{
         return (
+            <div className='project-item-row' key={project.title}>
             <div className="project-item" key={project.title}>
                 <h3>{project.title}</h3>
-                <img className='project-image' src={project.image}/>
                 <p>{project.description}</p>
                 <div id='project-links-container'>
                     <a className="project-link" href={project.link}>Demo</a>
@@ -61,7 +61,9 @@ function ProjectItem(){
                 </div>
                 <div>
                     Stage: {project.stage}
-                </div>
+                </div>  
+            </div>
+            <img className='project-image' src={project.image}/>
             </div>
         )
     })
