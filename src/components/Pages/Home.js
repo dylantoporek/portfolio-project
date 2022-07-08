@@ -3,13 +3,15 @@ import Contact from "../Contact";
 import InteractiveResume from "../InteracticeResume";
 import {useNavigate} from 'react-router-dom'
 import photo from '../../images/photo.jpeg'
+import botw from '../../images/botw.png'
+import nintendo from '../../images/nintendo.png'
 
 function Home({changePage}){
     const navigate = useNavigate()
     const [featuredProjects, setFeaturedProjects] = useState([
         {
              title: 'Breath of the Wild Cooking App',
-             gif: 'TBD',
+             image: botw,
              description: 'A cooking mini-game simulating an online shop with a cart and checkout. Buy ingredients and cook them!',
              link: 'https://obscure-scrubland-39099.herokuapp.com/',
              frontend: 'https://github.com/dylantoporek/botw-recipe-app', 
@@ -18,7 +20,7 @@ function Home({changePage}){
          }, 
          {
              title: 'Nintendo Land',
-             gif: 'TBD',
+             image: nintendo,
              description: 'A board game where you race to the finish against three computer opponents.',
              link: 'https://frozen-eyrie-81829.herokuapp.com/',
              frontend: 'https://github.com/dylantoporek/Nintendo-Land', 
@@ -35,6 +37,7 @@ function Home({changePage}){
         return (
             <div id='home-featured-project-item' key={project.title}>
                 <h4 id='home-project-title'>{project.title}</h4>
+                <img id='featured-projects-image' src={project.image}/>
                 <div id='project-links-container'>
                     <a className="home-project-link" href={project.link}>Demo</a>
                     <p className="home-project-link">|</p>
