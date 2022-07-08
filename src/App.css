@@ -20,7 +20,7 @@
   justify-content: end;
   background-color: aliceblue;
   z-index: 10000;
-  background-color: #1A2966;
+  background-color: #061A40;
   color: white;
 }
 
@@ -71,7 +71,7 @@
   justify-content: 'flex-end';
   width: 100%;
   height: 11%;
-  background-color: #1A2966;;
+  background-color: #061A40;
 }
 
 #contact-container{
@@ -163,7 +163,7 @@
   align-self: center;
   width: 80%;
   top: 20%;
-  background-color: #7088E6;;
+  background-color: #6987C9;;
   font-weight: bold;
   display: flex;
   flex-direction: column;
@@ -261,7 +261,7 @@
   position: relative;
   width: 60%;
   min-width: 200px;
-  background-color: #1A2966;
+  background-color: #061A40;
   color: white;
   display: flex;
   flex-direction: column;
@@ -319,7 +319,7 @@
   position: relative;
   width: 300px;
   height: 275px;
-  background-color: #1A2966;
+  background-color: #061A40;
   margin: 2%;
   font-size: 12px;
   border-radius: 4%;
@@ -371,7 +371,7 @@
   justify-content: 'flex-end';
   width: 100%;
   height: 11%;
-  background-color: #1A2966;
+  background-color: #061A40;
 }
 
 /* /////////////////////////////        PORTFOLIO           ////////////////////////////////////// */
@@ -401,7 +401,7 @@
   flex-direction: row;
   width: 70%;
   height: 100%;
-  background-color: #1A2966;
+  background-color: #061A40;
   color: white;
   margin: 2%;
   padding: 2%;
@@ -412,7 +412,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  background-color: #1A2966;
+  background-color: #061A40;
   color: white;
   margin: 1.5%;
   justify-content: center;
