@@ -19,8 +19,9 @@ function InteractiveResume(){
             company: 'Flatiron School Software Engineering Bootcamp',
             jobTitle: 'Student',
             details: [
-                'Full Stack Web Development, Ruby on Rails, and JavaScript programming',
-                'Experience with React for frontend development and Ruby on Rails for backend development',
+                'Full-Stack web application development, created with React and Ruby on Rails',
+                "Studied Object-Oreinted-Programming, REST API's, and PostgreSQL databases",
+                'Utilized Heroku and Netlify to deploy and test projects'
             ],
             dates: '09/2021 - 03/2022'
         },
@@ -38,6 +39,8 @@ function InteractiveResume(){
             jobTitle: 'Instructor',
             details: [
                 'Math instructor at after school mathematics instruction company',
+                'Responsible for teaching a range of subjects, from addition to trigonometry',
+                'Offer mentorship and motivation to students from a wide range of backgrounds',
             ],
             dates: '09/2016 - Present'
         },
