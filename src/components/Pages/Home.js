@@ -5,6 +5,10 @@ import {useNavigate} from 'react-router-dom'
 import photo from '../../images/photo.jpeg'
 import botw from '../../images/botw.png'
 import nintendo from '../../images/nintendo.png'
+import lactate from '../../images/lactate_1.png'
+import poke from '../../images/poke.png'
+import pO from '../../images/promise_object.gif'
+import Skills from '../Skills'
 
 function Home({changePage}){
     const navigate = useNavigate()
@@ -26,7 +30,33 @@ function Home({changePage}){
              frontend: 'https://github.com/dylantoporek/Nintendo-Land', 
              backend: 'https://github.com/dylantoporek/Board-Game-Backend',
              stage: 'Development',    
-         }
+         },
+         {
+            title: 'Enduracne Lactate Analyzer',
+            image: lactate,
+            description: 'A conceptual fitness app for althetes to track and measure their blood lactate levels while training.',
+            link: 'https://serene-spire-65012.herokuapp.com/',
+            frontend: 'https://github.com/jonathonmcclen/endurance-lactate-analyzer-client', 
+            backend: 'https://github.com/jonathonmcclen/endurance-lactate-analyzer-API',
+            stage: 'Development',  
+        },
+        {
+            title: 'Pokemon Minigame App',
+            image: poke,
+            description: 'A collection of Pokemon themed mini-games. Race on the track or battle in the arena!',
+            link: 'https://tranquil-scrubland-82540.herokuapp.com/',
+            frontend: 'https://github.com/dylantoporek/pokemon-mini-game-project', 
+            backend: 'https://github.com/dylantoporek/pokemon-minigame-backend',
+            stage: 'Development',  
+        },
+    ])
+
+    const [featuredBlogs, setfestureedBlogs] = useState([
+        {
+            title: 'Using Promise Objects to Control Data Flow',
+            image: pO,
+            link: 'https://medium.com/@dylantoporek/using-promise-objects-to-control-data-flow-cc5ecdd0a42b',
+        }
     ])
 
     useEffect(()=>{
@@ -48,6 +78,16 @@ function Home({changePage}){
                 <div>
                     Stage: {project.stage}
                 </div>
+            </div>
+        )
+    })
+
+    const featuedBlogDisplay = featuredBlogs.map((blog)=>{
+        return (
+            <div id='home-featured-blog-item' key={blog.title}>
+                <h4>{blog.title}</h4>
+                <img id='featued projects-image'/>
+                <a className='home-project-link' href={blog.link}>click here to read</a>
             </div>
         )
     })
@@ -88,7 +128,6 @@ function Home({changePage}){
                   
             </div>
             
-
             <div id='home-experience'>
                 <InteractiveResume/>
             </div>
@@ -110,6 +149,14 @@ function Home({changePage}){
                 </div>
                 
             </div>
+
+            {/* <div id='home-skills'>
+            <h3>Skills</h3>
+                <Skills/>
+            </div> */}
+
+
+            
 
             {/* <div id='home-blogs'>
                 <p>As a tool to better learn to code, I chose to write a few blog posts about technical topics. If you want to read my blogs, 
