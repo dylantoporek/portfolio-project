@@ -1,4 +1,7 @@
 /* //////////////////      APP     ////////////////////////////// */
+#parent{
+  background-color: #FFF9FB;
+}
 #app-container{
   position: absolute;
   display: flex;
@@ -6,6 +9,7 @@
   width: 100%;
   height: 100%;
   align-items: center;
+  background-color: #FFF9FB;
 }
 
 /*///////////////////////   NAVBAR    ///////////////////////////////////////////////// */
@@ -20,7 +24,7 @@
   justify-content: end;
   background-color: aliceblue;
   z-index: 10000;
-  background-color: #41658A;
+  background-color: #4B88A2;
   color: white;
 }
 
@@ -71,7 +75,7 @@
   justify-content: 'flex-end';
   width: 100%;
   height: 11%;
-  background-color: #41658A;
+  background-color: #4B88A2;
 }
 
 #home-contact-bar{
@@ -83,7 +87,7 @@
   justify-content: 'center';
   align-items: center;
   width: 100%;
-  background-color: #41658A;
+  background-color: #4B88A2;
   font-weight: bold;
   color: white;
   padding-left: 2%;
@@ -144,6 +148,7 @@
   align-items: center;
   font-size: medium;
   padding-left: 4%;
+  background-color: #FFF9FB;
 }
 
 #intro-text{
@@ -163,6 +168,7 @@
   align-items: flex-start;
   padding: 4%;
   font-size: 20px;
+  background-color: #FFF9FB;
 }
 
 #self-photo{
@@ -173,19 +179,21 @@
 
 #home-experience{
   position: relative;
-  width: 80%;
+  width: 92%;
   top: 5%;
-  align-self: center;
+  align-self: flex-start;
   display: flex;
   flex-direction: column;
+  background-color: #FFF9FB;
+  margin-left: 4%;
 }
 
 #home-projects{
   position: relative;
-  align-self: center;
-  width: 80%;
+  align-self: flex-start;
+  width: 92%;
   top: 25%;
-  background-color: #414073;;
+  background-color: #4B88A2;
   font-weight: bold;
   display: flex;
   flex-direction: column;
@@ -193,6 +201,7 @@
   align-items: center;
   color: white;
   border-radius: 4%; 
+  margin-left: 4%;
 }
 
 
@@ -262,7 +271,7 @@
 #resume-container{
   position: relative;
   align-self: center;
-  background-color: #414073;
+  background-color: #4B88A2;
   font-weight: bold;
   display: flex;
   flex-direction: column;
@@ -367,20 +376,20 @@
   margin-right: 2%;
   margin-top: 10%;
   margin-bottom: 5%;
-  color: lightgreen;
+  color: white;
 }
 
 
 
 .home-link{
-  color: lightgreen;
+  color: white;
   position: relative;
   cursor: pointer;
   left: 1%;
 }
 
 .portfolio-home-link{
-  color: lightgreen;
+  color: white;
   position: relative;
   top: -17px;
   left: 5px;

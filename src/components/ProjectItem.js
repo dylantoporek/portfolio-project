@@ -26,7 +26,7 @@ function ProjectItem(){
             stage: 'Development',    
         },
         {
-            title: 'Enduracne Lactate Analyzer',
+            title: 'Endurance Lactate Analyzer',
             image: lactate,
             description: 'A conceptual fitness app for althetes to track and measure their blood lactate levels while training.',
             link: 'https://serene-spire-65012.herokuapp.com/',

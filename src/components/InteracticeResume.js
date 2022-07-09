@@ -78,7 +78,7 @@ function InteractiveResume(){
     function handleResumeHover(e){
         setIsShown(e.target.value)
         if(showExperienceDetails === e.target.value){
-            e.target.style.backgroundColor = 'lightgreen'
+            e.target.style.backgroundColor = '#061A40'
         }
         else {
             e.target.style.backgroundColor = 'lightblue'
@@ -89,7 +89,7 @@ function InteractiveResume(){
 
     function handleResumeLeave(e){
         if(showExperienceDetails === e.target.value){
-            e.target.style.backgroundColor = 'lightgreen'
+            e.target.style.backgroundColor = '#061A40'
         }
         else {
             e.target.style.backgroundColor = 'aliceblue'
@@ -108,7 +108,7 @@ function InteractiveResume(){
             onClick={handleResumeClick}
             onMouseEnter={handleResumeHover}
             onMouseLeave={handleResumeLeave}
-            style={{backgroundColor: showExperienceDetails === experience.company ? 'lightgreen' : 'aliceblue' 
+            style={{backgroundColor: showExperienceDetails === experience.company ? '#061A40' : 'aliceblue' 
             }}>
                 {experience.company}
             </button>   
