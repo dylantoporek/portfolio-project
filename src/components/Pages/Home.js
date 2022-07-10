@@ -134,7 +134,7 @@ function Home({changePage}){
             </div>
 
             <div id='home-projects'>
-                <h3>Projects</h3>
+                <h3 className='section-title'>Projects</h3>
                 <div id='project-text-container'>
                 
                     Here are a few things I have made. To see more, 
