@@ -18,10 +18,7 @@ function Navbar({selectedPage}){
             <NavLink id='selected-to-portfolio' to='/portfolio' onClick={handleScrollToTop}>Portfolio</NavLink>
             :
             <NavLink className='navLink' to='/portfolio' onClick={handleScrollToTop}>Portfolio</NavLink>}
-            {/* {selectedPage === 'http://localhost:3000/about' || selectedPage === 'https://dylantoporek.netlify.app/about' ?
-            <NavLink id='selected-to-about' to='/about' onClick={handleScrollToTop}>About</NavLink>
-            :
-            <NavLink className='navLink' to='/about' onClick={handleScrollToTop}>About</NavLink>} */}
+            <a className="navLink" href='https://drive.google.com/file/d/1APNgek--JsLy05tjixRrRFtrf09HVQsY/view?usp=sharing'>Resume</a>
         </div>
     )
 }

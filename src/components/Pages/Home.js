@@ -129,6 +129,7 @@ function Home({changePage}){
             </div>
             
             <div id='home-experience'>
+                <h3 className='section-title'>Experience</h3>
                 <InteractiveResume/>
             </div>
 

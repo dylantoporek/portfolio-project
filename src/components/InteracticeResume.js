@@ -68,7 +68,7 @@ function InteractiveResume(){
         if (showExperienceDetails !== e.target.value){
            let wasSelected = document.getElementById(`${showExperienceDetails}`)
            wasSelected.style.backgroundColor = 'aliceblue'
-           e.target.style.backgroundColor = 'lightgreen'
+           e.target.style.backgroundColor = '#4B88A2'
            setShowExperienceDetials(e.target.value)
         } else {
            return null
@@ -78,7 +78,7 @@ function InteractiveResume(){
     function handleResumeHover(e){
         setIsShown(e.target.value)
         if(showExperienceDetails === e.target.value){
-            e.target.style.backgroundColor = '#061A40'
+            e.target.style.backgroundColor = '#4B88A2'
         }
         else {
             e.target.style.backgroundColor = 'lightblue'
@@ -89,10 +89,10 @@ function InteractiveResume(){
 
     function handleResumeLeave(e){
         if(showExperienceDetails === e.target.value){
-            e.target.style.backgroundColor = '#061A40'
+            e.target.style.backgroundColor = '#4B88A2'
         }
         else {
-            e.target.style.backgroundColor = 'aliceblue'
+            e.target.style.backgroundColor = '#FFF9FB'
         }
     }
 
@@ -108,7 +108,7 @@ function InteractiveResume(){
             onClick={handleResumeClick}
             onMouseEnter={handleResumeHover}
             onMouseLeave={handleResumeLeave}
-            style={{backgroundColor: showExperienceDetails === experience.company ? '#061A40' : 'aliceblue' 
+            style={{backgroundColor: showExperienceDetails === experience.company ? '#4B88A2' : '#FFF9FB' 
             }}>
                 {experience.company}
             </button>   
@@ -121,21 +121,16 @@ function InteractiveResume(){
     })
 
     const workDetailsDisplay = <div id='work-details-container'>
-        <h3 id='work-title'>{targetedExperience.jobTitle}</h3>
+        <h3 id='work-title'>{targetedExperience.jobTitle} @ {targetedExperience.company}</h3>
+        <p id='work-dates'>{targetedExperience.dates}</p>
         {targetedExperience.details[0] ? <li className='work-details'>{targetedExperience.details[0]}</li> : null}
         {targetedExperience.details[1] ? <li className='work-details'>{targetedExperience.details[1]}</li> : null}
         {targetedExperience.details[2] ? <li className='work-details'>{targetedExperience.details[2]}</li> : null}
-        <p id='work-dates'>{targetedExperience.dates}</p>
+        
     </div>
 
     return (
         <div id='resume-container'>
-                <h3>Experience:</h3>
-                <p>
-                    To check out my full resume, <a className="home-link" href='https://drive.google.com/file/d/1APNgek--JsLy05tjixRrRFtrf09HVQsY/view?usp=sharing'>click here:</a>
-                </p>
-                
-                
                 
                 <div id='work-container'>
                 <div id='home-experience-container'>
