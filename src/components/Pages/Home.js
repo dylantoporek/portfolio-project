@@ -9,6 +9,7 @@ import lactate from '../../images/lactate_1.png'
 import poke from '../../images/poke.png'
 import pO from '../../images/promise_object.gif'
 import Skills from '../Skills'
+import PageNav from "../PageNav";
 
 function Home({changePage}){
     const navigate = useNavigate()
