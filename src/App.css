@@ -8,7 +8,6 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
-  align-items: center;
   background-color: #FFF9FB;
 }
 
@@ -18,17 +17,36 @@
   position: fixed;
   top: 0%;
   display: flex;
+  flex-direction: row;
   width: 100%;
   height: 10%;
   align-items: center;
-  justify-content: end;
-  background-color: aliceblue;
+  justify-content: flex-end;
   z-index: 10000;
   background-color: #4B88A2;
   color: white;
 }
 
-.navLink{
+#page-nav-container{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  right: 35%;
+  top: 10%;
+  z-index: 100;
+  color: white;
+  font-weight: bolder;
+  font-size: 18px;
+}
+
+.page-nav{
+  position: relative;
+  cursor: pointer;
+  padding-right: 4%;
+  padding-left: 4%;
+}
+
+/* .navLink{
   position: relative;
   font-size: larger;
   text-decoration: none;
@@ -64,7 +82,7 @@
   padding-left: 1%;
   color: white;
   font-weight: bold;
-}
+} */
 
 /* ////////////////////////      CONTACT BAR         ///////////////////////////////// */
 
@@ -82,7 +100,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  top: 15%;
+  top: 10%;
   flex-grow: 1;
   justify-content: 'center';
   align-items: center;
@@ -139,34 +157,20 @@
   background-color: #FFF9FB;
 }
 
-#home-page-nav{
-  display: flex;
-  position: fixed;
-  align-self: flex-end;
-  top: 10%;
-  z-index: 100;
-  color: #4B88A2;
-  font-weight: bolder;
-  font-size: 20px;
-  padding-right: 5%;
-}
 
-.page-nav{
-  cursor: pointer;
-}
 
 
 #home-intro{
   position: relative;
-  align-self: flex-start;
-  width: 80%;
+  align-self: center;
+  width: 100%;
   top: 10%;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   font-size: medium;
-  padding-left: 6%;
+  padding-left: 25%;
   background-color: #FFF9FB;
 }
 
@@ -179,7 +183,8 @@
 
 #home-about{
   position: relative;
-  align-self: flex-start;
+  justify-self: center;
+  align-self: center;
   word-wrap: normal;
   width: 100%;
   top: 10%;
@@ -212,7 +217,7 @@
 
 #home-experience{
   position: relative;
-  align-self: flex-start;
+  align-self: center;
   word-wrap: normal;
   width: 100%;
   top: 10%;
@@ -222,6 +227,7 @@
   align-items: flex-start;
   padding-top: 5%;
   padding-left: 4%;
+  padding-bottom: 0%;
   font-size: 20px;
   background-color: #FFF9FB;
 }
@@ -229,23 +235,17 @@
 #home-projects{
   position: relative;
   align-self: flex-start;
-  word-wrap: normal;
   width: 100%;
   top: 10%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 4%;
+  padding-left: 2%;
   font-size: 20px;
   background-color: #FFF9FB;
 }
 
-
-
-#project-text-container{
-  display: flex;
-}
 
 #home-blogs{
   position: relative;
@@ -262,6 +262,7 @@
 
 #home-about-container{
   position: relative;
+  align-self: center;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -389,7 +390,7 @@ position: relative;
 
 #home-featured-projects-container{
   position: relative;
-  width: 95%;
+  width: 90%;
   height: 100%;
   display: flex;
   justify-content: center;

@@ -17,7 +17,7 @@ function PageNav(){
             section.scrollIntoView( { behavior: 'smooth', block: 'start' } );
         }
     }
-    const pageNavHelper = <div>
+    const pageNavHelper = <div id='page-nav-container'>
         <p className="page-nav" id='About' onClick={findMySection}>About</p>
         <p className="page-nav" id='Experience' onClick={findMySection}>Experience</p>
         <p className="page-nav" id='Projects' onClick={findMySection}>Projects</p>

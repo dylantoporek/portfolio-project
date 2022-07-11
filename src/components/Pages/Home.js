@@ -95,11 +95,6 @@ function Home({changePage}){
 
     return (
         <div id='home-container'>
-            
-            <div id='home-page-nav'>
-                <PageNav/>
-            </div>
-
             <div id='home-intro'>
                 <div id='home-page-img'>
                     <img id='self-photo' src={photo}/>
@@ -140,16 +135,6 @@ function Home({changePage}){
 
             <div id='home-projects'>
                 <h3 className='section-title'>Projects</h3>
-                <div id='project-text-container'>
-                
-                    Here are a few things I have made. To see more, 
-                    <p className='portfolio-home-link' 
-                    onClick={()=> navigate('portfolio')}>
-                        click here:
-                    </p>
-                
-                </div>
-                
                 <div id='home-featured-projects-container'>
                     {featuredProjectDisplay}
                 </div>
