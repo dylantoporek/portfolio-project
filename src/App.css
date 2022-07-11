@@ -35,7 +35,7 @@
   top: 10%;
   z-index: 100;
   color: white;
-  font-weight: bolder;
+  font-weight: bold;
   font-size: 18px;
 }
 
@@ -44,6 +44,12 @@
   cursor: pointer;
   padding-right: 4%;
   padding-left: 4%;
+}
+
+#resume-link{
+  position: relative;
+  color: white;
+  text-decoration: none;
 }
 
 /* .navLink{
@@ -150,8 +156,8 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
+  width: fit-content;
+  height: fit-content;
   top: 0%;
   background-color: #FFF9FB;
 }
@@ -161,9 +167,9 @@
 
 #home-intro{
   position: relative;
-  align-self: center;
-  width: 100%;
-  top: 10%;
+  align-self: flex-start;
+  width: 70%;
+  top: 5%;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -185,17 +191,24 @@
   justify-self: center;
   align-self: center;
   word-wrap: normal;
-  width: 100%;
-  top: 10%;
+  width: 80%;
+  top: 5%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding-left: 4%;
+  justify-items: center;
+  align-items: center;
   font-size: 20px;
   background-color: #FFF9FB;
-  left: 20%;
- 
+}
+
+#home-about-container{
+  position: relative;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
 }
 
 .section-title{
@@ -204,11 +217,14 @@
   display: flex;
   color: #4B88A2;
   align-self: flex-start;
-  right: 10%;
+  top: 0%;
   font-size: 30PX;
-  padding-left: 0;
+  font-weight: bold;
 }
-
+#experience-title{
+  position: relative;
+  top: 12%;
+}
 #self-photo{
   position: relative;
   max-width: 200px;
@@ -218,33 +234,28 @@
 
 #home-experience{
   position: relative;
+  justify-self: center;
   align-self: center;
   word-wrap: normal;
-  width: 100%;
-  top: 10%;
+  width: 80%;
+  top: 7%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding-top: 5%;
-  padding-left: 45%;
-  padding-bottom: 15%;
+  justify-items: center;
+  align-items: center;
   font-size: 20px;
   background-color: #FFF9FB;
 }
 
 #home-projects{
   position: relative;
-  align-self: flex-start;
-  width: 100%;
+  align-self: center;
+  width: 80%;
   top: 10%;
-  padding-top: 5%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding-left: 23%;
-  padding-bottom: 20%;
+  justify-content: center;
+  align-items: center;
   font-size: 20px;
   background-color: #FFF9FB;
 }
@@ -263,19 +274,12 @@
   align-items: center;
 }
 
-#home-about-container{
-  position: relative;
-  align-self: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
+
 
 #home-about-text{
   position: relative;
   align-self: flex-start;
-  width: 60%;
+  width: 80%;
   height: 100%;
   font-size: smaller;
   top: 0%;
@@ -305,27 +309,28 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  align-self: flex-start;
+  align-self: center;
   margin-right: 3%;
+  
 }
 
 #resume-container{
   position: relative;
-  align-self: flex-start;
+  align-self: center;
   font-weight: bold;
   display: flex;
   flex-direction: column;
   color: black;
   width: 100%;
   border-radius: 4%;
-  padding-top: 2%;
+  padding-top: 5%;
 }
 
 #work-container{
   display: flex;
   flex-direction: row;
   width: 100%;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 #work-details{
@@ -335,7 +340,7 @@
   color: black;
   display: flex;
   flex-direction: column;
-  margin-left: 0%;
+  margin-left: 5%;
 
 }
 
@@ -344,6 +349,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 .work-button{
@@ -377,31 +383,19 @@
   font-weight: 500;
 }
 
-#resume-link{
-position: relative;
- align-self: flex-end;
- margin-right: 10%;
- padding: .5%;
- border-width: 5px;
- color: white;
- /* background-color: #4B88A2; */
- border-radius: 10%;
- top: -80px;
- z-index: 10;
-}
 
 /* ///////////////////////////     PROJECTS          //////////////////////////////////////// */
 
 #home-featured-projects-container{
   position: relative;
-  width: 90%;
+  width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: flex-start;
   align-items: flex-start;
   padding-top: 2%;
-  right: 15%
-
 }
 
 #home-featured-project-item{
@@ -410,9 +404,9 @@ position: relative;
   align-items: center;
   position: relative;
   width: 300px;
-  height: 275px;
+  height: 350px;
   background-color: #061A40;
-  margin: 2%;
+margin: 1%;
   font-size: 12px;
   border-radius: 4%;
   color: white;

@@ -95,9 +95,6 @@ function Home({changePage}){
 
     return (
         <div id='home-container'>
-            <div id='home-contact-bar'>
-                <Contact/>
-            </div>
             <div id='home-intro'>
                 <div id='home-page-img'>
                     <img id='self-photo' src={photo}/>
@@ -132,12 +129,12 @@ function Home({changePage}){
             </div>
             
             <div id='home-experience'>
-                <h3 className='section-title'>Experience</h3>
+                <h3 className='section-title' id='experience-title'>Experience</h3>
                 <InteractiveResume/>
             </div>
 
             <div id='home-projects'>
-                <h3 className='section-title'>Projects</h3>
+                <h3 className='section-title' id='project-title'>Projects</h3>
                 <div id='home-featured-projects-container'>
                     {featuredProjectDisplay}
                 </div>

@@ -7,6 +7,7 @@ import Portfolio from './Pages/Portfolio';
 import '../../src/App.css';
 import Contact from './Contact';
 
+
 function App() {
   const[selectedPage, setSelectedPage] = useState(null)
 
@@ -16,9 +17,12 @@ function App() {
   return (
     <div id='app-container'>
       <Navbar selectedPage={selectedPage}/>
+      <div id='home-contact-bar'>
+        <Contact/>
+      </div>
       <Routes>
-        <Route path='/portfolio' element={<Portfolio changePage={changePage}/>}/>
-        <Route path='/about' element={<About changePage={changePage}/>}/>
+        {/* <Route path='/portfolio' element={<Portfolio changePage={changePage}/>}/>
+        <Route path='/about' element={<About changePage={changePage}/>}/> */}
         <Route path='/' element={<Home changePage={changePage}/>}/>
       </Routes>
       
