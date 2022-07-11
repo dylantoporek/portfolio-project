@@ -33,7 +33,7 @@ function Home({changePage}){
              stage: 'Development',    
          },
          {
-            title: 'Enduracne Lactate Analyzer',
+            title: 'Endurance Lactate Analyzer',
             image: lactate,
             description: 'A conceptual fitness app for althetes to track and measure their blood lactate levels while training.',
             link: 'https://serene-spire-65012.herokuapp.com/',
@@ -96,6 +96,10 @@ function Home({changePage}){
     return (
         <div id='home-container'>
             
+            <div id='home-page-nav'>
+                <PageNav/>
+            </div>
+
             <div id='home-intro'>
                 <div id='home-page-img'>
                     <img id='self-photo' src={photo}/>
