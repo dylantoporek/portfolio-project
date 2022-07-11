@@ -95,6 +95,9 @@ function Home({changePage}){
 
     return (
         <div id='home-container'>
+            <div id='home-contact-bar'>
+                <Contact/>
+            </div>
             <div id='home-intro'>
                 <div id='home-page-img'>
                     <img id='self-photo' src={photo}/>
@@ -154,10 +157,6 @@ function Home({changePage}){
                 <a className='home-link' href='https://medium.com/@dylantoporek'>click here:</a>
                 </p>
             </div> */}
-
-            <div id='home-contact-bar'>
-                <Contact/>
-            </div>
             
         </div>
       );
