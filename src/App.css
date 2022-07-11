@@ -395,7 +395,6 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: flex-start;
-  padding-top: 2%;
 }
 
 #home-featured-project-item{
@@ -403,19 +402,21 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  width: 300px;
-  height: 350px;
+  width: 250px;
+  height: 250px;
   background-color: #061A40;
-margin: 1%;
+  margin-bottom: 1%;
+  margin-left: 20%;
+  margin-right: 5%;
   font-size: 12px;
   border-radius: 4%;
   color: white;
 }
 
-#home-project-title{
+#project-title{
   position: relative;
-  font-size: 14px;
-  top: 0%;
+  top: 3%;
+  padding-bottom: 1%;
 }
 
 #featured-projects-image{
