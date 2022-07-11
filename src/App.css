@@ -136,8 +136,8 @@
 
 .logo-link{
   position: relative;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   top: 0px;
 }
 
@@ -204,6 +204,7 @@
   display: flex;
   color: #4B88A2;
   align-self: flex-start;
+  right: 10%;
   font-size: 30PX;
   padding-left: 0;
 }
@@ -227,7 +228,7 @@
   align-items: flex-start;
   padding-top: 5%;
   padding-left: 45%;
-  padding-bottom: 0%;
+  padding-bottom: 15%;
   font-size: 20px;
   background-color: #FFF9FB;
 }
@@ -237,11 +238,13 @@
   align-self: flex-start;
   width: 100%;
   top: 10%;
+  padding-top: 5%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   padding-left: 23%;
+  padding-bottom: 20%;
   font-size: 20px;
   background-color: #FFF9FB;
 }
@@ -315,6 +318,7 @@
   color: black;
   width: 100%;
   border-radius: 4%;
+  padding-top: 2%;
 }
 
 #work-container{
@@ -331,7 +335,7 @@
   color: black;
   display: flex;
   flex-direction: column;
-  margin-left: 7%;
+  margin-left: 0%;
 
 }
 
@@ -344,7 +348,7 @@
 
 .work-button{
   width: 150px;
-  height: 60px;
+  height: 50px;
   font-size: 11px;
   margin-bottom: 4%;
   border: none;
@@ -395,6 +399,7 @@ position: relative;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+  padding-top: 2%;
   right: 15%
 
 }
