@@ -395,6 +395,7 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: flex-start;
+  top: -5%;
 }
 
 #home-featured-project-item{
@@ -415,8 +416,8 @@
 
 #project-title{
   position: relative;
-  top: 3%;
-  padding-bottom: 1%;
+  top: -5%;
+  padding-bottom: 0%;
 }
 
 #featured-projects-image{
