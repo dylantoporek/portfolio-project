@@ -4,7 +4,7 @@ import Navbar from './Navbar';
 import About from './Pages/About';
 import Home from './Pages/Home';
 import Portfolio from './Pages/Portfolio';
-import '../../src/App.css';
+import '../../src/App.scss';
 import Contact from './Contact';
 
 
