@@ -18,13 +18,10 @@ function Contact(){
 
     function handleHover(e){
       console.log(e.target.id)
-      e.target.style.color = 'yellow'
     }
 
     function handleLeave(e){
       console.log(e.target.id)
-      e.target.style.color = "#FFF9FB"
-      
     }
   return (
     <div className="nav-bar">
