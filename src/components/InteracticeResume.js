@@ -13,7 +13,8 @@ function InteractiveResume(){
                 'React based development within Microsoft Office Addins',
                 'Created custom explorations and reports with Google Analytics',
             ],
-            dates: '04/2022 -  07/2022'
+            dates: '04/2022 -  07/2022',
+            num: 1,
         },
         {
             company: 'Flatiron School Software Engineering Bootcamp',
@@ -23,7 +24,8 @@ function InteractiveResume(){
                 "Studied Object-Oreinted-Programming, REST API's, and PostgreSQL databases",
                 'Utilized Heroku and Netlify to deploy and test projects'
             ],
-            dates: '09/2021 - 03/2022'
+            dates: '09/2021 - 03/2022',
+            num: 2,
         },
         {
             company: 'Private Tutor & Home School Teacher',
@@ -32,7 +34,8 @@ function InteractiveResume(){
                 'Offered academic support in various subjects',
                 'Facilitated contact with school teachers and administration to ensure seamless schooling experience',
             ],
-            dates: '09/2017 - Present'
+            dates: '09/2017 - Present',
+            num: 3,
         },
         {
             company: 'Mathnasium',
@@ -42,7 +45,8 @@ function InteractiveResume(){
                 'Responsible for teaching a range of subjects, from addition to trigonometry',
                 'Offer mentorship and motivation to students from a wide range of backgrounds',
             ],
-            dates: '09/2016 - Present'
+            dates: '09/2016 - Present',
+            num: 4,
         },
         {
             company: 'The Collegiate School',
@@ -51,7 +55,8 @@ function InteractiveResume(){
                 'Math teacher of two 7th grade classes',
                 'Prepared all course work, classroom activities, and assessments',
             ],
-            dates: '01/2020 - 06/2020'
+            dates: '01/2020 - 06/2020',
+            num: 5,
         },
         {
             company: 'The Birch Wathen Lenox School',
@@ -60,16 +65,31 @@ function InteractiveResume(){
                 'Assistant math teacher / permanent substitute',
                 'Assisted with four sections by crafting lessons, maintaining classroom order, and grading assignments',
             ],
-            dates: '01/2017 - 06/2017'
+            dates: '01/2017 - 06/2017',
+            num: 6,
         }, 
     ]
 
     function handleResumeClick(e){
-        if (showExperienceDetails !== e.target.value){
+        if (showExperienceDetails !== e.target.innerText){
            let wasSelected = document.getElementById(`${showExperienceDetails}`)
            wasSelected.style.backgroundColor = 'aliceblue'
            e.target.style.backgroundColor = '#4B88A2'
-           setShowExperienceDetials(e.target.value)
+           let details = document.getElementById('work-details-container')
+           details.className = 'animate__animated animate__fadeOut animate__fast'
+
+           let animationDirectionCheck = (wasSelected.value - e.target.value)
+           
+           setTimeout(()=>{
+            setShowExperienceDetials(e.target.innerText)
+            let newDetails = document.getElementById('work-details-container')
+            if (animationDirectionCheck < 0){
+                newDetails.className = 'animate__animated animate__bounceInUp'
+            } else {
+                newDetails.className = 'animate__animated animate__bounceInDown'
+            }
+           }, 400)
+           
         } else {
            return null
         }
@@ -77,7 +97,7 @@ function InteractiveResume(){
 
     function handleResumeHover(e){
         setIsShown(e.target.value)
-        if(showExperienceDetails === e.target.value){
+        if(showExperienceDetails === e.target.innerText){
             e.target.style.backgroundColor = '#4B88A2'
         }
         else {
@@ -88,7 +108,7 @@ function InteractiveResume(){
     }
 
     function handleResumeLeave(e){
-        if(showExperienceDetails === e.target.value){
+        if(showExperienceDetails === e.target.innerText){
             e.target.style.backgroundColor = '#4B88A2'
         }
         else {
@@ -104,7 +124,7 @@ function InteractiveResume(){
             className='work-button'
             key={experience.company}
             id={experience.company} 
-            value={experience.company}
+            value={experience.num}
             onClick={handleResumeClick}
             onMouseEnter={handleResumeHover}
             onMouseLeave={handleResumeLeave}
@@ -125,10 +145,10 @@ function InteractiveResume(){
         <p id='work-dates'>{targetedExperience.dates}</p>
         {targetedExperience.details[0] ? <li className='work-details'>{targetedExperience.details[0]}</li> : null}
         {targetedExperience.details[1] ? <li className='work-details'>{targetedExperience.details[1]}</li> : null}
-        {targetedExperience.details[2] ? <li className='work-details'>{targetedExperience.details[2]}</li> : null}
-        
+        {targetedExperience.details[2] ? <li className='work-details'>{targetedExperience.details[2]}</li> : null} 
     </div>
 
+// className="animate__animated animate__fadeOutUp"
     const animatedDisplay =
     <div id='button-nav-animated'
         style={{

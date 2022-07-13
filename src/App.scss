@@ -474,6 +474,8 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  transition: all .5s ease;
+  animation-duration: .8s;
 }
 
 .work-button{
@@ -497,8 +499,6 @@
   position: relative;
   align-self: start;
   font-weight: 500;
-
-
 }
 
 .work-details{
