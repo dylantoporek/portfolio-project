@@ -102,15 +102,18 @@
         display: block;
         width: 100%;
         align-content: center;
-        margin-bottom: 30px;
+        margin-bottom: 50%;
         font-size: 30px;
         line-height: 16px;
         color: #FFF9FB;
         z-index: 10;
+        transition: all .5s ease;
+
       :hover{
-        font-size: 35px;
+        font-size: 33px;
         animation: pulse;
         animation-duration: 2s;
+        transition: all .5s ease;
       }
       }
     }
@@ -481,6 +484,7 @@
   border: none;
   cursor: pointer;
   border-radius: 5%;
+  transition: all .5s ease;
 }
 
 #work-title{

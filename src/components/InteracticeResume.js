@@ -133,7 +133,6 @@ function InteractiveResume(){
     <div id='button-nav-animated'
         style={{
         position: 'absolute',
-        backgroundColor: '#4B88A2',
         width: '5px',
         height: '70%',
         borderRadius: '10px',
