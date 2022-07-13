@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { $CombinedState } from "redux";
+import 'animate.css'
 
 function InteractiveResume(){
     const [showExperienceDetails, setShowExperienceDetials] = useState('Expedience Software')
@@ -13,7 +13,7 @@ function InteractiveResume(){
                 'React based development within Microsoft Office Addins',
                 'Created custom explorations and reports with Google Analytics',
             ],
-            dates: '04/2022 -  Present'
+            dates: '04/2022 -  07/2022'
         },
         {
             company: 'Flatiron School Software Engineering Bootcamp',
@@ -26,7 +26,7 @@ function InteractiveResume(){
             dates: '09/2021 - 03/2022'
         },
         {
-            company: 'Private Tutor / Home School Teacher',
+            company: 'Private Tutor & Home School Teacher',
             jobTitle: 'Tutor / Teacher',
             details: [
                 'Offered academic support in various subjects',
@@ -129,11 +129,62 @@ function InteractiveResume(){
         
     </div>
 
+    const animatedDisplay =
+    <div id='button-nav-animated'
+        style={{
+        position: 'absolute',
+        backgroundColor: '#4B88A2',
+        width: '5px',
+        height: '70%',
+        borderRadius: '10px',
+        transition: "all .5s ease",
+        WebkitTransition: "all .5s ease",
+        MozTransition: "all .5s ease",   
+    }}> 
+    <div className="scroll-section" style={{
+        backgroundColor:'#061A40',
+        top: 
+        showExperienceDetails === 'Expedience Software' ? 0 : null ||
+        showExperienceDetails === 'Flatiron School Software Engineering Bootcamp' ? 55 : null ||
+        showExperienceDetails === 'Private Tutor & Home School Teacher' ? 120 : null ||
+        showExperienceDetails === 'Mathnasium' ? 170 : null ||
+        showExperienceDetails === 'The Collegiate School' ? 230 : null ||
+        showExperienceDetails === 'The Birch Wathen Lenox School' ? 285 : null
+    }}></div>
+
+
+        {/* {showExperienceDetails === 'Expedience Software' ? 
+            <div className="scroll-section" style={{
+                backgroundColor: '#061A40',
+                transition: "all .5s ease",
+                WebkitTransition: "all .5s ease",
+                MozTransition: "all .5s ease", 
+                }}></div> 
+        : 
+            <div className="scroll-section" style={{
+                backgroundColor: '#4B88A2',
+                transition: "all .5s ease",
+                WebkitTransition: "all .5s ease",
+                MozTransition: "all .5s ease",
+                }}></div>} */}
+        
+        {/* {showExperienceDetails === 'Flatiron School Software Engineering Bootcamp' ? 
+            <div className="scroll-section" style={{backgroundColor: '#061A40'}}></div> 
+        : 
+            <div className="scroll-section" style={{backgroundColor: '#4B88A2'}}></div>} */}
+        
+       
+            
+                 
+        
+    </div>
     return (
         <div id='resume-container'>
                 
-                <div id='work-container'>
-                <div id='home-experience-container'>
+            <div id='work-container'>
+                {animatedDisplay}
+                        
+                <div id='home-experience-buttons-container'>
                     {workButtonsDisplay}
                 </div>
 
@@ -141,7 +192,7 @@ function InteractiveResume(){
                     {workDetailsDisplay}
                 </div> 
 
-                </div>
+            </div>
                      
             </div>
     )
