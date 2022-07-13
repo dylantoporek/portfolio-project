@@ -141,43 +141,18 @@ function InteractiveResume(){
         WebkitTransition: "all .5s ease",
         MozTransition: "all .5s ease",   
     }}> 
-    <div className="scroll-section" style={{
-        backgroundColor:'#061A40',
-        top: 
-        showExperienceDetails === 'Expedience Software' ? 0 : null ||
-        showExperienceDetails === 'Flatiron School Software Engineering Bootcamp' ? 55 : null ||
-        showExperienceDetails === 'Private Tutor & Home School Teacher' ? 120 : null ||
-        showExperienceDetails === 'Mathnasium' ? 170 : null ||
-        showExperienceDetails === 'The Collegiate School' ? 230 : null ||
-        showExperienceDetails === 'The Birch Wathen Lenox School' ? 285 : null
-    }}></div>
-
-
-        {/* {showExperienceDetails === 'Expedience Software' ? 
-            <div className="scroll-section" style={{
-                backgroundColor: '#061A40',
-                transition: "all .5s ease",
-                WebkitTransition: "all .5s ease",
-                MozTransition: "all .5s ease", 
-                }}></div> 
-        : 
-            <div className="scroll-section" style={{
-                backgroundColor: '#4B88A2',
-                transition: "all .5s ease",
-                WebkitTransition: "all .5s ease",
-                MozTransition: "all .5s ease",
-                }}></div>} */}
-        
-        {/* {showExperienceDetails === 'Flatiron School Software Engineering Bootcamp' ? 
-            <div className="scroll-section" style={{backgroundColor: '#061A40'}}></div> 
-        : 
-            <div className="scroll-section" style={{backgroundColor: '#4B88A2'}}></div>} */}
-        
-       
-            
-                 
-        
+        <div className="scroll-section" style={{
+            backgroundColor:'#061A40',
+            top: 
+            showExperienceDetails === 'Expedience Software' ? 0 : null ||
+            showExperienceDetails === 'Flatiron School Software Engineering Bootcamp' ? 55 : null ||
+            showExperienceDetails === 'Private Tutor & Home School Teacher' ? 120 : null ||
+            showExperienceDetails === 'Mathnasium' ? 170 : null ||
+            showExperienceDetails === 'The Collegiate School' ? 230 : null ||
+            showExperienceDetails === 'The Birch Wathen Lenox School' ? 285 : null
+        }}></div>              
     </div>
+
     return (
         <div id='resume-container'>
                 
