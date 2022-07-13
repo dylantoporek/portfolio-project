@@ -21,7 +21,7 @@ function InteractiveResume(){
             jobTitle: 'Student',
             details: [
                 'Full-Stack web application development, created with React and Ruby on Rails',
-                "Studied Object-Oreinted-Programming, REST API's, and PostgreSQL databases",
+                "Studied Object-oriented programming, REST API's, and PostgreSQL databases",
                 'Utilized Heroku and Netlify to deploy and test projects'
             ],
             dates: '09/2021 - 03/2022',
@@ -88,7 +88,7 @@ function InteractiveResume(){
             } else {
                 newDetails.className = 'animate__animated animate__bounceInDown'
             }
-           }, 400)
+           }, 350)
            
         } else {
            return null
@@ -163,12 +163,12 @@ function InteractiveResume(){
         <div className="scroll-section" style={{
             backgroundColor:'#061A40',
             top: 
-            showExperienceDetails === 'Expedience Software' ? 0 : null ||
-            showExperienceDetails === 'Flatiron School Software Engineering Bootcamp' ? 55 : null ||
-            showExperienceDetails === 'Private Tutor & Home School Teacher' ? 120 : null ||
-            showExperienceDetails === 'Mathnasium' ? 170 : null ||
-            showExperienceDetails === 'The Collegiate School' ? 230 : null ||
-            showExperienceDetails === 'The Birch Wathen Lenox School' ? 285 : null
+            showExperienceDetails === 'Expedience Software' ? -4 : null ||
+            showExperienceDetails === 'Flatiron School Software Engineering Bootcamp' ? 61 : null ||
+            showExperienceDetails === 'Private Tutor & Home School Teacher' ? 126 : null ||
+            showExperienceDetails === 'Mathnasium' ? 191 : null ||
+            showExperienceDetails === 'The Collegiate School' ? 256 : null ||
+            showExperienceDetails === 'The Birch Wathen Lenox School' ? 321 : null
         }}></div>              
     </div>
 

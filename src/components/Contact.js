@@ -17,6 +17,9 @@ import {
 function Contact(){
 const [isHovered, setIsHovered] = useState(null)
 
+const openInNewTab = url => {
+  window.open(url, '_blank', 'noopener,noreferrer');
+};
     function handleHover(e){
       console.log(e.target.id)
       // setIsHovered(e.target.id)
@@ -31,12 +34,8 @@ const [isHovered, setIsHovered] = useState(null)
   return (
     <div className="nav-bar">
         <div>
-          <a
-            href="https://www.linkedin.com/in/dylan-toporek-bb3491106/"
-            onMouseEnter={handleHover} onMouseLeave={handleLeave}
-            id='linkedin'
-            
-          >
+          <a id='linkedin'
+            onMouseEnter={handleHover} onMouseLeave={handleLeave} onClick={()=> openInNewTab("https://www.linkedin.com/in/dylan-toporek-bb3491106/")}>
             <FontAwesomeIcon icon={faLinkedin} color="#FFF9FB" style={{
               transition: "all .5s ease",
               WebkitTransition: "all .5s ease",
@@ -47,8 +46,7 @@ const [isHovered, setIsHovered] = useState(null)
 
         <div>
           <a id='github'
-            href="https://github.com/dylantoporek"
-            onMouseEnter={handleHover} onMouseLeave={handleLeave}>
+            onMouseEnter={handleHover} onMouseLeave={handleLeave} onClick={()=> openInNewTab("https://github.com/dylantoporek")}>
             <FontAwesomeIcon icon={faGithub} color="#FFF9FB" style={{
               transition: "all .5s ease",
               WebkitTransition: "all .5s ease",
@@ -57,11 +55,8 @@ const [isHovered, setIsHovered] = useState(null)
             </a> 
         </div>
         <div>
-          <a
-            href="https://medium.com/@dylantoporek"
-            onMouseEnter={handleHover} onMouseLeave={handleLeave}
-            id='medium'
-          >
+          <a id='medium'
+            onMouseEnter={handleHover} onMouseLeave={handleLeave} onClick={()=> openInNewTab("https://medium.com/@dylantoporek")}>
             <FontAwesomeIcon icon={faMedium} color="#FFF9FB" style={{
               transition: "all .5s ease",
               WebkitTransition: "all .5s ease",
