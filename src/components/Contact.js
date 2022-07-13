@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import '../../src/App.scss';
 import 'animate.css'
-import { bounce } from 'animate.css';
 import githubImg from '../images/GithubLogo.png'
 import mediumImg from '../images/mediumLogo.png'
 import linkedinImg from '../images/linkedinLogo.webp'
@@ -19,14 +18,15 @@ function Contact(){
 const [isHovered, setIsHovered] = useState(null)
 
     function handleHover(e){
-      setIsHovered(e.target.id)
-      e.target.className = 'animate__animated animate__pulse animate__slow'
-      console.log(e.target.className)
+      console.log(e.target.id)
+      // setIsHovered(e.target.id)
+      // e.target.setAttribute('class','animate__animated animate__pulse')
     }
 
     function handleLeave(e){
-      e.target.className = 'animate__animated animate__pulse animate__slow'
-      setIsHovered(null)
+      console.log(e.target)
+      // setIsHovered('')
+      // e.target.setAttribute('class', null)
     }
   return (
     <div className="nav-bar">
@@ -38,28 +38,23 @@ const [isHovered, setIsHovered] = useState(null)
             
           >
             <FontAwesomeIcon icon={faLinkedin} color="#FFF9FB" style={{
-              color: isHovered === 'linkedin' ? "orange" : "#FFF9FB",
-              transition: "all .6s ease",
-              WebkitTransition: "all .6s ease",
-              MozTransition: "all .6s ease",
-              zIndex: 100,
-            }} />
-          </a>
-        </div>
-        <div>
-          <a
-            href="https://github.com/dylantoporek"
-            onMouseEnter={handleHover} onMouseLeave={handleLeave}
-            id='github'
-          >
-            <FontAwesomeIcon icon={faGithub} color="#FFF9FB" style={{
-              color: isHovered === 'github' ? "orange" : "#FFF9FB",
               transition: "all .5s ease",
               WebkitTransition: "all .5s ease",
               MozTransition: "all .5s ease",
-              zIndex: 100,
-            }} /> 
+            }}/>
           </a>
+        </div>
+
+        <div>
+          <a id='github'
+            href="https://github.com/dylantoporek"
+            onMouseEnter={handleHover} onMouseLeave={handleLeave}>
+            <FontAwesomeIcon icon={faGithub} color="#FFF9FB" style={{
+              transition: "all .5s ease",
+              WebkitTransition: "all .5s ease",
+              MozTransition: "all .5s ease",
+            }}/>
+            </a> 
         </div>
         <div>
           <a
@@ -68,11 +63,9 @@ const [isHovered, setIsHovered] = useState(null)
             id='medium'
           >
             <FontAwesomeIcon icon={faMedium} color="#FFF9FB" style={{
-              color: isHovered === 'medium' ? "orange" : "#FFF9FB",
               transition: "all .5s ease",
               WebkitTransition: "all .5s ease",
               MozTransition: "all .5s ease",
-              zIndex: 100,
             }} /> 
           </a>
         </div>

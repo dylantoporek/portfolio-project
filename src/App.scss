@@ -107,7 +107,11 @@
         line-height: 16px;
         color: #FFF9FB;
         z-index: 10;
-        text-decoration: none;
+      :hover{
+        font-size: 35px;
+        animation: pulse;
+        animation-duration: 2s;
+      }
       }
     }
   
