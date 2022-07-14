@@ -4,10 +4,10 @@ import Contact from "../Contact";
 
 function Portfolio({changePage}){
 
-    useEffect(()=>{
-        changePage(window.location.href)
-        window.scrollTo(0, 0)
-    }, [])
+    // useEffect(()=>{
+    //     changePage(window.location.href)
+    //     window.scrollTo(0, 0)
+    // }, [])
     
     return (
         <div id='portfolio-container'>

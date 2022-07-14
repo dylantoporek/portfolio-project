@@ -1,9 +1,7 @@
 import React, {useState} from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Navbar from './Navbar';
-import About from './Pages/About';
 import Home from './Pages/Home';
-import Portfolio from './Pages/Portfolio';
 import '../../src/App.scss';
 import Contact from './Contact';
 
@@ -21,8 +19,6 @@ function App() {
         <Contact/>
       </div>
       <Routes>
-        {/* <Route path='/portfolio' element={<Portfolio changePage={changePage}/>}/>
-        <Route path='/about' element={<About changePage={changePage}/>}/> */}
         <Route path='/' element={<Home changePage={changePage}/>}/>
       </Routes>
       

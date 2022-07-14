@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from "react";
-import Contact from "../Contact";
 import InteractiveResume from "../InteracticeResume";
 import {useNavigate} from 'react-router-dom'
 import photo from '../../images/photo.jpeg'
@@ -9,9 +8,10 @@ import lactate from '../../images/lactate_1.png'
 import poke from '../../images/poke.png'
 import pO from '../../images/promise_object.gif'
 import Skills from '../Skills'
-import PageNav from "../PageNav";
+import Portfolio from "../Pages/Portfolio"
 
-function Home({changePage}){
+
+function Home({}){
     const navigate = useNavigate()
     const [featuredProjects, setFeaturedProjects] = useState([
         {
@@ -60,9 +60,9 @@ function Home({changePage}){
         }
     ])
 
-    useEffect(()=>{
-        changePage(window.location.href)
-    }, [])
+    // useEffect(()=>{
+    //     changePage(window.location.href)
+    // }, [])
 
     const featuredProjectDisplay = featuredProjects.map((project)=>{
         return (
@@ -136,23 +136,15 @@ function Home({changePage}){
             <div id='home-projects'>
                 <h3 className='section-title' id='project-title'>Projects</h3>
                 <div id='home-featured-projects-container'>
-                    {featuredProjectDisplay}
+                   <Portfolio />
                 </div>
-                
+                {/* {featuredProjectDisplay} */}
             </div>
 
+            
             {/* <div id='home-skills'>
             <h3>Skills</h3>
                 <Skills/>
-            </div> */}
-
-
-            
-
-            {/* <div id='home-blogs'>
-                <p>As a tool to better learn to code, I chose to write a few blog posts about technical topics. If you want to read my blogs, 
-                <a className='home-link' href='https://medium.com/@dylantoporek'>click here:</a>
-                </p>
             </div> */}
             
         </div>

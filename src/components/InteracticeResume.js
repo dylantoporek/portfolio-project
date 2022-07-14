@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import 'animate.css'
 
 function InteractiveResume(){
-    const [showExperienceDetails, setShowExperienceDetials] = useState('Expedience Software')
+    const [showExperienceDetails, setShowExperienceDetails] = useState('Expedience Software')
     const [isShown, setIsShown] = useState('Expedience Software');
     const experienceDetails = [
         {
@@ -74,14 +74,16 @@ function InteractiveResume(){
         if (showExperienceDetails !== e.target.innerText){
            let wasSelected = document.getElementById(`${showExperienceDetails}`)
            wasSelected.style.backgroundColor = 'aliceblue'
+           wasSelected.style.color = 'black'
            e.target.style.backgroundColor = '#4B88A2'
+           e.target.style.color = 'white'
            let details = document.getElementById('work-details-container')
            details.className = 'animate__animated animate__fadeOut animate__fast'
 
            let animationDirectionCheck = (wasSelected.value - e.target.value)
            
            setTimeout(()=>{
-            setShowExperienceDetials(e.target.innerText)
+            setShowExperienceDetails(e.target.innerText)
             let newDetails = document.getElementById('work-details-container')
             if (animationDirectionCheck < 0){
                 newDetails.className = 'animate__animated animate__bounceInUp'
@@ -128,7 +130,9 @@ function InteractiveResume(){
             onClick={handleResumeClick}
             onMouseEnter={handleResumeHover}
             onMouseLeave={handleResumeLeave}
-            style={{backgroundColor: showExperienceDetails === experience.company ? '#4B88A2' : '#FFF9FB' 
+            style={{
+                backgroundColor: showExperienceDetails === experience.company ? '#4B88A2' : '#FFF9FB',
+                color: showExperienceDetails === experience.company ? 'white' : 'black',
             }}>
                 {experience.company}
             </button>   
