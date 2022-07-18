@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Hi, my name is Dylan Toporek! 👋
 
 ## Skills
@@ -24,4 +25,6 @@
     <img src="http://cdn.jsdelivr.net/gh/devicons/devicon/icons/heroku/heroku-original.svg" width="30px">
 
     <img src="http://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" width="30px">
+=======
+>>>>>>> e1bf35161d139b1012c991a6e501f71d84fc9386
 
