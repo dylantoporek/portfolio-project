@@ -29,13 +29,7 @@ function Skills(){
         <img className='skill-logo' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
         {/* heroku */}
         <img className='skill-logo' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/heroku/heroku-original.svg" />
-          
-        
-          
-        
-           
-        
-          
+          {/* VSCode */}
         <img className='skill-logo' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" />
           
     </div>
