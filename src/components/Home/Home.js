@@ -10,6 +10,7 @@ import pO from '../../images/promise_object.gif'
 import Skills from '../../components/Skills/Skills'
 import Portfolio from '../../components/Portfolio/Portfolio'
 import '../Home/index.scss'
+import mountains from '../../images/mountains.png'
 
 
 function Home({}){
@@ -95,6 +96,7 @@ function Home({}){
     })
 
     return (
+
         <div id='home-container'>
             <div id='home-intro'>
                 <div id='home-page-img'>
