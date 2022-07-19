@@ -16,9 +16,8 @@ function App() {
   return (
     <div id='app-container'>
       <Navbar selectedPage={selectedPage}/>
-      <div id='home-contact-bar'>
-        <Contact/>
-      </div>
+      <Contact/>
+
       <Routes>
         <Route path='/' element={<Home changePage={changePage}/>}/>
       </Routes>
