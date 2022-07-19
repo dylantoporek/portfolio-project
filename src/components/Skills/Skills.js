@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import '../Skills/index.scss'
 
 function Skills(){
     console.log('hello')

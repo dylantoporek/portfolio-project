@@ -1,8 +1,8 @@
 import React, {useState} from "react";
-import botw from '../images/botw.png'
-import nintendo from '../images/nintendo.png'
-import lactate from '../images/lactate_1.png'
-import poke from '../images/poke.png'
+import botw from '../../images/botw.png'
+import nintendo from '../../images/nintendo.png'
+import lactate from '../../images/lactate_1.png'
+import poke from '../../images/poke.png'
 
 
 function ProjectItem(){

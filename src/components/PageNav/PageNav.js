@@ -1,5 +1,5 @@
 import React from "react";
-
+import '../PageNav/index.scss'
 function PageNav(){
 
     const openInNewTab = url => {

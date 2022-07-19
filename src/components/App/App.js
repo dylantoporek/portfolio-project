@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Navbar from './Navbar';
-import Home from './Pages/Home';
-import '../../src/App.scss';
-import Contact from './Contact';
+import Navbar from '../../components/Navbar/Navbar';
+import Home from '../../components/Home/Home'
+import '../App/index.scss'
+// import '../../src/App.scss';
+import Contact from '../../components/Contact/Contact';
 
 
 function App() {

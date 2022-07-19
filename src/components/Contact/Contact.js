@@ -1,12 +1,13 @@
 import React, {useState} from "react";
-import '../../src/App.scss';
+import '../../App.scss';
+import '../Contact/index.scss'
 import 'animate.css'
-import githubImg from '../images/GithubLogo.png'
-import mediumImg from '../images/mediumLogo.png'
-import linkedinImg from '../images/linkedinLogo.webp'
-import gitHub from '../images/github-brands.svg'
-import medium from '../images/medium-brands.svg'
-import linkedin from '../images/linkedin-in-brands.svg'
+import githubImg from '../../images/GithubLogo.png'
+import mediumImg from '../../images/mediumLogo.png'
+import linkedinImg from '../../images/linkedinLogo.webp'
+import gitHub from '../../images/github-brands.svg'
+import medium from '../../images/medium-brands.svg'
+import linkedin from '../../images/linkedin-in-brands.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faLinkedin,

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import InteractiveResume from "../InteracticeResume";
+import InteractiveResume from "../InteractiveResume/InteracticeResume";
 import {useNavigate} from 'react-router-dom'
 import photo from '../../images/photo.jpeg'
 import botw from '../../images/botw.png'
@@ -7,8 +7,9 @@ import nintendo from '../../images/nintendo.png'
 import lactate from '../../images/lactate_1.png'
 import poke from '../../images/poke.png'
 import pO from '../../images/promise_object.gif'
-import Skills from '../Skills'
-import Portfolio from "../Pages/Portfolio"
+import Skills from '../../components/Skills/Skills'
+import Portfolio from '../../components/Portfolio/Portfolio'
+import '../Home/index.scss'
 
 
 function Home({}){

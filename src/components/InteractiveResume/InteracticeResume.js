@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import 'animate.css'
+import '../InteractiveResume/index.scss'
 
 function InteractiveResume(){
     const [showExperienceDetails, setShowExperienceDetails] = useState('Expedience Software')

@@ -1,6 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import PageNav from "./PageNav";
+import PageNav from "../PageNav/PageNav";
+import '../Navbar/index.scss'
+
 function Navbar({selectedPage}){
     
 
