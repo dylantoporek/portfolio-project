@@ -33,7 +33,7 @@ const openInNewTab = url => {
       // e.target.setAttribute('class', null)
     }
   return (
-    <div className="nav-bar">
+    <div className="contact-bar">
         <div>
           <a id='linkedin'
             onMouseEnter={handleHover} onMouseLeave={handleLeave} onClick={()=> openInNewTab("https://www.linkedin.com/in/dylan-toporek-bb3491106/")}>
