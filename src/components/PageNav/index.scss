@@ -1,0 +1,27 @@
+@import 'animate.css';
+
+#page-nav-container{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    right: 25%;
+    z-index: 100;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    justify-content: center;
+    align-content: center;
+
+    .page-nav{
+        position: relative;
+        cursor: pointer;
+        padding-right: 4%;
+        padding-left: 4%;
+    }
+
+    #resume-link{
+        position: relative;
+        color: white;
+        text-decoration: none;
+    }
+}
