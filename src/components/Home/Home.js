@@ -100,12 +100,6 @@ function Home({}){
 
         <div id='home-container'>
             <Landing/>
-            {/* <div id='home-intro'>
-                <div id='home-page-img'>
-                    <img id='self-photo' src={photo}/>
-                </div>
-                  
-            </div> */}
 
             <div id='home-about'>
                 <h3 className='section-title'>About me</h3>

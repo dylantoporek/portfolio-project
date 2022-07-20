@@ -2,12 +2,6 @@ import React, {useState} from "react";
 import '../../App.scss';
 import '../Contact/index.scss'
 import 'animate.css'
-import githubImg from '../../images/GithubLogo.png'
-import mediumImg from '../../images/mediumLogo.png'
-import linkedinImg from '../../images/linkedinLogo.webp'
-import gitHub from '../../images/github-brands.svg'
-import medium from '../../images/medium-brands.svg'
-import linkedin from '../../images/linkedin-in-brands.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faLinkedin,
@@ -18,18 +12,18 @@ import {
 function Contact(){
 const [isHovered, setIsHovered] = useState(null)
 
-console.log(window.scrollY)
+
 const openInNewTab = url => {
   window.open(url, '_blank', 'noopener,noreferrer');
 };
     function handleHover(e){
-      console.log(e.target.id)
+      // console.log(e.target.id)
       // setIsHovered(e.target.id)
       // e.target.setAttribute('class','animate__animated animate__pulse')
     }
 
     function handleLeave(e){
-      console.log(e.target)
+      // console.log(e.target)
       // setIsHovered('')
       // e.target.setAttribute('class', null)
     }

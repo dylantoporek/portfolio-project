@@ -2,9 +2,11 @@ import React from "react";
 import mountains from '../../images/mountains1.png'
 import '../Landing/index.scss'
 
-function Landing(){
+function Landing({}){
     let screenWidth = window.innerWidth
     let screenHeight = window.innerHeight
+
+    
     return (
         <div id='landing-container'>
             <div id='intro-text'>
