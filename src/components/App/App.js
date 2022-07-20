@@ -19,7 +19,7 @@ function App() {
   return (
     <div id='app-container'>
       <Navbar selectedPage={selectedPage}/>
-      {isScroll ? <Contact/> : null}
+      <Contact/>
 
       <Routes>
         <Route path='/' element={<Home changePage={changePage}/>}/>
