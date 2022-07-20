@@ -11,6 +11,7 @@ import Skills from '../../components/Skills/Skills'
 import Portfolio from '../../components/Portfolio/Portfolio'
 import '../Home/index.scss'
 import mountains from '../../images/mountains.png'
+import Landing from '../Landing/Landing'
 
 
 function Home({}){
@@ -98,17 +99,13 @@ function Home({}){
     return (
 
         <div id='home-container'>
-            <div id='home-intro'>
+            <Landing/>
+            {/* <div id='home-intro'>
                 <div id='home-page-img'>
                     <img id='self-photo' src={photo}/>
                 </div>
-                <div id='intro-text'>
-                    <h2>Hi, my name is Dylan Toporek</h2>
-                    <p>
-                     I am a fullstack software engineer focusing on developing and designing exceptional web experiences. Currently, I am honing my skills using React and Ruby on Rails.
-                    </p> 
-                </div>   
-            </div>
+                  
+            </div> */}
 
             <div id='home-about'>
                 <h3 className='section-title'>About me</h3>

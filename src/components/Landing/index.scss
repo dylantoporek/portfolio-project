@@ -1,0 +1,32 @@
+@import 'animate.css';
+
+
+#landing-container{
+    display: flex;
+    height: 700px;
+    min-width: 100%;
+    max-width: 100%;
+    top: 2%;
+    position: absolute;
+    background-image: url('../../images/mountains1.png');
+    overflow: hidden;
+
+    #intro-text{
+        position: relative;
+        padding-left: 2%;
+        top: 25%;
+        width: 80%;
+        z-index: 5;
+
+        h1{
+            font-size: 35px;
+        }
+
+        p{
+            font-size: 14px;
+            width: 50%;
+            text-align:left;
+        }
+    }
+}
+

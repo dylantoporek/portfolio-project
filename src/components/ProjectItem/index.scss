@@ -1,0 +1,20 @@
+@import 'animate.css';
+
+#projects-container{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    top: 10%;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#project-buttons{
+    position: relative;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    right: 8%;
+    top: -50px; 
+}

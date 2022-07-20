@@ -18,6 +18,7 @@ import {
 function Contact(){
 const [isHovered, setIsHovered] = useState(null)
 
+console.log(window.scrollY)
 const openInNewTab = url => {
   window.open(url, '_blank', 'noopener,noreferrer');
 };

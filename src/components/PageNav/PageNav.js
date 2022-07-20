@@ -9,7 +9,7 @@ function PageNav(){
     function findMySection(e){
         console.log(e.target.id)
         if(e.target.id === 'About'){
-            const section = document.querySelector( '#home-container' );
+            const section = document.querySelector( '#home-about' );
             section.scrollIntoView( { behavior: 'smooth', block: 'start' } );
         }
         if(e.target.id === 'Experience'){
