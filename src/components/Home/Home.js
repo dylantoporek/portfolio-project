@@ -102,7 +102,7 @@ function Home({}){
             <Landing/>
 
             <div id='home-about'>
-                <h3 className='section-title'>About me</h3>
+                <h3 className='section-title' id='about-title'>About me</h3>
                 <div id='home-about-container'>
                     
                     <div id='home-about-text'>
