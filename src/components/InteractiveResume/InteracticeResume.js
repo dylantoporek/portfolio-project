@@ -179,7 +179,7 @@ function InteractiveResume(){
 
     return (
         <div id='resume-container'>
-                
+            <h3 className='section-title' id='experience-title'>Experience</h3>
             <div id='work-container'>
                 {animatedDisplay}
                         

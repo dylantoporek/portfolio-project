@@ -3,6 +3,7 @@ import botw from '../../images/botw.png'
 import nintendo from '../../images/nintendo.png'
 import lactate from '../../images/lactate_1.png'
 import poke from '../../images/poke.png'
+import '../ProjectItem/index.scss'
 
 
 function ProjectItem(){
@@ -143,7 +144,7 @@ const animatedDisplay =
 <div id='button-nav-animated'
     style={{
     position: 'absolute',
-    left: '-107px',
+    left: '0px',
     width: '5px',
     height: '70%',
     borderRadius: '10px',
@@ -162,17 +163,21 @@ const animatedDisplay =
 </div>
 
     return (
-    <div id='projects-container'>
-        {animatedDisplay}
-        <div id='project-buttons'>
-            {projectButtonDisplay}
-         </div>
+        <div id='portfolio-container'>
+            <h3 className='section-title' id='project-title'>Projects</h3>
             
-        <div id='project-details'>
-          {projectDisplay}
+            <div id='projects-container'>
+                {animatedDisplay}
+                <div id='project-buttons'>
+                    {projectButtonDisplay}
+                </div>
+            
+                <div id='project-details'>
+                    {projectDisplay}
+                </div>
+            </div>
         </div>
-    </div>
-      );
+    );
 }
 
 export default ProjectItem

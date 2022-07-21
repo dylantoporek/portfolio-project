@@ -1,20 +1,40 @@
 @import 'animate.css';
 
-#projects-container{
+#portfolio-container{
     position: relative;
+    align-self: center;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    color: black;
+    width: 100%;
+    border-radius: 4%;
+    top: 0%;
+    padding: 2%
+  }
+
+  #project-title{
+    position: relative;
+    top: 0%;
+    padding-bottom: 1%;
+  }
+
+#projects-container{
     display: flex;
     flex-direction: row;
     width: 100%;
-    top: 10%;
     justify-content: flex-start;
-    align-items: flex-start;
+    height: 100%;
 }
 
 #project-buttons{
     position: relative;
-    align-self: flex-start;
     display: flex;
     flex-direction: column;
-    right: 8%;
-    top: -50px; 
+    align-self: flex-start;
+    justify-self: flex-start;
+    margin-right: 3%;
+    margin-left: 2%;
+    top: -50px
+
 }
