@@ -19,6 +19,13 @@
     .page-nav{
         position: relative;
         cursor: pointer;
+        transition: all 1s ease;
+    }
+
+    .pag-nav-decoration{
+        transition: all 1s ease;
+        width: 50px;
+        height: 5px;
     }
 
     #resume-link{
