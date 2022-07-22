@@ -2,9 +2,14 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import PageNav from "../PageNav/PageNav";
 import '../Navbar/index.scss'
+import logo from '../../images/logo.png'
 
 function Navbar({selectedPage}){
     
+    function handleClick(){
+        const section = document.getElementById('home-container')
+        section.scrollIntoView( { behavior: 'smooth', block: 'start' } )
+    }
 
     // function handleScrollToTop(){
     //     window.scrollTo(0, 0)
@@ -26,6 +31,15 @@ function Navbar({selectedPage}){
 
     return (
         <div id='navbar-container'>
+            <div>
+                <img onClick={handleClick} style={{
+                position: 'relative',
+                left: '20px',
+                width: '50px',
+                cursor: 'pointer',
+                zIndex: 10,
+                }} src={logo}/>
+            </div>
             <PageNav/>
         </div>
         

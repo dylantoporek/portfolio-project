@@ -1,5 +1,6 @@
 import React from "react";
 import '../PageNav/index.scss'
+
 function PageNav(){
 
     const openInNewTab = url => {
@@ -21,6 +22,8 @@ function PageNav(){
         }
     }
     const pageNavHelper = <div id='page-nav-container'>
+        
+        
         <a className="page-nav" id='About' onClick={findMySection}>About</a>
         <a className="page-nav" id='Experience' onClick={findMySection}>Experience</a>
         <a className="page-nav" id='Projects' onClick={findMySection}>Projects</a>

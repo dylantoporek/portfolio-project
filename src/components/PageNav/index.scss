@@ -3,20 +3,22 @@
 #page-nav-container{
     display: flex;
     flex-direction: row;
-    position: relative;
-    right: 25%;
+    align-self: flex-end;
+    justify-self: flex-end;
+    position: absolute;
+    width: 90%;
+    right: 2%;
     z-index: 100;
     color: white;
     font-weight: bold;
     font-size: 18px;
-    justify-content: center;
-    align-content: center;
+    justify-content: flex-end;
+    top: 35%;
+    gap: 30px;
 
     .page-nav{
         position: relative;
         cursor: pointer;
-        padding-right: 4%;
-        padding-left: 4%;
     }
 
     #resume-link{
