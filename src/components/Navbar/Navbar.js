@@ -1,33 +1,31 @@
-import React from "react";
+import React, {useState} from "react";
 import { NavLink } from "react-router-dom";
 import PageNav from "../PageNav/PageNav";
 import '../Navbar/index.scss'
 import logo from '../../images/logo.png'
 
 function Navbar({selectedPage}){
+    const [selectedNav, setSelectedNav] = useState(null)
+    const [animation, setAnimation] = useState(false)
     
     function handleClick(){
         const section = document.getElementById('home-container')
         section.scrollIntoView( { behavior: 'smooth', block: 'start' } )
+        setSelectedNav(null)
     }
 
-    // function handleScrollToTop(){
-    //     window.scrollTo(0, 0)
-    // }
+    function handleNavSelection(props){
+        setSelectedNav(props)
+    }
 
-    // return (
-    //     <div id='navbar-container'>
-    //         {selectedPage === 'http://localhost:3000/' || selectedPage === 'https://dylantoporek.netlify.app/' ? 
-    //         <NavLink id='selected-to-home' to='/' onClick={handleScrollToTop}>Home</NavLink>
-    //         :
-    //         <NavLink className='navLink' to='/' onClick={handleScrollToTop}>Home</NavLink>}
-    //         {selectedPage === 'http://localhost:3000/portfolio' || selectedPage === 'https://dylantoporek.netlify.app/portfolio' ? 
-    //         <NavLink id='selected-to-portfolio' to='/portfolio' onClick={handleScrollToTop}>Portfolio</NavLink>
-    //         :
-    //         <NavLink className='navLink' to='/portfolio' onClick={handleScrollToTop}>Portfolio</NavLink>}
-    //         <a className="navLink" href='https://drive.google.com/file/d/1APNgek--JsLy05tjixRrRFtrf09HVQsY/view?usp=sharing'>Resume</a>
-    //     </div>
-    // )
+    function handleAnimation(props){
+        if(props === 'on'){
+            setAnimation(true)
+        } else {
+            setAnimation(false)
+        }
+    }
+
 
     return (
         <div id='navbar-container'>
@@ -40,7 +38,11 @@ function Navbar({selectedPage}){
                 zIndex: 10,
                 }} src={logo}/>
             </div>
-            <PageNav/>
+            <PageNav 
+            animation={animation} 
+            handleAnimation={handleAnimation}
+            selectedNav={selectedNav}
+            handleNavSelection={handleNavSelection}/>
         </div>
         
     )
