@@ -101,7 +101,7 @@ function Home({}){
 
         <div id='home-container'>
             <Landing/>
-
+        
             <About/>
             
             <div id='home-experience'>
