@@ -3,23 +3,23 @@
 #page-nav-container{
     display: flex;
     flex-direction: row;
-    align-self: flex-end;
-    justify-self: flex-end;
+    align-self: center;
+    justify-self: center;
     position: absolute;
-    width: 90%;
-    right: 2%;
+    top: 35%;
     z-index: 100;
     color: white;
     font-weight: bold;
     font-size: 18px;
     justify-content: flex-end;
-    top: 35%;
     gap: 30px;
+    right: 2%;
 
     .page-nav{
         position: relative;
         cursor: pointer;
         transition: all 1s ease;
+
     }
 
     .pag-nav-decoration{

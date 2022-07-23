@@ -8,7 +8,7 @@ function Landing({}){
 
     
     return (
-        <div id='landing-container'>
+        <div id='landing-container'> 
             <div id='intro-text'>
                 <h2>Hi, my name is</h2>
                 <h1>Dylan Toporek</h1>
