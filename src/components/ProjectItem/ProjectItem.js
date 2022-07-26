@@ -132,15 +132,17 @@ function ProjectItem(){
     })
 
     const projectDisplay = <div id='project-details-item' key={targetedProject.title}>
-                <h3>{targetedProject.title}</h3>
+        <div id='wriiten-info'>
+        <h3>{targetedProject.title}</h3>
                 <div id='more-info'>
                     <p>{targetedProject.description}</p>
                     <p>Goal: {targetedProject.goal}</p>
                     <p>Issue: {targetedProject.issue}</p>
                     <p>Solution: {targetedProject.solution}</p>
                 </div>
+        </div>
+        <div id='other-info'>
                 <div id='project-image-container'>
-                
                     <img className='project-image' src={targetedProject.image}/>
                 </div>
                 
@@ -153,8 +155,9 @@ function ProjectItem(){
                 </div>
                 <div className="stage">
                     Stage: {targetedProject.stage}
-                </div>  
-            </div>
+                </div> 
+            </div> 
+    </div>
 
 const animatedDisplay =
 <div id='button-nav-animated'
@@ -171,10 +174,10 @@ const animatedDisplay =
     <div className="scroll-section" style={{
         backgroundColor:'#061A40',
         top: 
-        showProjectDetails === 'Breath of the Wild Cooking App' ? -55 : null ||
-        showProjectDetails === 'Nintendo-Land' ? 12 : null ||
-        showProjectDetails === 'Endurance Lactate Analyzer' ? 78 : null ||
-        showProjectDetails === 'Pokemon Minigame App' ? 142 : null
+        showProjectDetails === 'Breath of the Wild Cooking App' ? -83 : null ||
+        showProjectDetails === 'Nintendo-Land' ? -18 : null ||
+        showProjectDetails === 'Endurance Lactate Analyzer' ? 47 : null ||
+        showProjectDetails === 'Pokemon Minigame App' ? 112 : null
     }}></div>              
 </div>
 

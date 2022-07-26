@@ -15,7 +15,7 @@
 
   #project-title{
     position: relative;
-    top: 7%;
+    top: 0%;
     padding-bottom: 5%;
   }
 
@@ -26,7 +26,6 @@
     width: 100%;
     justify-content: flex-start;
     top: 10%;
-    height: 100%;
 }
 
 #project-buttons{
@@ -37,7 +36,7 @@
     justify-self: flex-start;
     margin-right: 3%;
     margin-left: 2%;
-    top: -50px
+    top: -80px
 
 }
 
@@ -86,12 +85,22 @@
 #project-details-item{
   position: relative;
   display: flex;
-  flex-direction: column;
-  width: 90%;
-  top: -80px;
+  flex-direction: row;
+  width: 100%;
+  top: -110px;
   align-self: flex-start;
   justify-self: center;
+  gap: 1em;
 
+  #wriiten-info{
+    width:60%;
+  }
+
+  #other-info{
+    width:50%;
+    align-self: center;
+    justify-self: center;
+  }
   h3{
     position: relative;
     z-index: 1;
@@ -102,6 +111,7 @@
   }
   .stage{
     font-size: 16px;
+    justify-self: center;
   }
 
   
@@ -112,7 +122,7 @@
 
   p{
     width: 100%;
-    font-size: 15px;
+    font-size: 17px;
   }
 }
 
@@ -120,14 +130,13 @@
   position: relative;
   display: flex;
   align-self: center;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .project-image{
   display: flex;
   align-self: center;
   position: relative;
-  left: 20%;
   max-width: 60%;
   max-height: 250px;
 }
@@ -157,4 +166,5 @@
 .stage{
   position: relative;
   align-self: center;
+  text-align: center;
 }
