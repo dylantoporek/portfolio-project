@@ -27,23 +27,26 @@ function Navbar({selectedPage}){
 
     return (
         <Stack
+         flexDir={'row'}
          zIndex={'100'}
-         top={'0%'}
          position={'fixed'}
          width={"100%"}
          height={'10%'}
-         justifyContent={'center'}
+         alignItems={'center'}
          backgroundColor={'#4B88A2'}
+         justifyContent={'space-between'}
          color={'white'}>
-            <Flex>
-                <Image width={'50px'} cursor={'pointer'} onClick={handleClick} src={logo}/>
+            <Flex ml={5}>
+                <Image width={'50px'} height={'50px'} cursor={'pointer'} onClick={handleClick} src={logo}/>
             </Flex>
-            <PageNav 
-             animation={animation} 
-             handleAnimation={handleAnimation}
-             selectedNav={selectedNav}
-             handleNavSelection={handleNavSelection}
-            />
+            <Flex mr={5}>
+                <PageNav 
+                    animation={animation} 
+                    handleAnimation={handleAnimation}
+                    selectedNav={selectedNav}
+                    handleNavSelection={handleNavSelection}
+                />
+            </Flex>
         </Stack>
         
     )
