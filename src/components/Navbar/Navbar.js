@@ -1,8 +1,7 @@
 import React, {useState} from "react";
-import { NavLink } from "react-router-dom";
 import PageNav from "../PageNav/PageNav";
-import '../Navbar/index.scss'
 import logo from '../../images/logo.png'
+import {Stack, Flex, Image} from '@chakra-ui/react'
 
 function Navbar({selectedPage}){
     const [selectedNav, setSelectedNav] = useState(null)
@@ -26,24 +25,26 @@ function Navbar({selectedPage}){
         }
     }
 
-
     return (
-        <div id='navbar-container'>
-            <div>
-                <img onClick={handleClick} style={{
-                position: 'relative',
-                left: '20px',
-                width: '50px',
-                cursor: 'pointer',
-                zIndex: 10,
-                }} src={logo}/>
-            </div>
+        <Stack
+         zIndex={'100'}
+         top={'0%'}
+         position={'fixed'}
+         width={"100%"}
+         height={'10%'}
+         justifyContent={'center'}
+         backgroundColor={'#4B88A2'}
+         color={'white'}>
+            <Flex>
+                <Image width={'50px'} cursor={'pointer'} onClick={handleClick} src={logo}/>
+            </Flex>
             <PageNav 
-            animation={animation} 
-            handleAnimation={handleAnimation}
-            selectedNav={selectedNav}
-            handleNavSelection={handleNavSelection}/>
-        </div>
+             animation={animation} 
+             handleAnimation={handleAnimation}
+             selectedNav={selectedNav}
+             handleNavSelection={handleNavSelection}
+            />
+        </Stack>
         
     )
 }
