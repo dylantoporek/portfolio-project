@@ -96,16 +96,6 @@ function Home({}){
         )
     })
 
-    // #home-container{
-    //     position: relative;
-    //     display: flex;
-    //     flex-direction: column;
-    //     width: fit-content;
-    //     height: fit-content;
-    //     top: 0%;
-    //     background-color: #FFF9FB;
-    // }
-
     return (
 
         <Stack 
