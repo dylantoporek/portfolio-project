@@ -182,17 +182,19 @@ const animatedDisplay =
 </div>
 
     return (
-        <div id='portfolio-container'>
-            <h3 className='section-title' id='project-title'>Projects</h3>
-            
-            <div id='projects-container'>
-                {animatedDisplay}
-                <div id='project-buttons'>
-                    {projectButtonDisplay}
-                </div>
-            
-                <div id='project-details'>
-                    {projectDisplay}
+        <div id='home-projects'>
+            <div id='portfolio-container'>
+                <h3 className='section-title' id='project-title'>Projects</h3>
+                
+                <div id='projects-container'>
+                    {animatedDisplay}
+                    <div id='project-buttons'>
+                        {projectButtonDisplay}
+                    </div>
+                
+                    <div id='project-details'>
+                        {projectDisplay}
+                    </div>
                 </div>
             </div>
         </div>

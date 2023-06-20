@@ -11,6 +11,7 @@ import '../Home/index.scss'
 import Landing from '../Landing/Landing'
 import About from "../About/About";
 import ProjectItem from "../ProjectItem/ProjectItem";
+import { Flex, Stack, Heading } from "@chakra-ui/react";
 
 
 function Home({}){
@@ -95,20 +96,31 @@ function Home({}){
         )
     })
 
+    // #home-container{
+    //     position: relative;
+    //     display: flex;
+    //     flex-direction: column;
+    //     width: fit-content;
+    //     height: fit-content;
+    //     top: 0%;
+    //     background-color: #FFF9FB;
+    // }
+
     return (
 
-        <div id='home-container'>
-            <Landing/>
-        
-            <About/>
+        <Stack 
+            id='home-container'
+            position={'relative'}
+            flexDirection={'column'}
+            width={'fit-content'}
+            height={'fit-content'}
+            top={'0%'}
+            backgroundColor={'#FFF9FB'}>
             
-            <div id='home-experience'>
-                <InteractiveResume/>
-            </div>
-
-            <div id='home-projects'>
-                   <ProjectItem />
-            </div>
+            <Landing/>
+            <About/>
+            <InteractiveResume/>
+            <ProjectItem />
 
             
             {/* <div id='home-skills'>
@@ -116,7 +128,7 @@ function Home({}){
                 <Skills/>
             </div> */}
             
-        </div>
+        </Stack>
       );
 }
 

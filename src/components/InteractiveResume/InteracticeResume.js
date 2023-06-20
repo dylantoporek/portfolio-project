@@ -178,22 +178,23 @@ function InteractiveResume(){
     </div>
 
     return (
-        <div id='resume-container'>
-            <h3 className='section-title' id='experience-title'>Experience</h3>
-            <div id='work-container'>
-                {animatedDisplay}
-                        
-                <div id='home-experience-buttons-container'>
-                    {workButtonsDisplay}
+        <div id='home-experience'>
+            <div id='resume-container'>
+                <h3 className='section-title' id='experience-title'>Experience</h3>
+                <div id='work-container'>
+                    {animatedDisplay}
+                            
+                    <div id='home-experience-buttons-container'>
+                        {workButtonsDisplay}
+                    </div>
+
+                    <div id='work-details'>
+                        {workDetailsDisplay}
+                    </div> 
+
                 </div>
-
-                <div id='work-details'>
-                    {workDetailsDisplay}
-                </div> 
-
-            </div>
-                     
-            </div>
+            </div>   
+        </div>
     )
 }
 
