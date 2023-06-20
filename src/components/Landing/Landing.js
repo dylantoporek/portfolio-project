@@ -1,6 +1,6 @@
 import React from "react";
 import mountains from '../../images/mountains1.png'
-import { Flex, Stack, Heading, Text } from "@chakra-ui/react";
+import { Flex, Stack, Heading, Text, Image } from "@chakra-ui/react";
 
 function Landing({}){
     let screenWidth = window.innerWidth
@@ -37,14 +37,20 @@ function Landing({}){
     //     }
     // }
     return (
-        <Stack id='landing-container' flexDir={'column'}> 
-            <Flex id='intro-text' flexDir={'column'}>
-                <Heading>Hi, my name is</Heading>
-                <Heading>Dylan Toporek</Heading>
-                <Text>
+        <Stack 
+         id='landing-container' 
+         flexDir={'column'}
+         position={'absolute'}
+         w={'100%'}
+         top={'0%'}>
+            <Flex id='intro-text' flexDir={'column'} zIndex={1} position={'relative'} p={5} top={100} ml={4} mt={5}> 
+                <Heading mb={2} fontSize={25}>Hi, my name is</Heading>
+                <Heading mb={2} fontSize={50}>Dylan Toporek.</Heading>
+                <Text fontSize={16} w={'50%'}>
                     I am a fullstack software engineer focusing on developing and designing exceptional web experiences. Currently, I am honing my skills using React and Ruby on Rails.
                 </Text> 
             </Flex>
+            <Image w={'100%'} position={'absolute'} src={mountains}/>
         </Stack>
     )
 }
