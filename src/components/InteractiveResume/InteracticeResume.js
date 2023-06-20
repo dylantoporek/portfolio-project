@@ -3,9 +3,20 @@ import 'animate.css'
 import './index.scss'
 
 function InteractiveResume(){
-    const [showExperienceDetails, setShowExperienceDetails] = useState('Expedience Software')
-    const [isShown, setIsShown] = useState('Expedience Software');
+    const [showExperienceDetails, setShowExperienceDetails] = useState('Rhabit Analytics')
+    const [isShown, setIsShown] = useState('Rhabit Analytics');
     const experienceDetails = [
+        {
+            company: 'Rhabit Analytics',
+            jobTitle: 'Junior Software Engineer',
+            details: [
+                'Using Github, created new features, fixed bugs, and performed app maintenance',
+                'Built new pages and components from scratch using React and Typescript, as well as updated existing code',
+                'Wrote Cypress tests to reflect changes to the app and updated existing tests',
+                'Implemented screen reader friendly code to allow for a better experience for visually impaired users',
+                'Developed a Slackbot to send demo links either through slack or text message'
+            ]
+        },
         {
             company: 'Expedience Software',
             jobTitle: 'Contractor',
@@ -159,7 +170,7 @@ function InteractiveResume(){
         style={{
         position: 'absolute',
         width: '5px',
-        height: '70%',
+        height: '75%',
         borderRadius: '10px',
         transition: "all .5s ease",
         WebkitTransition: "all .5s ease",
@@ -168,12 +179,13 @@ function InteractiveResume(){
         <div className="scroll-section" style={{
             backgroundColor:'#061A40',
             top: 
-            showExperienceDetails === 'Expedience Software' ? -4 : null ||
-            showExperienceDetails === 'Flatiron School Software Engineering Bootcamp' ? 61 : null ||
-            showExperienceDetails === 'Private Tutor & Home School Teacher' ? 126 : null ||
-            showExperienceDetails === 'Mathnasium' ? 191 : null ||
-            showExperienceDetails === 'The Collegiate School' ? 256 : null ||
-            showExperienceDetails === 'The Birch Wathen Lenox School' ? 321 : null
+            showExperienceDetails === 'Rhabit Analytics' ? -4 : null ||
+            showExperienceDetails === 'Expedience Software' ? 61 : null ||
+            showExperienceDetails === 'Flatiron School Software Engineering Bootcamp' ? 126 : null ||
+            showExperienceDetails === 'Private Tutor & Home School Teacher' ? 191 : null ||
+            showExperienceDetails === 'Mathnasium' ? 256 : null ||
+            showExperienceDetails === 'The Collegiate School' ? 321 : null ||
+            showExperienceDetails === 'The Birch Wathen Lenox School' ? 386 : null
         }}></div>              
     </div>
 
@@ -184,7 +196,7 @@ function InteractiveResume(){
                 <div id='work-container'>
                     {animatedDisplay}
                             
-                    <div id='home-experience-buttons-container'>
+                    <div id='experience-buttons-container'>
                         {workButtonsDisplay}
                     </div>
 

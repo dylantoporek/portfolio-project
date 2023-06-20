@@ -6,15 +6,15 @@
   align-self: center;
   word-wrap: normal;
   width: 100%;
-  top: 50%;
   display: flex;
   flex-direction: column;
   justify-items: center;
   align-items: center;
   font-size: 20px;
+  background-color: '#FFF9FB';
 }
   #resume-container{
-    position: static;
+    position: relative;
     align-self: center;
     font-weight: bold;
     display: flex;
@@ -23,7 +23,7 @@
     width: 100%;
     border-radius: 4%;
     overflow: hidden;
-    top: 12%;
+    top: 15%;
     padding: 0%
   }
   #experience-title{
@@ -32,7 +32,7 @@
     top: 0%;
   }
   
-  #home-experience-buttons-container{
+  #experience-buttons-container{
     position: relative;
     display: flex;
     flex-direction: column;
