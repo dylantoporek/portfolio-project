@@ -16,7 +16,8 @@ function InteractiveResume(){
                 'Wrote Cypress tests to reflect changes to the app and updated existing tests',
                 'Implemented screen reader friendly code to allow for a better experience for visually impaired users',
                 'Developed a Slackbot to send demo links either through slack or text message'
-            ]
+            ],
+            dates: '09/2022 - 06/2023'
         },
         {
             company: 'Expedience Software',
