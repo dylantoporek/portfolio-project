@@ -4,7 +4,7 @@ import nintendo from '../../images/nintendo.png'
 import lactate from '../../images/lactate_1.png'
 import poke from '../../images/poke.png'
 import '../ProjectItem/index.scss'
-import {Flex, Stack, Text, Image, Heading} from '@chakra-ui/react'
+import {Flex, Stack, Text, Image, Heading, Link} from '@chakra-ui/react'
 
 
 function ProjectItem(){
@@ -132,33 +132,36 @@ function ProjectItem(){
             </button> 
     })
 
-    const projectDisplay = <div id='project-details-item' key={targetedProject.title}>
-        <div id='wriiten-info'>
-        <h3>{targetedProject.title}</h3>
-                <div id='more-info'>
-                    <p>{targetedProject.description}</p>
-                    <p>Goal: {targetedProject.goal}</p>
-                    <p>Issue: {targetedProject.issue}</p>
-                    <p>Solution: {targetedProject.solution}</p>
-                </div>
-        </div>
-        <div id='other-info'>
-                <div id='project-image-container'>
-                    <img className='project-image' src={targetedProject.image}/>
-                </div>
+    const projectDisplay = <Flex 
+     id='project-details-item' 
+     key={targetedProject.title}
+     flexDir={'column'}>
+        <Flex id='wriiten-info' flexDirection={'column'} mt={10}>
+        <Heading mb={5}>{targetedProject.title}</Heading>
+                <Flex id='more-info' flexDir={'column'}>
+                    <Text fontWeight={'600'} mb={2}>{targetedProject.description}</Text>
+                    <Text fontWeight={'400'}  mb={2}>Goal: {targetedProject.goal}</Text>
+                    <Text fontWeight={'400'} mb={2}>Issue: {targetedProject.issue}</Text>
+                    <Text fontWeight={'400'} mb={2}>Solution: {targetedProject.solution}</Text>
+                </Flex>
+        </Flex>
+        <Flex id='other-info' flexDir={'column'}>
+                <Flex id='project-image-container'>
+                    <Image className='project-image' src={targetedProject.image}/>
+                </Flex>
                 
-                <div id='project-links-container'>
-                    <a className="project-link" href={targetedProject.link}>Demo</a>
-                    <p>|</p>
-                    <a className="project-link" href={targetedProject.frontend}>Frontend Repo</a>
-                    <p>|</p>
-                    <a className="project-link" href={targetedProject.backend}>Backend Repo</a>
-                </div>
-                <div className="stage">
-                    Stage: {targetedProject.stage}
-                </div> 
-            </div> 
-    </div>
+                <Flex id='project-links-container'>
+                    <Link className="project-link" href={targetedProject.link}>Demo</Link>
+                    <Text>|</Text>
+                    <Link className="project-link" href={targetedProject.frontend}>Frontend Repo</Link>
+                    <Text>|</Text>
+                    <Link className="project-link" href={targetedProject.backend}>Backend Repo</Link>
+                </Flex>
+                <Flex className="stage">
+                    <Text>Stage: {targetedProject.stage}</Text>
+                </Flex> 
+            </Flex> 
+    </Flex>
 
 const animatedDisplay =
 <div id='button-nav-animated'
@@ -220,7 +223,7 @@ const animatedDisplay =
          alignSelf={'center'}
          width={'100%'}
          height={'100%'}
-         top={'33%'}
+         top={'34%'}
          flexDir={'column'}
          backgroundColor={'#FFF9FB'}
          mt={10}>
@@ -234,7 +237,7 @@ const animatedDisplay =
              w={'80%'}
              h={'100%'}
              borderRadius={'4%'}>
-                <Heading className='section-title' id='project-title' fontSize={35} mb={5}>Projects</Heading>
+                <Heading className='section-title' id='project-title' fontSize={35} paddingTop={5} mb={5}>Projects</Heading>
                 <Flex id='projects-container'>
                     {animatedDisplay}
                     <Flex id='project-buttons'>
