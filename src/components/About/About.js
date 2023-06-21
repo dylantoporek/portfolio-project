@@ -5,13 +5,14 @@ import { Flex, Stack, Heading, Image, Text } from "@chakra-ui/react";
 
 function About(){
     return (
-        <Stack 
+        <Stack
         id='home-about'
         position={'relative'}
         justifySelf={'center'}
         alignSelf={'center'}
         width={'80%'}
-        top={'42%'}
+        height={'100%'}
+        top={'34%'}
         flexDirection={'column'}
         fontSize={'20px'}
         zIndex={10}>
@@ -20,8 +21,9 @@ function About(){
              id='about-title'
              position={'relative'}
              fontSize={'35px'}
+             paddingTop={'2%'}
              paddingBottom={'1%'}
-             top={'20%'}>
+             top={'10%'}>
                 About me
             </Heading>
 
@@ -29,14 +31,14 @@ function About(){
              id='home-about-container'
              position={'relative'}
              width={'100%'}
-             top={'20%'}>
+             top={'10%'}>
 
                 <Flex 
                  id='home-about-text' 
                  flexDir={'column'}
-                 width={'50%'}
+                 width={'55%'}
                  fontSize={'smaller'}
-                 paddingRight={'10%'}>
+                 paddingRight={'15%'}>
                     <Text className='about-text-blurb'>
                         I was born and raised in the Upper West Side of New York City. For my undergraduate studies, I attended UMass Amherst and graduated with a major in economics and a minor in philosophy. After graduation, I taught math to middle and high school students for a while before transitioning to software engineering.
                     </Text>
@@ -51,7 +53,7 @@ function About(){
                 </Flex>
                 <Image
                 marginTop={'2%'}
-                marginLeft={'10%'}
+                marginLeft={'5%'}
                 h={350}
                  w={350}
                  borderRadius={'50%'}

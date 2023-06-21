@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import 'animate.css'
 import './index.scss'
+import {Flex, Stack, Text, Heading} from '@chakra-ui/react'
 
 function InteractiveResume(){
     const [showExperienceDetails, setShowExperienceDetails] = useState('Rhabit Analytics')
@@ -161,7 +162,9 @@ function InteractiveResume(){
         <p id='work-dates'>{targetedExperience.dates}</p>
         {targetedExperience.details[0] ? <li className='work-details'>{targetedExperience.details[0]}</li> : null}
         {targetedExperience.details[1] ? <li className='work-details'>{targetedExperience.details[1]}</li> : null}
-        {targetedExperience.details[2] ? <li className='work-details'>{targetedExperience.details[2]}</li> : null} 
+        {targetedExperience.details[2] ? <li className='work-details'>{targetedExperience.details[2]}</li> : null}
+        {targetedExperience.details[3] ? <li className='work-details'>{targetedExperience.details[3]}</li> : null}  
+        {targetedExperience.details[4] ? <li className='work-details'>{targetedExperience.details[4]}</li> : null} 
     </div>
 
 // className="animate__animated animate__fadeOutUp"
@@ -190,23 +193,43 @@ function InteractiveResume(){
     </div>
 
     return (
-        <div id='home-experience'>
-            <div id='resume-container'>
-                <h3 className='section-title' id='experience-title'>Experience</h3>
-                <div id='work-container'>
+        <Stack 
+         id='home-experience'
+         position={'relative'}
+         width={'100%'}
+         height={'100%'}
+         flexDirection={'column'}
+         fontSize={20}
+         alignSelf={'center'}
+         top={'35%'}
+         backgroundColor={'#FFF9FB'}
+         mb={10}
+          >
+            <Flex 
+             position={'relative'}
+             id='resume-container'
+             fontWeight={'bold'}
+             color={'black'}
+             borderRadius={'4%'}
+             flexDir={'column'}
+             w={'80%'}
+             alignSelf={'center'}
+             top={'15%'}>
+                <Heading className='section-title' id='experience-title' fontSize={35} marginBottom={5}>Experience</Heading>
+                <Flex id='work-container'>
                     {animatedDisplay}
                             
-                    <div id='experience-buttons-container'>
+                    <Flex id='experience-buttons-container'>
                         {workButtonsDisplay}
-                    </div>
+                    </Flex>
 
-                    <div id='work-details'>
+                    <Flex id='work-details'>
                         {workDetailsDisplay}
-                    </div> 
+                    </Flex> 
 
-                </div>
-            </div>   
-        </div>
+                </Flex>
+            </Flex>   
+        </Stack>
     )
 }
 

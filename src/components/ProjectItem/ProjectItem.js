@@ -4,6 +4,7 @@ import nintendo from '../../images/nintendo.png'
 import lactate from '../../images/lactate_1.png'
 import poke from '../../images/poke.png'
 import '../ProjectItem/index.scss'
+import {Flex, Stack, Text, Image, Heading} from '@chakra-ui/react'
 
 
 function ProjectItem(){
@@ -181,23 +182,71 @@ const animatedDisplay =
     }}></div>              
 </div>
 
+// #home-projects{
+//     position: relative;
+//     justify-self: center;
+//     align-self: center;
+//     word-wrap: normal;
+//     width: 80%;
+//     top: 35%;
+//     display: flex;
+//     flex-direction: column;
+//     justify-items: center;
+//     align-items: center;
+//     font-size: 20px;
+//     background-color: #FFF9FB;
+//     padding-bottom: 100px;
+//   }
+  
+//   #portfolio-container{
+//       position: relative;
+//       align-self: center;
+//       font-weight: bold;
+//       display: flex;
+//       flex-direction: column;
+//       color: black;
+//       width: 100%;
+//       border-radius: 4%;
+//       top: 0%;
+//       padding: 0%
+//     }
+
     return (
-        <div id='home-projects'>
-            <div id='portfolio-container'>
-                <h3 className='section-title' id='project-title'>Projects</h3>
-                
-                <div id='projects-container'>
+        <Stack 
+         paddingY={10}
+         paddingTop={20}
+         id='home-projects'
+         position={'relative'}
+         alignSelf={'center'}
+         width={'100%'}
+         height={'100%'}
+         top={'33%'}
+         flexDir={'column'}
+         backgroundColor={'#FFF9FB'}
+         mt={10}>
+            <Flex 
+             paddingY={10}
+             id='portfolio-container'
+             justifySelf={'center'}
+             position={'relative'}
+             alignSelf={'center'}
+             flexDirection={'column'}
+             w={'80%'}
+             h={'100%'}
+             borderRadius={'4%'}>
+                <Heading className='section-title' id='project-title' fontSize={35} mb={5}>Projects</Heading>
+                <Flex id='projects-container'>
                     {animatedDisplay}
-                    <div id='project-buttons'>
+                    <Flex id='project-buttons'>
                         {projectButtonDisplay}
-                    </div>
+                    </Flex>
                 
-                    <div id='project-details'>
+                    <Flex id='project-details'>
                         {projectDisplay}
-                    </div>
-                </div>
-            </div>
-        </div>
+                    </Flex>
+                </Flex>
+            </Flex>
+        </Stack>
     );
 }
 
