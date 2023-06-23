@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import '../../App.scss';
-import '../Contact/index.scss'
 import 'animate.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -8,59 +7,86 @@ import {
   faGithub,
   faMedium
 } from '@fortawesome/free-brands-svg-icons'
+import { Flex, Stack, Link } from "@chakra-ui/react";
 
 function Contact(){
-const [isHovered, setIsHovered] = useState(null)
+const [isHovered, setIsHovered] = useState('')
 
 
 const openInNewTab = url => {
   window.open(url, '_blank', 'noopener,noreferrer');
 };
     function handleHover(e){
-      // console.log(e.target.id)
-      // setIsHovered(e.target.id)
-      // e.target.setAttribute('class','animate__animated animate__pulse')
+      setIsHovered(e.target.id)
     }
 
-    function handleLeave(e){
-      // console.log(e.target)
-      // setIsHovered('')
-      // e.target.setAttribute('class', null)
+    function handleLeave(){
+      setIsHovered('')
     }
+
   return (
-    <div className="contact-bar">
-        <div>
-          <a id='linkedin'
-            onMouseEnter={handleHover} onMouseLeave={handleLeave} onClick={()=> openInNewTab("https://www.linkedin.com/in/dylan-toporek-bb3491106/")}>
-            <FontAwesomeIcon icon={faLinkedin} color="#FFF9FB" style={{
-              transition: "all .5s ease",
-              WebkitTransition: "all .5s ease",
-              MozTransition: "all .5s ease",
+    <Stack 
+      height={'30%'}
+      className="contact-bar" 
+      ml={'30px'} 
+      alignItems={'center'}
+      backgroundColor={'#FFF9FB'}
+      width={'60px'}
+      position={'fixed'}
+      bottom={10}
+      zIndex={1}
+      left={0}>
+        <Flex mb={10} mt={1}> 
+          <Link
+            onMouseEnter={handleHover} 
+            onMouseLeave={handleLeave} 
+            onClick={()=> openInNewTab("https://www.linkedin.com/in/dylan-toporek-bb3491106/")}>
+            <FontAwesomeIcon id='linkedin' icon={faLinkedin} color={isHovered === 'linkedin' ? '#061A40' : "#4B88A2"} style={{
+              position: 'relative',
+              top: isHovered === 'linkedin' ? '-5px' : '0px',
+              width: '25px',
+              height: '25px',
+              transition: "all .3s ease",
+              WebkitTransition: "all .3s ease",
+              MozTransition: "all .3s ease",
             }}/>
-          </a>
-        </div>
+          </Link>
+        </Flex>
+        <Flex mb={10}>
+          <Link
+            onMouseEnter={handleHover}
+            onMouseLeave={handleLeave} 
+            onClick={()=> openInNewTab("https://github.com/dylantoporek")}>
+            <FontAwesomeIcon id='github' icon={faGithub} color={isHovered === 'github' ? '#061A40' : "#4B88A2"} style={{
+              position: 'relative',
+              top: isHovered === 'github' ? '-5px' : '0px',
+              width: '25px',
+              height: '25px',
+              transition: "all .3s ease",
+              WebkitTransition: "all .3s ease",
+              MozTransition: "all .3s ease",
+            }}/>
+            </Link> 
+        </Flex>
 
-        <div>
-          <a id='github'
-            onMouseEnter={handleHover} onMouseLeave={handleLeave} onClick={()=> openInNewTab("https://github.com/dylantoporek")}>
-            <FontAwesomeIcon icon={faGithub} color="#FFF9FB" style={{
-              transition: "all .5s ease",
-              WebkitTransition: "all .5s ease",
-              MozTransition: "all .5s ease",
-            }}/>
-            </a> 
-        </div>
-        <div>
-          <a id='medium'
-            onMouseEnter={handleHover} onMouseLeave={handleLeave} onClick={()=> openInNewTab("https://medium.com/@dylantoporek")}>
-            <FontAwesomeIcon icon={faMedium} color="#FFF9FB" style={{
-              transition: "all .5s ease",
-              WebkitTransition: "all .5s ease",
-              MozTransition: "all .5s ease",
+        <Flex mb={10}>
+          <Link
+            onMouseEnter={handleHover} 
+            onMouseLeave={handleLeave} 
+            onClick={()=> openInNewTab("https://medium.com/@dylantoporek")}>
+            <FontAwesomeIcon id='medium' icon={faMedium} color={isHovered === 'medium' ? '#061A40' : "#4B88A2"} style={{
+              position: 'relative',
+              top: isHovered === 'medium' ? '-5px' : '0px',
+              width: '25px',
+              height: '25px',
+              transition: "all .3s ease",
+              WebkitTransition: "all .3s ease",
+              MozTransition: "all .3s ease",
             }} /> 
-          </a>
-        </div>
-    </div>
+          </Link>
+        </Flex>
+        <Flex maxW={'2px'} w={'1%'} minH={'100%'} backgroundColor={"#4B88A2"}></Flex>
+    </Stack>
   )
 }
 
