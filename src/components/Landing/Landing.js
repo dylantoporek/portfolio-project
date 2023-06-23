@@ -42,17 +42,16 @@ function Landing({}){
          flexDir={'column'}
          position={'relative'}
          w={'100%'}
-         top={'0%'}
          zIndex={1}>
-             <Image w={'100%'} h={'100%'} position={'fixed'} src={mountains}/>
+            <Image w={'100%'} position={'relative'} src={mountains}/>
             <Flex
              id='intro-text' 
              flexDir={'column'} 
              zIndex={1} 
-             position={'relative'} 
+             position={'absolute'} 
              p={5} 
              top={'80px'}
-             ml={4} 
+             ml={10} 
              mt={5}>
                 <Flex>
                     <Heading mb={2} fontSize={25}>Hi, my name is</Heading>

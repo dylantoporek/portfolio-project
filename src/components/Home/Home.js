@@ -21,13 +21,12 @@ function Home({}){
             position={'relative'}
             flexDirection={'column'}
             width={'100%'}
-            height={'100%'}
             top={'0%'}
             backgroundColor={'#FFF9FB'}>
             
             <Landing/>
-            {/* <About/>
-            <InteractiveResume/>
+            <About/>
+            {/* <InteractiveResume/>
             <ProjectItem /> */}
 
             
