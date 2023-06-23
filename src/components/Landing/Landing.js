@@ -42,7 +42,8 @@ function Landing({}){
          flexDir={'column'}
          position={'absolute'}
          w={'100%'}
-         top={'0%'}>
+         top={'0%'}
+         zIndex={1}>
             <Flex id='intro-text' flexDir={'column'} zIndex={1} position={'relative'} p={5} top={100} ml={4} mt={5}> 
                 <Heading mb={2} fontSize={25}>Hi, my name is</Heading>
                 <Heading mb={2} fontSize={50}>Dylan Toporek.</Heading>
