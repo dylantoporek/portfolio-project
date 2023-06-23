@@ -216,19 +216,17 @@ const animatedDisplay =
 
     return (
         <Stack 
-         paddingY={10}
-         paddingTop={20}
+         mt={10}
+         padding={5}
          id='home-projects'
          position={'relative'}
          alignSelf={'center'}
          width={'100%'}
          height={'100%'}
-         top={'34%'}
          flexDir={'column'}
-         backgroundColor={'#FFF9FB'}
-         mt={10}>
+         backgroundColor={'#FFF9FB'}>
             <Flex 
-             paddingY={10}
+             padding={5}
              id='portfolio-container'
              justifySelf={'center'}
              position={'relative'}
@@ -237,8 +235,10 @@ const animatedDisplay =
              w={'80%'}
              h={'100%'}
              borderRadius={'4%'}>
-                <Heading className='section-title' id='project-title' fontSize={35} paddingTop={5} mb={5}>Projects</Heading>
-                <Flex id='projects-container'>
+                <Heading className='section-title' id='project-title' color={'#4B88A2'} paddingBottom={5} fontSize={35} mb={10}>
+                    Projects
+                </Heading>
+                <Flex id='projects-container' paddingTop={5} mt={10}>
                     {animatedDisplay}
                     <Flex id='project-buttons'>
                         {projectButtonDisplay}

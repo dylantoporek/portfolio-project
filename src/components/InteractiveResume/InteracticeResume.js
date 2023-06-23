@@ -198,15 +198,14 @@ function InteractiveResume(){
          id='home-experience'
          position={'relative'}
          width={'100%'}
-         height={'100%'}
          flexDirection={'column'}
          fontSize={20}
          alignSelf={'center'}
-         top={'35%'}
-         backgroundColor={'#FFF9FB'}
+         p={5}
          mb={10}
           >
             <Flex 
+             p={5}
              position={'relative'}
              id='resume-container'
              fontWeight={'bold'}
@@ -214,10 +213,9 @@ function InteractiveResume(){
              borderRadius={'4%'}
              flexDir={'column'}
              w={'80%'}
-             alignSelf={'center'}
-             top={'15%'}>
-                <Heading className='section-title' id='experience-title' fontSize={35} marginBottom={5}>Experience</Heading>
-                <Flex id='work-container'>
+             alignSelf={'center'}>
+                <Heading className='section-title' id='experience-title' color={'#4B88A2'} fontSize={35} py={2} mb={5}>Experience</Heading>
+                <Flex id='work-container' p={0} w={'100%'} mt={10}>
                     {animatedDisplay}
                             
                     <Flex id='experience-buttons-container'>
