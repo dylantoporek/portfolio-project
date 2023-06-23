@@ -22,9 +22,9 @@ function About(){
              position={'relative'}
              fontSize={'35px'}
              paddingTop={'2%'}
-             paddingBottom={'1%'}
+             marginBottom={8}
              top={'10%'}>
-                About me
+                About Me
             </Heading>
 
             <Flex 
