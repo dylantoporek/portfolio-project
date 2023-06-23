@@ -23,15 +23,15 @@ function PageNav({selectedNav, handleNavSelection, handleAnimation, animation}){
         handleAnimation('on')
             if(e.target.id === 'About'){
                 const section = document.querySelector( '#home-about' );
-                section.scrollIntoView( { behavior: 'smooth', block: 'start' } );
+                section.scrollIntoView( { behavior: 'smooth', block: 'end' } );
             }
             if(e.target.id === 'Experience'){
                 const section = document.querySelector( '#home-experience' );
-                section.scrollIntoView( { behavior: 'smooth', block: 'start' } );
+                section.scrollIntoView( { behavior: 'smooth', block: 'end' } );
             }
             if(e.target.id === 'Projects'){
                 const section = document.querySelector( '#home-projects' );
-                section.scrollIntoView( { behavior: 'smooth', block: 'start' } );
+                section.scrollIntoView( { behavior: 'smooth', block: 'end' } );
             }
     }
 

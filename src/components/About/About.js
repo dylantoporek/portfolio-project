@@ -6,7 +6,7 @@ import { Flex, Stack, Heading, Image, Text } from "@chakra-ui/react";
 function About(){
     return (
         <Stack
-        p={4}
+        p={5}
         id='home-about'
         position={'relative'}
         justifySelf={'center'}
@@ -15,13 +15,14 @@ function About(){
         flexDirection={'column'}
         fontSize={'20px'}
         zIndex={0}>
-            <Flex flexDir={'column'} p={5} w={'75%'} alignSelf={'center'}>
+            <Flex flexDir={'column'} p={5} w={'80%'} alignSelf={'center'} mt={2}>
                 <Heading
-                py={2}
+                py={8}
                 className='section-title' 
                 id='about-title'
                 position={'relative'}
                 fontSize={'35px'}
+                color={'#4B88A2'}
                 marginBottom={8}>
                     About Me
                 </Heading>
@@ -31,7 +32,7 @@ function About(){
                     position={'relative'}
                     width={'100%'}
                     margintop={'10%'}
-                    marginBottom={'10%'}>
+                    mb={'5%'}>
 
                     <Flex 
                     justifySelf={'center'}

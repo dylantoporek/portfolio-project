@@ -42,6 +42,7 @@ function Landing({}){
          flexDir={'column'}
          position={'relative'}
          w={'100%'}
+         mb={'1%'}
          zIndex={1}>
             <Image w={'100%'} position={'relative'} src={mountains}/>
             <Flex

@@ -26,8 +26,9 @@ function Home({}){
             
             <Landing/>
             <About/>
-            {/* <InteractiveResume/>
-            <ProjectItem /> */}
+            <InteractiveResume/>
+            
+            <ProjectItem />
 
             
             {/* <div id='home-skills'>
