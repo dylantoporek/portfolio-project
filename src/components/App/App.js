@@ -20,7 +20,6 @@ function App() {
     <Stack 
       flexDir={'column'}
       width={'100%'}
-      height={'120%'}
       background-color={'#FFF9FB'}>
       <Navbar selectedPage={selectedPage}/>
       <Contact/>
