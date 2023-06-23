@@ -40,18 +40,34 @@ function Landing({}){
         <Stack 
          id='landing-container' 
          flexDir={'column'}
-         position={'absolute'}
+         position={'relative'}
          w={'100%'}
          top={'0%'}
          zIndex={1}>
-            <Flex id='intro-text' flexDir={'column'} zIndex={1} position={'relative'} p={5} top={100} ml={4} mt={5}> 
-                <Heading mb={2} fontSize={25}>Hi, my name is</Heading>
-                <Heading mb={2} fontSize={50}>Dylan Toporek.</Heading>
-                <Text fontSize={16} w={'50%'}>
-                    I am a fullstack software engineer focusing on developing and designing exceptional web experiences. Currently, I am honing my skills using React and Ruby on Rails.
-                </Text> 
+             <Image w={'100%'} h={'100%'} position={'fixed'} src={mountains}/>
+            <Flex
+             id='intro-text' 
+             flexDir={'column'} 
+             zIndex={1} 
+             position={'relative'} 
+             p={5} 
+             top={'80px'}
+             ml={4} 
+             mt={5}>
+                <Flex>
+                    <Heading mb={2} fontSize={25}>Hi, my name is</Heading>
+                </Flex>
+                <Flex>
+                    <Heading mb={2} fontSize={50}>Dylan Toporek.</Heading>
+                </Flex>
+                
+                <Flex>
+                    <Text fontSize={16} w={'65%'}>
+                        I am a fullstack software engineer focusing on developing and designing exceptional web experiences. Currently, I am honing my skills using React and Ruby on Rails.
+                    </Text> 
+                </Flex>
             </Flex>
-            <Image w={'100%'} position={'absolute'} src={mountains}/>
+            
         </Stack>
     )
 }

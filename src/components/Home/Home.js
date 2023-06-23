@@ -26,9 +26,9 @@ function Home({}){
             backgroundColor={'#FFF9FB'}>
             
             <Landing/>
-            <About/>
+            {/* <About/>
             <InteractiveResume/>
-            <ProjectItem />
+            <ProjectItem /> */}
 
             
             {/* <div id='home-skills'>
