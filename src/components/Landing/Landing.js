@@ -1,5 +1,5 @@
 import React from "react";
-import mountains from '../../images/mountains1.png'
+import landing from '../../images/blue-minimal.webp'
 import { Flex, Stack, Heading, Text, Image } from "@chakra-ui/react";
 
 function Landing({}){
@@ -44,7 +44,7 @@ function Landing({}){
          w={'100%'}
          mb={'1%'}
          zIndex={1}>
-            <Image w={'100%'} position={'relative'} src={mountains}/>
+            <Image position={'relative'} src={landing}/>
             <Flex
              id='intro-text' 
              flexDir={'column'} 
