@@ -33,11 +33,16 @@ function Navbar({selectedPage}){
          width={"100%"}
          height={'10%'}
          alignItems={'center'}
-         backgroundColor={'#4B88A2'}
+         backgroundColor={'#041A4D'}
          justifyContent={'space-between'}
          color={'white'}>
-            <Flex ml={5}>
-                <Image width={'50px'} height={'50px'} cursor={'pointer'} onClick={handleClick} src={logo}/>
+            <Flex ml={'33px'}>
+                <Image 
+                 width={'50px'}
+                 height={'50px'} 
+                 cursor={'pointer'} 
+                 onClick={handleClick}
+                 src={logo}/>
             </Flex>
             <Flex mr={5}>
                 <PageNav 

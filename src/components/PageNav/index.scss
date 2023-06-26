@@ -24,39 +24,39 @@
     
    
 
-    .pag-nav-decoration{
-        position: relative;
-        align-self: center;
-        width: 100%;
-        height: 2px;
-        background-color: white;
-        animation: progressBar 1s ease-in-out;
-        animation-fill-mode: both;
-    }
+    // .pag-nav-decoration{
+    //     position: relative;
+    //     align-self: center;
+    //     width: 100%;
+    //     height: 2px;
+    //     background-color: white;
+    //     animation: progressBar 1s ease-in-out;
+    //     animation-fill-mode: both;
+    // }
 
     @keyframes progressBar {
         0% { left:50% ;width: 0; }
         100% { left:0 ;width: 100%; }
     }
 
-    .pag-nav-deco-undo{
-        position: relative;
-        align-self: center;
-        width: 100%;
-        height: 2px;
-        background-color: white;
-        animation: progressBarUndo 1s ease-in-out;
-        animation-fill-mode: both;
-    }
+    // .pag-nav-deco-undo{
+    //     position: relative;
+    //     align-self: center;
+    //     width: 100%;
+    //     height: 2px;
+    //     background-color: white;
+    //     animation: progressBarUndo 1s ease-in-out;
+    //     animation-fill-mode: both;
+    // }
 
     @keyframes progressBarUndo{
         0% { left:0 ;width: 100%; }
         100% { left:50% ;width: 0; }
     }
 
-    #resume-link{
-        position: relative;
-        color: white;
-        text-decoration: none;
-    }
+    // #resume-link{
+    //     position: relative;
+    //     color: white;
+    //     text-decoration: none;
+    // }
 }
