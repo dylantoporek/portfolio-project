@@ -82,10 +82,10 @@ function ProjectItem(){
          setShowProjectDetails(e.target.innerText)
          let newDetails = document.getElementById('project-details-item')
          if (animationDirectionCheck < 0){
-             newDetails.className = 'animate__animated animate__bounceInUp'
-         } else {
-             newDetails.className = 'animate__animated animate__bounceInDown'
-         }
+            newDetails.className = 'animate__animated animate__fadeIn'
+        } else {
+            newDetails.className = 'animate__animated animate__fadeIn'
+        }
         }, 350)
         
      } else {
@@ -132,41 +132,45 @@ function ProjectItem(){
             </button> 
     })
 
-    const projectDisplay = <Flex 
+    const projectDisplay = <Flex
      id='project-details-item' 
      key={targetedProject.title}
      flexDir={'column'}>
-        <Flex id='wriiten-info' flexDirection={'column'} mt={10}>
-        <Heading mb={5}>{targetedProject.title}</Heading>
-                <Flex id='more-info' flexDir={'column'}>
-                    <Text fontWeight={'600'} mb={2}>{targetedProject.description}</Text>
-                    <Text fontWeight={'400'}  mb={2}>Goal: {targetedProject.goal}</Text>
-                    <Text fontWeight={'400'} mb={2}>Issue: {targetedProject.issue}</Text>
-                    <Text fontWeight={'400'} mb={2}>Solution: {targetedProject.solution}</Text>
-                </Flex>
-        </Flex>
-        <Flex id='other-info' flexDir={'column'}>
-                <Flex id='project-image-container'>
-                    <Image className='project-image' src={targetedProject.image}/>
+        <Flex id='wriiten-info' flexDirection={'column'} p={10}>
+            <Flex>
+                <Heading mb={5}>{targetedProject.title}</Heading>
+            </Flex>
+        
+                <Flex id='more-info' flexDir={'column'} w={'80%'}>
+                    <Text fontWeight={'600'} fontSize={'12px'} mb={5}>{targetedProject.description}</Text>
+                    <Flex flexDir={'column'} fontSize={'12px'}>
+                        <Text fontWeight={'400'} mb={3}>Goal: {targetedProject.goal}</Text>
+                        <Text fontWeight={'400'} mb={3}>Issue: {targetedProject.issue}</Text>
+                        <Text fontWeight={'400'} mb={3}>Solution: {targetedProject.solution}</Text>
+                    </Flex>
+                    
                 </Flex>
                 
-                <Flex id='project-links-container'>
-                    <Link className="project-link" href={targetedProject.link}>Demo</Link>
-                    <Text>|</Text>
-                    <Link className="project-link" href={targetedProject.frontend}>Frontend Repo</Link>
-                    <Text>|</Text>
+        </Flex>
+        <Flex flexDir={'column'} alignItems={'center'}>
+                    <Image maxW={'200px'} src={targetedProject.image}/>
+                <Flex mt={3}>
+                <Link className="project-link" href={targetedProject.link} mr={3}>Demo</Link>
+                    <Text mr={3}>|</Text>
+                    <Link mr={3} className="project-link" href={targetedProject.frontend}>Frontend Repo</Link>
+                    <Text mr={3}>|</Text>
                     <Link className="project-link" href={targetedProject.backend}>Backend Repo</Link>
                 </Flex>
-                <Flex className="stage">
+                <Flex mt={1}>
                     <Text>Stage: {targetedProject.stage}</Text>
-                </Flex> 
-            </Flex> 
+                </Flex>
+            </Flex>
     </Flex>
 
 const animatedDisplay =
 <div id='button-nav-animated'
     style={{
-    position: 'absolute',
+    position: 'relative',
     left: '0px',
     width: '5px',
     height: '70%',
@@ -178,10 +182,10 @@ const animatedDisplay =
     <div className="scroll-section" style={{
         backgroundColor:'#061A40',
         top: 
-        showProjectDetails === 'Breath of the Wild Cooking App' ? -83 : null ||
-        showProjectDetails === 'Nintendo-Land' ? -18 : null ||
-        showProjectDetails === 'Endurance Lactate Analyzer' ? 47 : null ||
-        showProjectDetails === 'Pokemon Minigame App' ? 112 : null
+        showProjectDetails === 'Breath of the Wild Cooking App' ? -6 : null ||
+        showProjectDetails === 'Nintendo-Land' ? 59 : null ||
+        showProjectDetails === 'Endurance Lactate Analyzer' ? 124 : null ||
+        showProjectDetails === 'Pokemon Minigame App' ? 189 : null
     }}></div>              
 </div>
 
@@ -220,31 +224,32 @@ const animatedDisplay =
          padding={5}
          id='home-projects'
          position={'relative'}
-         alignSelf={'center'}
          width={'100%'}
-         height={'100%'}
          flexDir={'column'}
+         alignSelf={'center'}
          backgroundColor={'#FFF9FB'}>
             <Flex 
+            justifyItems={'center'}
              padding={5}
              id='portfolio-container'
-             justifySelf={'center'}
              position={'relative'}
-             alignSelf={'center'}
              flexDirection={'column'}
-             w={'80%'}
-             h={'100%'}
+             w={'100%'}
              borderRadius={'4%'}>
-                <Heading className='section-title' id='project-title' color={'#4B88A2'} paddingBottom={5} fontSize={35} mb={10}>
+                <Heading ml={'11.3%'} className='section-title' id='project-title' color={'#016BA6'} py={5} fontSize={35} mb={10}>
                     Projects
                 </Heading>
-                <Flex id='projects-container' paddingTop={5} mt={10}>
-                    {animatedDisplay}
+                <Flex id='projects-container' paddingTop={5} mt={10} alignSelf={'center'} w={'80%'} ml={10}>
+                    <Flex>
+                        {animatedDisplay}
+                    </Flex>
+
                     <Flex id='project-buttons'>
                         {projectButtonDisplay}
                     </Flex>
                 
-                    <Flex id='project-details'>
+                    <Flex id='project-details' backgroundColor={'#EBEBEB'} borderRadius={'.5em'} ml={'80px'} minH={'450px'} 
+                    maxH={'450px'}>
                         {projectDisplay}
                     </Flex>
                 </Flex>

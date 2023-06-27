@@ -11,28 +11,34 @@ function About(){
         position={'relative'}
         justifySelf={'center'}
         alignSelf={'center'}
+        alignContent={'center'}
         width={'100%'}
         flexDirection={'column'}
         fontSize={'20px'}
         zIndex={0}>
-            <Flex flexDir={'column'} p={5} w={'80%'} alignSelf={'center'} mt={2}>
+            <Flex flexDir={'column'} p={5} w={'100%'} mt={2}>
+                <Flex w={'100%'}>
                 <Heading
+                ml={'11.3%'}
                 py={8}
                 className='section-title' 
                 id='about-title'
                 position={'relative'}
                 fontSize={'35px'}
-                color={'#4B88A2'}
+                color={'#016BA6'}
                 marginBottom={8}>
                     About Me
                 </Heading>
+                </Flex>
+                
 
                 <Flex 
                     id='home-about-container'
                     position={'relative'}
                     width={'100%'}
                     margintop={'10%'}
-                    mb={'5%'}>
+                    mb={'5%'}
+                    justifyContent={'center'}>
 
                     <Flex 
                     justifySelf={'center'}
