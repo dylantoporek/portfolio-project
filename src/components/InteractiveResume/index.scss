@@ -40,18 +40,18 @@
     display: flex;
     flex-direction: column;
     align-self: center;
-    margin-right: 3%;
+    margin-right: 2%;
     margin-left: 2%;
     
   }
   
-  #work-container{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: flex-start;
-    height: 100%;
-  }
+  // #work-container{
+  //   display: flex;
+  //   flex-direction: row;
+  //   width: 100%;
+  //   justify-content: flex-start;
+  //   height: 100%;
+  // }
   
   #work-details{
     position: relative;
@@ -60,7 +60,7 @@
     color: black;
     display: flex;
     flex-direction: column;
-    margin-left: 5%;
+    margin-left: 4%;
   }
   
   #work-details-container{
@@ -80,7 +80,7 @@
     margin-bottom: 15px;
     border: none;
     cursor: pointer;
-    border-radius: 5%;
+    border-radius: .5em;
     transition: all .5s ease;
   }
   
@@ -101,7 +101,7 @@
     margin: 2%;
     padding-bottom: 1%;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 14px;
   }
   
   .scroll-section{

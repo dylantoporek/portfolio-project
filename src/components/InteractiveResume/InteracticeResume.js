@@ -100,9 +100,9 @@ function InteractiveResume(){
             setShowExperienceDetails(e.target.innerText)
             let newDetails = document.getElementById('work-details-container')
             if (animationDirectionCheck < 0){
-                newDetails.className = 'animate__animated animate__bounceInUp'
+                newDetails.className = 'animate__animated animate__fadeIn'
             } else {
-                newDetails.className = 'animate__animated animate__bounceInDown'
+                newDetails.className = 'animate__animated animate__fadeIn'
             }
            }, 350)
            
@@ -158,15 +158,15 @@ function InteractiveResume(){
         return experience.company === showExperienceDetails
     })
 
-    const workDetailsDisplay = <div id='work-details-container'>
-        <h3 id='work-title'>{targetedExperience.jobTitle} @ {targetedExperience.company}</h3>
-        <p id='work-dates'>{targetedExperience.dates}</p>
-        {targetedExperience.details[0] ? <li className='work-details'>{targetedExperience.details[0]}</li> : null}
-        {targetedExperience.details[1] ? <li className='work-details'>{targetedExperience.details[1]}</li> : null}
-        {targetedExperience.details[2] ? <li className='work-details'>{targetedExperience.details[2]}</li> : null}
-        {targetedExperience.details[3] ? <li className='work-details'>{targetedExperience.details[3]}</li> : null}  
-        {targetedExperience.details[4] ? <li className='work-details'>{targetedExperience.details[4]}</li> : null} 
-    </div>
+    const workDetailsDisplay = <Flex id='work-details-container'>
+        <Heading id='work-title'>{targetedExperience.jobTitle} @ {targetedExperience.company}</Heading>
+        <Text id='work-dates' mb={5}>{targetedExperience.dates}</Text>
+        {targetedExperience.details[0] ? <Text className='work-details'>{targetedExperience.details[0]}</Text> : null}
+        {targetedExperience.details[1] ? <Text className='work-details'>{targetedExperience.details[1]}</Text> : null}
+        {targetedExperience.details[2] ? <Text className='work-details'>{targetedExperience.details[2]}</Text> : null}
+        {targetedExperience.details[3] ? <Text className='work-details'>{targetedExperience.details[3]}</Text> : null}  
+        {targetedExperience.details[4] ? <Text className='work-details'>{targetedExperience.details[4]}</Text> : null} 
+    </Flex>
 
 // className="animate__animated animate__fadeOutUp"
     const animatedDisplay =
@@ -212,17 +212,22 @@ function InteractiveResume(){
              color={'black'}
              borderRadius={'4%'}
              flexDir={'column'}
-             w={'80%'}
-             alignSelf={'center'}>
-                <Heading className='section-title' id='experience-title' color={'#4B88A2'} fontSize={35} py={2} mb={5}>Experience</Heading>
-                <Flex id='work-container' p={0} w={'100%'} mt={10}>
-                    {animatedDisplay}
+             justifyItems={'center'}
+             w={'100%'}>
+                <Heading ml={'11.3%'} id='experience-title' color={'#016BA6'} fontSize={35} py={2} mb={5}>
+                    Experience
+                </Heading>
+                <Flex id='work-container' p={0} w={'100%'} mt={10} justifyContent={'center'} ml={5}>
+                    <Flex>
+                     {animatedDisplay}
+                    </Flex>
+                    
                             
                     <Flex id='experience-buttons-container'>
                         {workButtonsDisplay}
                     </Flex>
 
-                    <Flex id='work-details'>
+                    <Flex id='work-details' p={10} backgroundColor={'#EBEBEB'} borderRadius={'.5em'} maxH={'450px'}>
                         {workDetailsDisplay}
                     </Flex> 
 
