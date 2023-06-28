@@ -135,25 +135,24 @@ function ProjectItem(){
     const projectDisplay = <Flex
      id='project-details-item' 
      key={targetedProject.title}
-     flexDir={'column'}>
-        <Flex id='wriiten-info' flexDirection={'column'} p={10}>
+     flexDirection={'column'}>
+        <Flex id='wriiten-info' flexDirection={'column'} p={10} w={'100%'}>
             <Flex>
-                <Heading mb={5}>{targetedProject.title}</Heading>
+                <Heading mb={5} fontSize={'20px'}>{targetedProject.title}</Heading>
             </Flex>
         
-                <Flex id='more-info' flexDir={'column'} w={'80%'}>
+                <Flex id='more-info' flexDir={'column'} justifyContent={'center'} mt={0}>
                     <Text fontWeight={'600'} fontSize={'12px'} mb={5}>{targetedProject.description}</Text>
                     <Flex flexDir={'column'} fontSize={'12px'}>
                         <Text fontWeight={'400'} mb={3}>Goal: {targetedProject.goal}</Text>
                         <Text fontWeight={'400'} mb={3}>Issue: {targetedProject.issue}</Text>
                         <Text fontWeight={'400'} mb={3}>Solution: {targetedProject.solution}</Text>
-                    </Flex>
-                    
+                   </Flex>
                 </Flex>
                 
         </Flex>
-        <Flex flexDir={'column'} alignItems={'center'}>
-                    <Image maxW={'200px'} src={targetedProject.image}/>
+        <Flex flexDir={'column'} alignItems={'center'} position={'absolute'} bottom={7} left={'50%'} justifyItems={'center'}>
+                    <Image maxW={'300px'} src={targetedProject.image}/>
                 <Flex mt={3}>
                 <Link className="project-link" href={targetedProject.link} mr={3}>Demo</Link>
                     <Text mr={3}>|</Text>
@@ -164,59 +163,30 @@ function ProjectItem(){
                 <Flex mt={1}>
                     <Text>Stage: {targetedProject.stage}</Text>
                 </Flex>
-            </Flex>
+        </Flex>
     </Flex>
 
-const animatedDisplay =
-<div id='button-nav-animated'
-    style={{
-    position: 'relative',
-    left: '0px',
-    width: '5px',
-    height: '70%',
-    borderRadius: '10px',
-    transition: "all .5s ease",
-    WebkitTransition: "all .5s ease",
-    MozTransition: "all .5s ease",   
-}}> 
-    <div className="scroll-section" style={{
-        backgroundColor:'#061A40',
-        top: 
-        showProjectDetails === 'Breath of the Wild Cooking App' ? -6 : null ||
-        showProjectDetails === 'Nintendo-Land' ? 59 : null ||
-        showProjectDetails === 'Endurance Lactate Analyzer' ? 124 : null ||
-        showProjectDetails === 'Pokemon Minigame App' ? 189 : null
-    }}></div>              
-</div>
-
-// #home-projects{
-//     position: relative;
-//     justify-self: center;
-//     align-self: center;
-//     word-wrap: normal;
-//     width: 80%;
-//     top: 35%;
-//     display: flex;
-//     flex-direction: column;
-//     justify-items: center;
-//     align-items: center;
-//     font-size: 20px;
-//     background-color: #FFF9FB;
-//     padding-bottom: 100px;
-//   }
-  
-//   #portfolio-container{
-//       position: relative;
-//       align-self: center;
-//       font-weight: bold;
-//       display: flex;
-//       flex-direction: column;
-//       color: black;
-//       width: 100%;
-//       border-radius: 4%;
-//       top: 0%;
-//       padding: 0%
-//     }
+    const animatedDisplay =
+    <div id='button-nav-animated'
+        style={{
+        position: 'relative',
+        left: '0px',
+        width: '5px',
+        height: '70%',
+        borderRadius: '10px',
+        transition: "all .5s ease",
+        WebkitTransition: "all .5s ease",
+        MozTransition: "all .5s ease",   
+    }}> 
+        <div className="scroll-section" style={{
+            backgroundColor:'#061A40',
+            top: 
+            showProjectDetails === 'Breath of the Wild Cooking App' ? -6 : null ||
+            showProjectDetails === 'Nintendo-Land' ? 59 : null ||
+            showProjectDetails === 'Endurance Lactate Analyzer' ? 124 : null ||
+            showProjectDetails === 'Pokemon Minigame App' ? 189 : null
+        }}></div>              
+    </div>
 
     return (
         <Stack 
@@ -229,7 +199,7 @@ const animatedDisplay =
          alignSelf={'center'}
          backgroundColor={'#FFF9FB'}>
             <Flex 
-            justifyItems={'center'}
+             justifyItems={'center'}
              padding={5}
              id='portfolio-container'
              position={'relative'}
@@ -239,7 +209,7 @@ const animatedDisplay =
                 <Heading ml={'11.3%'} className='section-title' id='project-title' color={'#016BA6'} py={5} fontSize={35} mb={10}>
                     Projects
                 </Heading>
-                <Flex id='projects-container' paddingTop={5} mt={10} alignSelf={'center'} w={'80%'} ml={10}>
+                <Flex id='projects-container' paddingTop={5} mt={10} justifyContent={'center'} ml={10}>
                     <Flex>
                         {animatedDisplay}
                     </Flex>
@@ -248,8 +218,14 @@ const animatedDisplay =
                         {projectButtonDisplay}
                     </Flex>
                 
-                    <Flex id='project-details' backgroundColor={'#EBEBEB'} borderRadius={'.5em'} ml={'80px'} minH={'450px'} 
-                    maxH={'450px'}>
+                    <Flex 
+                     id='project-details' 
+                     backgroundColor={'#EBEBEB'} 
+                     borderRadius={'.5em'} 
+                     ml={'4%'} 
+                     minH={'450px'}
+                     w={'60%'} 
+                     maxH={'450px'}>
                         {projectDisplay}
                     </Flex>
                 </Flex>

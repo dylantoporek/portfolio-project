@@ -158,17 +158,15 @@ function InteractiveResume(){
         return experience.company === showExperienceDetails
     })
 
+    console.log(targetedExperience.details.map((detail) => console.log(detail)))
     const workDetailsDisplay = <Flex id='work-details-container'>
-        <Heading id='work-title'>{targetedExperience.jobTitle} @ {targetedExperience.company}</Heading>
+        <Heading id='work-title' fontSize={'20px'}>{targetedExperience.jobTitle} @ {targetedExperience.company}</Heading>
         <Text id='work-dates' mb={5}>{targetedExperience.dates}</Text>
-        {targetedExperience.details[0] ? <Text className='work-details'>{targetedExperience.details[0]}</Text> : null}
-        {targetedExperience.details[1] ? <Text className='work-details'>{targetedExperience.details[1]}</Text> : null}
-        {targetedExperience.details[2] ? <Text className='work-details'>{targetedExperience.details[2]}</Text> : null}
-        {targetedExperience.details[3] ? <Text className='work-details'>{targetedExperience.details[3]}</Text> : null}  
-        {targetedExperience.details[4] ? <Text className='work-details'>{targetedExperience.details[4]}</Text> : null} 
+        <Flex w={'100%'} flexDir={'column'} alignItems={'flex-start'} mt={10}>
+            {targetedExperience.details.map((detail)=> <Text className="work-details">{detail}</Text>)}
+        </Flex>
     </Flex>
 
-// className="animate__animated animate__fadeOutUp"
     const animatedDisplay =
     <div id='button-nav-animated'
         style={{
