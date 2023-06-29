@@ -30,7 +30,6 @@ const openInNewTab = url => {
       className="contact-bar" 
       ml={'30px'} 
       alignItems={'center'}
-      backgroundColor={'#FFF9FB'}
       width={'60px'}
       position={'fixed'}
       bottom={10}
@@ -44,8 +43,8 @@ const openInNewTab = url => {
             <FontAwesomeIcon id='linkedin' icon={faLinkedin} color={isHovered === 'linkedin' ? '#061A40' : "#4B88A2"} style={{
               position: 'relative',
               top: isHovered === 'linkedin' ? '-5px' : '0px',
-              width: '25px',
-              height: '25px',
+              width: '30px',
+              height: '30px',
               transition: "all .3s ease",
               WebkitTransition: "all .3s ease",
               MozTransition: "all .3s ease",
@@ -60,8 +59,8 @@ const openInNewTab = url => {
             <FontAwesomeIcon id='github' icon={faGithub} color={isHovered === 'github' ? '#061A40' : "#4B88A2"} style={{
               position: 'relative',
               top: isHovered === 'github' ? '-5px' : '0px',
-              width: '25px',
-              height: '25px',
+              width: '30px',
+              height: '30px',
               transition: "all .3s ease",
               WebkitTransition: "all .3s ease",
               MozTransition: "all .3s ease",
@@ -77,8 +76,8 @@ const openInNewTab = url => {
             <FontAwesomeIcon id='medium' icon={faMedium} color={isHovered === 'medium' ? '#061A40' : "#4B88A2"} style={{
               position: 'relative',
               top: isHovered === 'medium' ? '-5px' : '0px',
-              width: '25px',
-              height: '25px',
+              width: '30px',
+              height: '30px',
               transition: "all .3s ease",
               WebkitTransition: "all .3s ease",
               MozTransition: "all .3s ease",
