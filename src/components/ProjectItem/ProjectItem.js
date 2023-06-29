@@ -140,31 +140,33 @@ function ProjectItem(){
             <Flex>
                 <Heading mb={5} fontSize={'20px'}>{targetedProject.title}</Heading>
             </Flex>
-        
-                <Flex id='more-info' flexDir={'column'} justifyContent={'center'} mt={0}>
-                    <Text fontWeight={'600'} fontSize={'12px'} mb={5}>{targetedProject.description}</Text>
-                    <Flex flexDir={'column'} fontSize={'12px'}>
-                        <Text fontWeight={'400'} mb={3}>Goal: {targetedProject.goal}</Text>
-                        <Text fontWeight={'400'} mb={3}>Issue: {targetedProject.issue}</Text>
-                        <Text fontWeight={'400'} mb={3}>Solution: {targetedProject.solution}</Text>
-                   </Flex>
-                </Flex>
-                
+            <Flex id='more-info' flexDir={'column'} justifyContent={'center'} mt={0}>
+                <Text fontWeight={'600'} fontSize={'16px'} mb={5}>{targetedProject.description}</Text>
+                    <Flex>
+                        <Flex flexDir={'column'} fontSize={'14px'} mr={10}>
+                            <Text fontWeight={'400'} mb={3}>Goal: {targetedProject.goal}</Text>
+                            <Text fontWeight={'400'} mb={3}>Issue: {targetedProject.issue}</Text>
+                            <Text fontWeight={'400'} mb={3}>Solution: {targetedProject.solution}</Text>
+                        </Flex>
+                        
+                        <Flex flexDir={'column'} alignItems={'center'} justifyItems={'center'} justifyContent={'center'}>
+                            <Image maxW={'300px'} src={targetedProject.image}/>
+                            <Flex mt={3}>
+                                <Link className="project-link" href={targetedProject.link} mr={3}>Demo</Link>
+                                <Text mr={3}>|</Text>
+                                <Link mr={3} className="project-link" href={targetedProject.frontend}>Frontend Repo</Link>
+                                <Text mr={3}>|</Text>
+                                <Link className="project-link" href={targetedProject.backend}>Backend Repo</Link>
+                            </Flex>
+                            
+                            <Flex mt={1}>
+                                <Text>Stage: {targetedProject.stage}</Text>
+                            </Flex>
+                        </Flex>
+                    </Flex>
+                </Flex> 
+            </Flex>
         </Flex>
-        <Flex flexDir={'column'} alignItems={'center'} position={'absolute'} bottom={7} left={'50%'} justifyItems={'center'}>
-                    <Image maxW={'300px'} src={targetedProject.image}/>
-                <Flex mt={3}>
-                <Link className="project-link" href={targetedProject.link} mr={3}>Demo</Link>
-                    <Text mr={3}>|</Text>
-                    <Link mr={3} className="project-link" href={targetedProject.frontend}>Frontend Repo</Link>
-                    <Text mr={3}>|</Text>
-                    <Link className="project-link" href={targetedProject.backend}>Backend Repo</Link>
-                </Flex>
-                <Flex mt={1}>
-                    <Text>Stage: {targetedProject.stage}</Text>
-                </Flex>
-        </Flex>
-    </Flex>
 
     const animatedDisplay =
     <div id='button-nav-animated'
@@ -206,7 +208,7 @@ function ProjectItem(){
              flexDirection={'column'}
              w={'100%'}
              borderRadius={'4%'}>
-                <Heading ml={'11.3%'} className='section-title' id='project-title' color={'#016BA6'} py={5} fontSize={35} mb={10}>
+                <Heading ml={'11.3%'} className='section-title' id='project-title' color={'#016BA6'} py={5} fontSize={35} mb={0}>
                     Projects
                 </Heading>
                 <Flex id='projects-container' paddingTop={5} mt={10} justifyContent={'center'} ml={10}>
