@@ -3,12 +3,15 @@ import { Route, Routes } from 'react-router-dom';
 import Navbar from '../../components/Navbar/Navbar';
 import Home from '../../components/Home/Home'
 import Contact from '../../components/Contact/Contact';
-import { ChakraProvider, Stack } from '@chakra-ui/react'
+import { ChakraProvider, Stack, useMediaQuery } from '@chakra-ui/react'
 
 
 function App() {
   const[selectedPage, setSelectedPage] = useState(null)
-  // const[isScroll, setIsScroll] = useState(false)
+  const [isMobile] = useMediaQuery("(max-width: 768px)", {
+    ssr: true,
+    fallback: false,
+})
 
   function changePage(str){
     setSelectedPage(str)
@@ -19,10 +22,9 @@ function App() {
     <ChakraProvider>
     <Stack 
       flexDir={'column'}
-      width={'100%'}
       background-color={'#FFF9FB'}>
       <Navbar selectedPage={selectedPage}/>
-      <Contact/>
+      {isMobile ? null : <Contact/>}
       <Routes>
         <Route path='/' element={<Home changePage={changePage}/>}/>
       </Routes>

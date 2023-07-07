@@ -1,11 +1,17 @@
 import React from "react";
 import selfPhoto from '../../images/photo.jpeg'
-import { Flex, Stack, Heading, Image, Text } from "@chakra-ui/react";
-
+import { Flex, Stack, Heading, Image, Text, useMediaQuery } from "@chakra-ui/react";
 
 function About(){
+
+    const [isMobile] = useMediaQuery("(max-width: 768px)", {
+        ssr: true,
+        fallback: false,
+    })
+
     return (
         <Stack
+        mb={isMobile ? 10:0}
         p={5}
         id='home-about'
         position={'relative'}
@@ -14,12 +20,12 @@ function About(){
         alignContent={'center'}
         width={'100%'}
         flexDirection={'column'}
-        fontSize={'20px'}
-        zIndex={0}>
-            <Flex flexDir={'column'} p={5} w={'100%'} mt={2}>
+        fontSize={'20px'}>
+            <Flex flexDir={'column'} p={5} w={'100%'} mt={2} ml={5} mr={5}>
                 <Flex w={'100%'}>
                 <Heading
-                ml={'11.3%'}
+                ml={isMobile ? 0 : '11.3%'}
+                paddingTop={'10px'}
                 py={8}
                 className='section-title' 
                 id='about-title'
@@ -32,7 +38,8 @@ function About(){
                 </Flex>
                 
 
-                <Flex 
+                <Flex
+                    flexDir={isMobile ? 'column' : 'row'}
                     id='home-about-container'
                     position={'relative'}
                     width={'100%'}
@@ -44,7 +51,7 @@ function About(){
                     justifySelf={'center'}
                     id='home-about-text' 
                     flexDir={'column'}
-                    width={'55%'}
+                    width={isMobile ? '100%': '55%'}
                     fontSize={'16px'}
                     paddingRight={'10%'}>
                         <Text className='about-text-blurb'>
@@ -60,8 +67,9 @@ function About(){
                         </Text>
                     </Flex>
                     <Image
-                     h={300}
-                     w={300}
+                     mt={isMobile ? 10 : 0}
+                     h={isMobile ? 200:300}
+                     w={isMobile ? 200:300}
                      alignSelf={'center'}
                      borderRadius={'50%'}
                      src={selfPhoto}/>

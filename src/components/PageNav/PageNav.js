@@ -1,45 +1,106 @@
 import React, {useState} from "react";
 import '../PageNav/index.scss'
-import {Stack, Flex, Text, Link, color} from '@chakra-ui/react'
+import {Stack, Flex, Text, Link, color,Button, useMediaQuery, Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalHeader,
+    ModalFooter,
+    ModalBody,
+    ModalCloseButton,
+useDisclosure} from '@chakra-ui/react'
+import {HamburgerIcon} from '@chakra-ui/icons'
+import 'animate.css'
 
 function PageNav({selectedNav, handleNavSelection, handleAnimation, animation}){
-
+    const { isOpen, onOpen, onClose } = useDisclosure()
+    const [isMobile] = useMediaQuery("(max-width: 768px)", {
+        ssr: true,
+        fallback: false,
+    })
+    const [menuOpen, setMenuOpen] = useState(false)
     const [navBarHovered, setNavBarHovered] = useState('')
     const openInNewTab = url => {
         window.open(url, '_blank', 'noopener,noreferrer');
     };
 
     function findMySection(e){
-        if (selectedNav){
-            const wasSelected = document.getElementById(`${selectedNav}-deco`)
-            wasSelected.className = 'pag-nav-deco-undo'
-        }
         handleNavSelection(e.target.id)
         handleAnimation('on')
             if (e.target.id === 'About'){
                 const section = document.querySelector( '#home-about' );
-                section.scrollIntoView( { behavior: 'smooth', block: 'end' } );
+                const title = document.querySelector( '#about-title')
+               isMobile ? title.scrollIntoView( { behavior: 'smooth', block: 'start', inline: 'start' } ) : section.scrollIntoView( { behavior: 'smooth', block: 'end' } );
             }
             if (e.target.id === 'Experience'){
                 const section = document.querySelector( '#home-experience' );
-                section.scrollIntoView( { behavior: 'smooth', block: 'end' } );
+                const title = document.querySelector( '#experience-title')
+                isMobile ? title.scrollIntoView( { behavior: 'smooth', block: 'start', inline: "nearest" } ) : section.scrollIntoView( { behavior: 'smooth', block: 'center' } );
             }
             if (e.target.id === 'Projects'){
                 const section = document.querySelector( '#home-projects' );
-                section.scrollIntoView( { behavior: 'smooth', block: 'end' } );
+                const title = document.querySelector( '#project-title')
+                isMobile ? title.scrollIntoView( { behavior: 'smooth', block: 'start', inline: "nearest" } ) : section.scrollIntoView( { behavior: 'smooth', block: 'end' } );
             }
+            // onClose()
     }
 
     function handleHover(id) {
        setNavBarHovered(id)
     }
     
-    return (
+
+    if (isMobile){
+        return (
+            <Stack w={'100%'}>
+                <HamburgerIcon onClick={onOpen} boxSize={10}></HamburgerIcon>
+                    <Modal isOpen={isOpen} onClose={onClose}>
+                        <ModalOverlay />
+                            <ModalContent transition={'ease all .2s'} position={'absolute'} top={9} right={0} w={'120px'}
+                            id={menuOpen ? 'modal': 'nodal'}>
+                                    <ModalCloseButton />
+                                        <Flex transition={'ease all .2s'} backgroundColor={'white'}>
+                                            <Flex  
+                                            w={'100%'}
+                                            flexDir={'column'}
+                                            mt={10} 
+                                            alignItems={'center'}>
+                                                <Text 
+                                                 id='About' 
+                                                 className="page-nav" 
+                                                 mb={5}
+                                                 onClick={findMySection} >About</Text>
+                                                <Text 
+                                                 id='Experience' 
+                                                 className="page-nav" 
+                                                 mb={5}
+                                                 onClick={(e) => findMySection(e)} >Experience</Text>
+                                                <Text 
+                                                 id="Projects" 
+                                                 className="page-nav" 
+                                                 mb={5}
+                                                 onClick={findMySection}>Projects</Text>
+                                                <Text 
+                                                 id="Resume" 
+                                                 className="page-nav" 
+                                                 mb={5}
+                                                 onClick={()=> {
+                                                    openInNewTab(
+                                                        'https://drive.google.com/file/d/1APNgek--JsLy05tjixRrRFtrf09HVQsY/view?usp=sharing/file/d/1APNgek--JsLy05tjixRrRFtrf09HVQsY/view?usp=sharing'
+                                                        )
+                                                        onClose()
+                                                 }}>Resume</Text>
+                                            </Flex>
+                                        </Flex>
+                            </ModalContent>
+                    </Modal>
+            </Stack>
+        )
+    } else return (
         <Stack 
          flexDirection={'row'} 
          alignItems={'center'} 
          fontWeight={400} 
-         mr={'35px'}
+         mr={5}
          fontSize={'16px'}>
         <Flex ml={2}> 
             <Text

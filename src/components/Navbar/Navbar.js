@@ -1,11 +1,15 @@
 import React, {useState} from "react";
 import PageNav from "../PageNav/PageNav";
 import logo from '../../images/logo.png'
-import {Stack, Flex, Image} from '@chakra-ui/react'
+import {Stack, Flex, Image, useMediaQuery} from '@chakra-ui/react'
 
 function Navbar({selectedPage}){
     const [selectedNav, setSelectedNav] = useState(null)
     const [animation, setAnimation] = useState(false)
+    const [isMobile] = useMediaQuery("(max-width: 768px)", {
+        ssr: true,
+        fallback: false,
+    })
     
     function handleClick(){
         const section = document.getElementById('home-container')
@@ -24,19 +28,21 @@ function Navbar({selectedPage}){
             setAnimation(false)
         }
     }
-
+    
     return (
         <Stack
          flexDir={'row'}
          zIndex={'100'}
          position={'fixed'}
-         width={"100%"}
+         top={0}
+         maxW={'100%'}
+         w={'100%'}
          height={'10%'}
          alignItems={'center'}
          backgroundColor={'#041A4D'}
          justifyContent={'space-between'}
          color={'white'}>
-            <Flex ml={'33px'}>
+            <Flex ml={ isMobile ? 5 : '33px'}>
                 <Image 
                  width={'50px'}
                  height={'50px'} 
