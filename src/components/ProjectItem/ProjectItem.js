@@ -4,20 +4,25 @@ import nintendo from '../../images/nintendo.png'
 import lactate from '../../images/lactate_1.png'
 import poke from '../../images/poke.png'
 import '../ProjectItem/index.scss'
-import {Flex, Stack, Text, Image, Heading, Link} from '@chakra-ui/react'
+import {Flex, Stack, Text, Image, Heading, Link, useMediaQuery, Button} from '@chakra-ui/react'
 
 
 function ProjectItem(){
     const [showProjectDetails, setShowProjectDetails] = useState('Breath of the Wild Cooking App')
     const [isShown, setIsShown] = useState('Breath of the Wild Cooking App');
+    const [isMobile] = useMediaQuery("(max-width: 768px)", {
+        ssr: true,
+        fallback: false,
+    })
+    let w = window.screen.width - 65
     const [projects, setProjects] = useState([
        {
             title: 'Breath of the Wild Cooking App',
             image: botw,
-            description: 'A cooking mini-game simulating an online shop with a cart and checkout. Buy ingredients and cook them!',
+            description: 'A cooking mini-game with an online shop. Buy ingredients and cook them!',
             goal: "The last project to make for the bootcamp was my capstone, an all encompassing app to show off all that I had learned. I wanted to make an e-commerce app, with a twist. I decided on this cooking app because it allowed me to merge e-commerce and gaming.",
-            issue: 'After seeding my database with all of the potential recipe combinations allowed in the game, I quickly realized that certain dishes were not registering properly. The structure of the database was not matching the structure I had created in my front end application.',
-            solution: 'After testing the reason for this, it was about the order in which it was checking the database for a match. By algorithmically reordering each combination from the front end before sending the request to check the database, I was able to get all the recipes to register properly.',
+            issue: 'After seeding my database with all of the recipe combinations, I quickly realized that certain dishes were not registering properly. The structure of the database was not matching the structure I had created in my front end application.',
+            solution: 'By algorithmically reordering each combination from the front end before sending the request to check the database, I was able to get all the recipes to register properly.',
             link: 'https://obscure-scrubland-39099.herokuapp.com/',
             frontend: 'https://github.com/dylantoporek/botw-recipe-app', 
             backend: 'https://github.com/dylantoporek/botw-recipe-app-backend',
@@ -28,7 +33,7 @@ function ProjectItem(){
             title: 'Nintendo-Land',
             image: nintendo,
             description: 'A board game where you race to the finish against three computer opponents.',
-            goal: "This would be my first full stack application built during my bootcamp. I wanted to make an original(ish) board game. Something simple enough where the logic would be easy to code, but something visually engaging at the same time.",
+            goal: "This would be my first full stack application built during my bootcamp. I wanted to make an original(ish) board game. Something simple enough where the logic would be managable, but something visually engaging at the same time.",
             issue: 'A major issue I ran into while building this project was the way the pieces moved around the board. At first, they would teleport around, which was not pleasant to look at. I tried to achieve a ‘life-like’ kind of movement to the piece, similar to someone picking up their piece and tapping it on each space of the board as they move.',
             solution: 'Using promise objects, and smooth transitions, I was able to make the pieces move in a much more pleasant way for users when playing the game.',
             link: 'https://frozen-eyrie-81829.herokuapp.com/',
@@ -115,9 +120,14 @@ function ProjectItem(){
         return project.title === showProjectDetails
     })
 
+
     const projectButtonDisplay = projects.map((project)=>{
-        return <button 
-            className='project-button'
+        return <Button 
+            cursor={'pointer'}
+            mr={isMobile ? 5 : 0}
+            p={5}
+            minW={'fit-content'}
+            h={'50px'}
             key={project.title}
             id={project.title} 
             value={project.num}
@@ -129,7 +139,7 @@ function ProjectItem(){
                 color: showProjectDetails === project.title ? 'white' : 'black', 
             }}>
                 {project.title}
-            </button> 
+            </Button> 
     })
 
     const projectDisplay = <Flex
@@ -138,19 +148,19 @@ function ProjectItem(){
      flexDirection={'column'}>
         <Flex id='wriiten-info' flexDirection={'column'} p={10} w={'100%'}>
             <Flex>
-                <Heading mb={5} fontSize={'20px'}>{targetedProject.title}</Heading>
+                <Heading mb={5} fontSize={isMobile ? '18px' : '20px'}>{targetedProject.title}</Heading>
             </Flex>
-            <Flex id='more-info' flexDir={'column'} justifyContent={'center'} mt={0}>
-                <Text fontWeight={'600'} fontSize={'16px'} mb={5}>{targetedProject.description}</Text>
-                    <Flex>
-                        <Flex flexDir={'column'} fontSize={'14px'} mr={10}>
+            <Flex id='more-info' flexDir={'column'} justifyContent={'center'}>
+                <Text fontWeight={'600'} fontSize={isMobile ? '14px': '16px'} mb={5}>{targetedProject.description}</Text>
+                    <Flex flexDir={isMobile ? 'column' : 'row'}>
+                        <Flex flexDir={'column'} fontSize={isMobile ? '14px' : '16px'}>
                             <Text fontWeight={'400'} mb={3}>Goal: {targetedProject.goal}</Text>
                             <Text fontWeight={'400'} mb={3}>Issue: {targetedProject.issue}</Text>
                             <Text fontWeight={'400'} mb={3}>Solution: {targetedProject.solution}</Text>
                         </Flex>
                         
                         <Flex flexDir={'column'} alignItems={'center'} justifyItems={'center'} justifyContent={'center'}>
-                            <Image maxW={'300px'} src={targetedProject.image}/>
+                            <Image maxW={isMobile ? '200px': '300px'} src={targetedProject.image}/>
                             <Flex mt={3}>
                                 <Link className="project-link" href={targetedProject.link} mr={3}>Demo</Link>
                                 <Text mr={3}>|</Text>
@@ -168,6 +178,7 @@ function ProjectItem(){
             </Flex>
         </Flex>
 
+const gap = 53
     const animatedDisplay =
     <div id='button-nav-animated'
         style={{
@@ -183,10 +194,10 @@ function ProjectItem(){
         <div className="scroll-section" style={{
             backgroundColor:'#061A40',
             top: 
-            showProjectDetails === 'Breath of the Wild Cooking App' ? -6 : null ||
-            showProjectDetails === 'Nintendo-Land' ? 59 : null ||
-            showProjectDetails === 'Endurance Lactate Analyzer' ? 124 : null ||
-            showProjectDetails === 'Pokemon Minigame App' ? 189 : null
+            showProjectDetails === 'Breath of the Wild Cooking App' ? -3 : null ||
+            showProjectDetails === 'Nintendo-Land' ? -3 + gap : null ||
+            showProjectDetails === 'Endurance Lactate Analyzer' ? -3 + (gap*2) : null ||
+            showProjectDetails === 'Pokemon Minigame App' ? -3 + (gap*3) : null
         }}></div>              
     </div>
 
@@ -198,8 +209,7 @@ function ProjectItem(){
          position={'relative'}
          width={'100%'}
          flexDir={'column'}
-         alignSelf={'center'}
-         backgroundColor={'#FFF9FB'}>
+         alignSelf={'center'}>
             <Flex 
              justifyItems={'center'}
              padding={5}
@@ -208,28 +218,37 @@ function ProjectItem(){
              flexDirection={'column'}
              w={'100%'}
              borderRadius={'4%'}>
-                <Heading ml={'11.3%'} className='section-title' id='project-title' color={'#016BA6'} py={5} fontSize={35} mb={0}>
+                <Heading ml={isMobile ? 0 : '11.3%'} className='section-title' id='project-title' color={'#016BA6'} py={5} fontSize={35} mb={0}>
                     Projects
                 </Heading>
-                <Flex id='projects-container' paddingTop={5} mt={10} justifyContent={'center'} ml={10}>
-                    <Flex>
-                        {animatedDisplay}
-                    </Flex>
+                <Flex id='projects-container' paddingTop={5} mt={10} justifyContent={'center'} ml={isMobile ? 0:10}>
+                {isMobile ? (
+                        <Flex flexDir={'column'} maxW={w}>
+                            <Flex overflowX={'scroll'} scrollBehavior={'smooth'} mr={5}>
+                                {projectButtonDisplay}
+                            </Flex>
+                            <Flex id='work-details' backgroundColor={'#EBEBEB'} borderRadius={'.5em'}>
+                                {projectDisplay}
+                            </Flex>
+                        </Flex>
 
-                    <Flex id='project-buttons'>
-                        {projectButtonDisplay}
-                    </Flex>
+                    ) : (
+                    <Flex w={'80%'} justifyContent={'center'}>
+                        <Flex w={'5px'} mr={5}>
+                            {animatedDisplay}
+                        </Flex>
+
+                        <Flex id='project-buttons' mr={5} gap={1}>
+                            {projectButtonDisplay}
+                        </Flex>
                 
-                    <Flex 
-                     id='project-details' 
-                     backgroundColor={'#EBEBEB'} 
-                     borderRadius={'.5em'} 
-                     ml={'4%'} 
-                     minH={'450px'}
-                     w={'60%'} 
-                     maxH={'450px'}>
-                        {projectDisplay}
+                        <Flex 
+                        id='project-details' 
+                        p={10} backgroundColor={'#EBEBEB'} borderRadius={'.5em'} h={'500px'} w={'100%'}>
+                            {projectDisplay}
+                        </Flex> 
                     </Flex>
+                    )}
                 </Flex>
             </Flex>
         </Stack>

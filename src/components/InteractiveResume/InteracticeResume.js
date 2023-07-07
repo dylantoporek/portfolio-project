@@ -1,11 +1,16 @@
 import React, {useState} from "react";
 import 'animate.css'
 import './index.scss'
-import {Flex, Stack, Text, Heading} from '@chakra-ui/react'
+import {Flex, Stack, Text, Heading, useMediaQuery, Button} from '@chakra-ui/react'
 
 function InteractiveResume(){
     const [showExperienceDetails, setShowExperienceDetails] = useState('Rhabit Analytics')
     const [isShown, setIsShown] = useState('Rhabit Analytics');
+    const [isMobile] = useMediaQuery("(max-width: 768px)", {
+        ssr: true,
+        fallback: false,
+    })
+    let w = window.screen.width - 65
     const experienceDetails = [
         {
             company: 'Rhabit Analytics',
@@ -112,8 +117,8 @@ function InteractiveResume(){
     }
 
     function handleResumeHover(e){
-        setIsShown(e.target.value)
-        if(showExperienceDetails === e.target.innerText){
+        setIsShown(e.target.id)
+        if(showExperienceDetails === e.target.id){
             e.target.style.backgroundColor = '#4B88A2'
         }
         else {
@@ -132,12 +137,14 @@ function InteractiveResume(){
         }
     }
 
-   
-    
-
     const workButtonsDisplay = experienceDetails.map((experience)=>{ 
-            return <button 
-            className='work-button'
+            return <Button 
+            cursor={'pointer'}
+            mb={0}
+            mr={isMobile ? 5 : 0}
+            minW={'fit-content'}
+            p={5}
+            h={'50px'}
             key={experience.company}
             id={experience.company} 
             value={experience.num}
@@ -149,7 +156,7 @@ function InteractiveResume(){
                 color: showExperienceDetails === experience.company ? 'white' : 'black',
             }}>
                 {experience.company}
-            </button>   
+            </Button>   
     })
 
 
@@ -158,16 +165,17 @@ function InteractiveResume(){
         return experience.company === showExperienceDetails
     })
 
-    console.log(targetedExperience.details.map((detail) => console.log(detail)))
+
     const workDetailsDisplay = <Flex id='work-details-container'>
-        <Heading id='work-title' fontSize={'20px'}>{targetedExperience.jobTitle} @ {targetedExperience.company}</Heading>
-        <Text id='work-dates' mb={5}>{targetedExperience.dates}</Text>
+        <Heading id='work-title' fontSize={isMobile ? '18px':'20px'}>{targetedExperience.jobTitle} @ {targetedExperience.company}</Heading>
+        <Text id="work-dates" fontSize={isMobile ? '14px' : '16px'} mt={2} mb={5}>{targetedExperience.dates}</Text>
         <Flex w={'100%'} flexDir={'column'} alignItems={'flex-start'} mt={10}>
-            {targetedExperience.details.map((detail)=> <Text className="work-details">{detail}</Text>)}
+            {targetedExperience.details.map((detail)=> <Text fontSize={isMobile ? '14px' : '16px'} className="work-details">{detail}</Text>)}
         </Flex>
     </Flex>
 
-    const animatedDisplay =
+const gap = 53    
+const animatedDisplay =
     <div id='button-nav-animated'
         style={{
         position: 'absolute',
@@ -182,17 +190,17 @@ function InteractiveResume(){
             backgroundColor:'#061A40',
             top: 
             showExperienceDetails === 'Rhabit Analytics' ? -4 : null ||
-            showExperienceDetails === 'Expedience Software' ? 61 : null ||
-            showExperienceDetails === 'Flatiron School Software Engineering Bootcamp' ? 126 : null ||
-            showExperienceDetails === 'Private Tutor & Home School Teacher' ? 191 : null ||
-            showExperienceDetails === 'Mathnasium' ? 256 : null ||
-            showExperienceDetails === 'The Collegiate School' ? 321 : null ||
-            showExperienceDetails === 'The Birch Wathen Lenox School' ? 386 : null
+            showExperienceDetails === 'Expedience Software' ? -4 + gap : null ||
+            showExperienceDetails === 'Flatiron School Software Engineering Bootcamp' ? -4 + (2*gap) : null ||
+            showExperienceDetails === 'Private Tutor & Home School Teacher' ? -4 + (3*gap) : null ||
+            showExperienceDetails === 'Mathnasium' ? -4 + (4*gap) : null ||
+            showExperienceDetails === 'The Collegiate School' ? -4 + (5*gap) : null ||
+            showExperienceDetails === 'The Birch Wathen Lenox School' ? -4 + (6*gap) : null
         }}></div>              
     </div>
 
     return (
-        <Stack 
+        <Stack
          id='home-experience'
          position={'relative'}
          width={'100%'}
@@ -202,7 +210,7 @@ function InteractiveResume(){
          p={5}
          mb={10}
           >
-            <Flex 
+            <Flex
              p={5}
              position={'relative'}
              id='resume-container'
@@ -212,23 +220,39 @@ function InteractiveResume(){
              flexDir={'column'}
              justifyItems={'center'}
              w={'100%'}>
-                <Heading ml={'11.3%'} id='experience-title' color={'#016BA6'} fontSize={35} py={2} mb={5}>
+                <Heading ml={isMobile ? 0 : '11.3%'} id='experience-title' color={'#016BA6'} fontSize={35} py={2} mb={5}>
                     Experience
                 </Heading>
-                <Flex id='work-container' p={0} w={'100%'} mt={10} justifyContent={'center'} ml={5}>
-                    <Flex>
-                     {animatedDisplay}
-                    </Flex>
+                <Flex id='work-container' p={0} w={'100%'} mt={10} justifyContent={'center'} ml={isMobile ? 0:5} 
+                    flexDirection={isMobile ? 'column':'row' }>
+
+
                     
+                    {isMobile ? (
+                        <Flex flexDir={'column'} maxW={w}>
+                            <Flex overflowX={'scroll'} scrollBehavior={'smooth'}>
+                                {workButtonsDisplay}
+                            </Flex>
+                            <Flex id='work-details' p={10} backgroundColor={'#EBEBEB'} borderRadius={'.5em'}>
+                                {workDetailsDisplay}
+                            </Flex>
+                        </Flex>
+
+                    ) : (
+                    <Flex w={'80%'} justifyContent={'center'}>
+                        <Flex w={'5px'} mr={5}>
+                        {animatedDisplay}
+                        </Flex>
                             
-                    <Flex id='experience-buttons-container'>
-                        {workButtonsDisplay}
+                        <Flex id='experience-buttons-container' mr={5} gap={1}>
+                            {workButtonsDisplay}
+                        </Flex>
+
+                        <Flex id='work-details' p={10} backgroundColor={'#EBEBEB'} borderRadius={'.5em'} maxH={'450px'} w={'100%'}>
+                            {workDetailsDisplay}
+                        </Flex> 
                     </Flex>
-
-                    <Flex id='work-details' p={10} backgroundColor={'#EBEBEB'} borderRadius={'.5em'} maxH={'450px'}>
-                        {workDetailsDisplay}
-                    </Flex> 
-
+                    )}
                 </Flex>
             </Flex>   
         </Stack>
