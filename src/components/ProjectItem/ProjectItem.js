@@ -259,7 +259,6 @@ const start = 0
     return (
         <Stack 
          mt={isDesktop ? '250px' : 10}
-         mb={10}
          padding={5}
          id='home-projects'
          position={'relative'}
