@@ -8,6 +8,15 @@ function About(){
         ssr: true,
         fallback: false,
     })
+    const [isDesktop] = useMediaQuery("(min-width: 1550px)")
+
+    function handleImageSizing(){
+        if(isMobile){
+            return 200
+        } else if (isDesktop){
+            return 400
+        } else return 300
+    }
 
     return (
         <Stack
@@ -22,22 +31,6 @@ function About(){
         flexDirection={'column'}
         fontSize={'20px'}>
             <Flex flexDir={'column'} p={5} w={'100%'} mt={2} ml={5} mr={5}>
-                <Flex w={'100%'}>
-                <Heading
-                ml={isMobile ? 0 : '11.3%'}
-                paddingTop={'10px'}
-                py={8}
-                className='section-title' 
-                id='about-title'
-                position={'relative'}
-                fontSize={'35px'}
-                color={'#016BA6'}
-                marginBottom={8}>
-                    About Me
-                </Heading>
-                </Flex>
-                
-
                 <Flex
                     flexDir={isMobile ? 'column' : 'row'}
                     id='home-about-container'
@@ -51,9 +44,20 @@ function About(){
                     justifySelf={'center'}
                     id='home-about-text' 
                     flexDir={'column'}
-                    width={isMobile ? '100%': '55%'}
-                    fontSize={'16px'}
-                    paddingRight={'10%'}>
+                    width={isMobile ? '100%': '58%'}
+                    fontSize={isDesktop ? '30px': '16px'}
+                    paddingRight={isDesktop ? '6%' : '10%'}>
+                            <Heading
+                                paddingTop={'10px'}
+                                py={8}
+                                className='section-title' 
+                                id='about-title'
+                                position={'relative'}
+                                fontSize={isDesktop ? '60px' : '35px'}
+                                color={'#016BA6'}
+                                marginBottom={8}>
+                                About Me
+                            </Heading>
                         <Text className='about-text-blurb'>
                             I was born and raised in the Upper West Side of New York City. For my undergraduate studies, I attended UMass Amherst and graduated with a major in economics and a minor in philosophy. After graduation, I taught math to middle and high school students for a while before transitioning to software engineering.
                         </Text>
@@ -68,8 +72,8 @@ function About(){
                     </Flex>
                     <Image
                      mt={isMobile ? 10 : 0}
-                     h={isMobile ? 200:300}
-                     w={isMobile ? 200:300}
+                     h={handleImageSizing()}
+                     w={handleImageSizing()}
                      alignSelf={'center'}
                      borderRadius={'50%'}
                      src={selfPhoto}/>

@@ -10,6 +10,7 @@ function InteractiveResume(){
         ssr: true,
         fallback: false,
     })
+    const [isDesktop] = useMediaQuery("(min-width: 1550px)")
     let w = window.screen.width - 65
     const experienceDetails = [
         {
@@ -36,7 +37,7 @@ function InteractiveResume(){
             num: 1,
         },
         {
-            company: 'Flatiron School Software Engineering Bootcamp',
+            company: 'Flatiron School',
             jobTitle: 'Student',
             details: [
                 'Full-Stack web application development, created with React and Ruby on Rails',
@@ -137,14 +138,37 @@ function InteractiveResume(){
         }
     }
 
+    function handleFontSizing(tag){
+      if (tag === 'heading') {
+        if(isDesktop){
+            return 45
+        } else if (isMobile){
+            return 18
+        } else return 20
+      } else if (tag === 'details'){
+        if(isDesktop){
+            return 30
+        } else if (isMobile){
+            return 14
+        } else return 16
+      } else if (tag === 'dates'){
+        if(isDesktop){
+            return 30
+        } else if (isMobile){
+            return 14
+        } else return 16
+      }
+        
+    }
+
     const workButtonsDisplay = experienceDetails.map((experience)=>{ 
             return <Button 
+            fontSize={isDesktop ? '20px' : undefined}
             cursor={'pointer'}
-            mb={0}
             mr={isMobile ? 5 : 0}
             minW={'fit-content'}
             p={5}
-            h={'50px'}
+            h={isDesktop ? '100px':'50px'}
             key={experience.company}
             id={experience.company} 
             value={experience.num}
@@ -167,14 +191,24 @@ function InteractiveResume(){
 
 
     const workDetailsDisplay = <Flex id='work-details-container'>
-        <Heading id='work-title' fontSize={isMobile ? '18px':'20px'}>{targetedExperience.jobTitle} @ {targetedExperience.company}</Heading>
-        <Text id="work-dates" fontSize={isMobile ? '14px' : '16px'} mt={2} mb={5}>{targetedExperience.dates}</Text>
-        <Flex w={'100%'} flexDir={'column'} alignItems={'flex-start'} mt={10}>
-            {targetedExperience.details.map((detail)=> <Text fontSize={isMobile ? '14px' : '16px'} className="work-details">{detail}</Text>)}
+        <Flex flexDir={'column'} alignSelf={'flex-start'} p={10}>
+            {targetedExperience.company === 'Flatiron School' ? 
+            (<Heading id='work-title' fontSize={handleFontSizing('heading')}>
+                {targetedExperience.jobTitle} @ {targetedExperience.company} Software Engineering Bootcamp
+            </Heading>): (
+                <Heading id='work-title' fontSize={handleFontSizing('heading')}>
+                {targetedExperience.jobTitle} @ {targetedExperience.company}
+            </Heading>
+            )}
+            <Text id="work-dates" fontSize={handleFontSizing('dates')} mt={2} mb={5}>{targetedExperience.dates}</Text>
+            <Flex w={'100%'} flexDir={'column'} alignItems={'flex-start'} mt={10}>
+                {targetedExperience.details.map((detail)=> <Text fontSize={handleFontSizing('details')} className="work-details">{detail}</Text>)}
+            </Flex>
         </Flex>
     </Flex>
 
-const gap = 53    
+const gap = isDesktop ? 102.5: 52.5  
+const start = 0  
 const animatedDisplay =
     <div id='button-nav-animated'
         style={{
@@ -187,15 +221,16 @@ const animatedDisplay =
         MozTransition: "all .5s ease",   
     }}> 
         <div className="scroll-section" style={{
+            height: isDesktop ? '100px' : '50px',
             backgroundColor:'#061A40',
             top: 
-            showExperienceDetails === 'Rhabit Analytics' ? -4 : null ||
-            showExperienceDetails === 'Expedience Software' ? -4 + gap : null ||
-            showExperienceDetails === 'Flatiron School Software Engineering Bootcamp' ? -4 + (2*gap) : null ||
-            showExperienceDetails === 'Private Tutor & Home School Teacher' ? -4 + (3*gap) : null ||
-            showExperienceDetails === 'Mathnasium' ? -4 + (4*gap) : null ||
-            showExperienceDetails === 'The Collegiate School' ? -4 + (5*gap) : null ||
-            showExperienceDetails === 'The Birch Wathen Lenox School' ? -4 + (6*gap) : null
+            showExperienceDetails === 'Rhabit Analytics' ? start : null ||
+            showExperienceDetails === 'Expedience Software' ? start + gap : null ||
+            showExperienceDetails === 'Flatiron School' ? start + (2*gap) : null ||
+            showExperienceDetails === 'Private Tutor & Home School Teacher' ? start + (3*gap) : null ||
+            showExperienceDetails === 'Mathnasium' ? start + (4*gap) : null ||
+            showExperienceDetails === 'The Collegiate School' ? start + (5*gap) : null ||
+            showExperienceDetails === 'The Birch Wathen Lenox School' ? start + (6*gap) : null
         }}></div>              
     </div>
 
@@ -209,6 +244,7 @@ const animatedDisplay =
          alignSelf={'center'}
          p={5}
          mb={10}
+         mt={isDesktop ? '100px' : 0}
           >
             <Flex
              p={5}
@@ -220,9 +256,9 @@ const animatedDisplay =
              flexDir={'column'}
              justifyItems={'center'}
              w={'100%'}>
-                <Heading ml={isMobile ? 0 : '11.3%'} id='experience-title' color={'#016BA6'} fontSize={35} py={2} mb={5}>
+                {/* <Heading id='experience-title' color={'#016BA6'} fontSize={35} py={2} mb={5}>
                     Experience
-                </Heading>
+                </Heading> */}
                 <Flex id='work-container' p={0} w={'100%'} mt={10} justifyContent={'center'} ml={isMobile ? 0:5} 
                     flexDirection={isMobile ? 'column':'row' }>
 
@@ -230,6 +266,9 @@ const animatedDisplay =
                     
                     {isMobile ? (
                         <Flex flexDir={'column'} maxW={w}>
+                            <Heading id='experience-title' color={'#016BA6'} fontSize={35} py={2} mb={5}>
+                                Experience
+                            </Heading>
                             <Flex overflowX={'scroll'} scrollBehavior={'smooth'}>
                                 {workButtonsDisplay}
                             </Flex>
@@ -239,17 +278,22 @@ const animatedDisplay =
                         </Flex>
 
                     ) : (
-                    <Flex w={'80%'} justifyContent={'center'}>
-                        <Flex w={'5px'} mr={5}>
-                        {animatedDisplay}
-                        </Flex>
-                            
-                        <Flex id='experience-buttons-container' mr={5} gap={1}>
-                            {workButtonsDisplay}
-                        </Flex>
+                    <Flex w={isDesktop ? '71%' : '80%'} justifyContent={'center'} flexDir={'column'}>
+                        <Heading id='experience-title' color={'#016BA6'} fontSize={isDesktop ? 60 : 35} py={2} mb={10}>
+                             Experience
+                        </Heading>
+                        <Flex mt={10}>
+                            <Flex w={'5px'} mr={isDesktop ? 10: 5}>
+                            {animatedDisplay}
+                            </Flex>
+                                
+                            <Flex id='experience-buttons-container' mr={isDesktop ? 10: 5} gap={1}>
+                                {workButtonsDisplay}
+                            </Flex>
 
-                        <Flex id='work-details' p={10} backgroundColor={'#EBEBEB'} borderRadius={'.5em'} maxH={'450px'} w={'100%'}>
-                            {workDetailsDisplay}
+                            <Flex id='work-details' p={isDesktop ? 16: 4} backgroundColor={'#EBEBEB'} borderRadius={'.5em'} maxH={isDesktop ? '730px':'360px'} w={'100%'}>
+                                {workDetailsDisplay}
+                            </Flex> 
                         </Flex> 
                     </Flex>
                     )}
