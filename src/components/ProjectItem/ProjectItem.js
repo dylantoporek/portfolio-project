@@ -14,6 +14,7 @@ function ProjectItem(){
         ssr: true,
         fallback: false,
     })
+    const [isDesktop] = useMediaQuery("(min-width: 1550px)")
     let w = window.screen.width - 65
     const [projects, setProjects] = useState([
        {
@@ -120,14 +121,59 @@ function ProjectItem(){
         return project.title === showProjectDetails
     })
 
+    function handleFontSizing(tag){
+        if (tag === 'heading') {
+          if(isDesktop){
+              return 45
+          } else if (isMobile){
+              return 18
+          } else return 20
+        } else if (tag === 'details'){
+          if(isDesktop){
+              return 30
+          } else if (isMobile){
+              return 14
+          } else return 16
+        } else if (tag === 'dates'){
+          if(isDesktop){
+              return 30
+          } else if (isMobile){
+              return 14
+          } else return 16
+        } else if (tag === 'links'){
+            if(isDesktop){
+                return 18
+            } else if (isMobile){
+                return 8
+            } else return 10
+          }
+          else if (tag === 'text-heading'){
+            if(isDesktop){
+                return 25
+            } else if (isMobile){
+                return 12
+            } else return 14
+          }
+          else if (tag === 'text'){
+            if(isDesktop){
+                return 22
+            } else if (isMobile){
+                return 10
+            } else return 12
+          }
+
+          
+      }
+
 
     const projectButtonDisplay = projects.map((project)=>{
         return <Button 
+            fontSize={isDesktop ? '20px' : undefined}
             cursor={'pointer'}
             mr={isMobile ? 5 : 0}
             p={5}
             minW={'fit-content'}
-            h={'50px'}
+            h={isDesktop ? '100px':'50px'}
             key={project.title}
             id={project.title} 
             value={project.num}
@@ -148,20 +194,13 @@ function ProjectItem(){
      flexDirection={'column'}>
         <Flex id='wriiten-info' flexDirection={'column'} p={10} w={'100%'}>
             <Flex>
-                <Heading mb={5} fontSize={isMobile ? '18px' : '20px'}>{targetedProject.title}</Heading>
+                <Heading mb={2} fontSize={handleFontSizing('heading')}>{targetedProject.title}</Heading>
             </Flex>
             <Flex id='more-info' flexDir={'column'} justifyContent={'center'}>
-                <Text fontWeight={'600'} fontSize={isMobile ? '14px': '16px'} mb={5}>{targetedProject.description}</Text>
-                    <Flex flexDir={isMobile ? 'column' : 'row'}>
-                        <Flex flexDir={'column'} fontSize={isMobile ? '14px' : '16px'}>
-                            <Text fontWeight={'400'} mb={3}>Goal: {targetedProject.goal}</Text>
-                            <Text fontWeight={'400'} mb={3}>Issue: {targetedProject.issue}</Text>
-                            <Text fontWeight={'400'} mb={3}>Solution: {targetedProject.solution}</Text>
-                        </Flex>
-                        
-                        <Flex flexDir={'column'} alignItems={'center'} justifyItems={'center'} justifyContent={'center'}>
-                            <Image maxW={isMobile ? '200px': '300px'} src={targetedProject.image}/>
-                            <Flex mt={3}>
+                <Text fontWeight={'600'} fontSize={handleFontSizing("dates")} mb={8}>{targetedProject.description}</Text>
+                    <Flex flexDir={'column'} alignItems={'center'} justifyItems={'center'} justifyContent={'center'} mt={isDesktop ? 10: 0} mb={isDesktop ? 20: 6}>
+                            <Image maxW={isMobile ? '200px': '35%'} src={targetedProject.image}/>
+                            <Flex mt={3} fontSize={handleFontSizing('links')}>
                                 <Link className="project-link" href={targetedProject.link} mr={3}>Demo</Link>
                                 <Text mr={3}>|</Text>
                                 <Link mr={3} className="project-link" href={targetedProject.frontend}>Frontend Repo</Link>
@@ -169,8 +208,23 @@ function ProjectItem(){
                                 <Link className="project-link" href={targetedProject.backend}>Backend Repo</Link>
                             </Flex>
                             
-                            <Flex mt={1}>
+                            <Flex mt={1} fontSize={handleFontSizing('links')}>
                                 <Text>Stage: {targetedProject.stage}</Text>
+                            </Flex>
+                    </Flex>
+                    <Flex mb={5}>
+                        <Flex flexDir={isMobile ? 'column':'row'} gap={2}>
+                            <Flex flexDir={'column'} alignItems={'center'} maxW={isMobile ? '100%':'33%'} textAlign={'left'}>
+                                <Text fontSize={handleFontSizing('text-heading')}>Goal</Text>
+                                <Text fontSize={handleFontSizing('text')} p={4} fontWeight={'400'} mb={3}>{targetedProject.goal}</Text>
+                            </Flex>
+                            <Flex flexDir={'column'} alignItems={'center'} maxW={isMobile ? '100%':'33%'}>
+                                <Text fontSize={handleFontSizing('text-heading')}>Issue</Text>
+                                <Text fontSize={handleFontSizing('text')} p={4} fontWeight={'400'} mb={3}>{targetedProject.issue}</Text>
+                            </Flex>
+                            <Flex flexDir={'column'} alignItems={'center'} maxW={isMobile ? '100%':'33%'}>
+                                <Text fontSize={handleFontSizing('text-heading')}>Solution</Text>
+                                <Text fontSize={handleFontSizing('text')} p={4} fontWeight={'400'} mb={3}>{targetedProject.solution}</Text>
                             </Flex>
                         </Flex>
                     </Flex>
@@ -178,20 +232,21 @@ function ProjectItem(){
             </Flex>
         </Flex>
 
-const gap = 53
+const gap = isDesktop ? 102.5: 52.5  
+const start = 0  
     const animatedDisplay =
     <div id='button-nav-animated'
         style={{
-        position: 'relative',
-        left: '0px',
+        position: 'absolute',
         width: '5px',
-        height: '70%',
+        height: '100%%',
         borderRadius: '10px',
         transition: "all .5s ease",
         WebkitTransition: "all .5s ease",
         MozTransition: "all .5s ease",   
     }}> 
         <div className="scroll-section" style={{
+            height: isDesktop ? '100px' : '50px',
             backgroundColor:'#061A40',
             top: 
             showProjectDetails === 'Breath of the Wild Cooking App' ? -3 : null ||
@@ -203,7 +258,8 @@ const gap = 53
 
     return (
         <Stack 
-         mt={10}
+         mt={isDesktop ? '250px' : 10}
+         mb={10}
          padding={5}
          id='home-projects'
          position={'relative'}
@@ -218,12 +274,13 @@ const gap = 53
              flexDirection={'column'}
              w={'100%'}
              borderRadius={'4%'}>
-                <Heading ml={isMobile ? 0 : '11.3%'} className='section-title' id='project-title' color={'#016BA6'} py={5} fontSize={35} mb={0}>
-                    Projects
-                </Heading>
+                
                 <Flex id='projects-container' paddingTop={5} mt={10} justifyContent={'center'} ml={isMobile ? 0:10}>
                 {isMobile ? (
                         <Flex flexDir={'column'} maxW={w}>
+                            <Heading className='section-title' id='project-title' color={'#016BA6'} py={5} fontSize={35} mb={0}>
+                                Projects
+                            </Heading>
                             <Flex overflowX={'scroll'} scrollBehavior={'smooth'} mr={5}>
                                 {projectButtonDisplay}
                             </Flex>
@@ -233,20 +290,32 @@ const gap = 53
                         </Flex>
 
                     ) : (
-                    <Flex w={'80%'} justifyContent={'center'}>
-                        <Flex w={'5px'} mr={5}>
-                            {animatedDisplay}
-                        </Flex>
+                    <Flex w={isDesktop ? '71%' : '80%'} justifyContent={'center'} flexDir={'column'}>
+                            <Heading 
+                             className='section-title' 
+                             id='project-title' 
+                             color={'#016BA6'} 
+                             py={2} 
+                             fontSize={isDesktop ? 60: 35}
+                              mb={10}>
+                                    Projects
+                                </Heading>
+                            <Flex mt={10}>
+                            <Flex w={'5px'} mr={isDesktop ? 10: 5}>
+                                {animatedDisplay}
+                            </Flex>
 
-                        <Flex id='project-buttons' mr={5} gap={1}>
-                            {projectButtonDisplay}
+                            <Flex id='project-buttons' mr={isDesktop ? 10: 5} gap={1}>
+                                {projectButtonDisplay}
+                            </Flex>
+                    
+                            <Flex 
+                            id='project-details' 
+                            p={isDesktop ? 16: 4} backgroundColor={'#EBEBEB'} borderRadius={'.5em'} h={isDesktop ? '1000px':'500px'} w={'100%'}>
+                                {projectDisplay}
+                            </Flex>
                         </Flex>
-                
-                        <Flex 
-                        id='project-details' 
-                        p={10} backgroundColor={'#EBEBEB'} borderRadius={'.5em'} h={'500px'} w={'100%'}>
-                            {projectDisplay}
-                        </Flex> 
+                             
                     </Flex>
                     )}
                 </Flex>

@@ -17,6 +17,7 @@ function PageNav({selectedNav, handleNavSelection, handleAnimation, animation}){
         ssr: true,
         fallback: false,
     })
+    const [isDesktop] = useMediaQuery("(min-width: 1550px)")
     const [menuOpen, setMenuOpen] = useState(false)
     const [navBarHovered, setNavBarHovered] = useState('')
     const openInNewTab = url => {
@@ -101,7 +102,7 @@ function PageNav({selectedNav, handleNavSelection, handleAnimation, animation}){
          alignItems={'center'} 
          fontWeight={400} 
          mr={5}
-         fontSize={'16px'}>
+         fontSize={ isDesktop ? '30px' : '16px'}>
         <Flex ml={2}> 
             <Text
              onMouseLeave={() => setNavBarHovered('')}

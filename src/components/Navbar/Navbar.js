@@ -6,10 +6,8 @@ import {Stack, Flex, Image, useMediaQuery} from '@chakra-ui/react'
 function Navbar({selectedPage}){
     const [selectedNav, setSelectedNav] = useState(null)
     const [animation, setAnimation] = useState(false)
-    const [isMobile] = useMediaQuery("(max-width: 768px)", {
-        ssr: true,
-        fallback: false,
-    })
+    const [isMobile] = useMediaQuery("(max-width: 768px)")
+    const [isDesktop] = useMediaQuery("(min-width: 1550px)")
     
     function handleClick(){
         const section = document.getElementById('home-container')
@@ -44,8 +42,8 @@ function Navbar({selectedPage}){
          color={'white'}>
             <Flex ml={ isMobile ? 5 : '33px'}>
                 <Image 
-                 width={'50px'}
-                 height={'50px'} 
+                 width={isDesktop ? '100px' : '50px'}
+                 height={isDesktop ? '100px' : '50px'}
                  cursor={'pointer'} 
                  onClick={handleClick}
                  src={logo}/>
