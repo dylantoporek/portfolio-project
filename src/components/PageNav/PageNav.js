@@ -160,7 +160,7 @@ function PageNav({selectedNav, handleNavSelection, handleAnimation, animation}){
              cursor={'pointer'}
              onClick={()=> 
                 openInNewTab(
-                    'https://drive.google.com/file/d/1APNgek--JsLy05tjixRrRFtrf09HVQsY/view?usp=sharing/file/d/1APNgek--JsLy05tjixRrRFtrf09HVQsY/view?usp=sharing'
+                    'https://drive.google.com/file/d/1APNgek--JsLy05tjixRrRFtrf09HVQsY/view?usp=sharing'
                     )}>
                 Resume
             </Text>
