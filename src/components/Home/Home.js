@@ -16,26 +16,8 @@ import { Flex, Stack, Heading } from "@chakra-ui/react";
 
 function Home({}){
     return (
-        <Stack 
-            id='home-container'
-            position={'relative'}
-            flexDirection={'column'}
-            width={'100%'}
-            top={'0%'}
-            backgroundColor={'#FFF9FB'}>
-            
-            <Landing/>
-            <About/>
-            <InteractiveResume/>
-            
-            <ProjectItem />
-
-            
-            {/* <div id='home-skills'>
-            <h3>Skills</h3>
-                <Skills/>
-            </div> */}
-            
+        <Stack>
+        
         </Stack>
       );
 }
