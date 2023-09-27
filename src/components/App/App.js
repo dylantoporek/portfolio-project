@@ -24,29 +24,26 @@ function App() {
   return (
     <ChakraProvider>
       <Stack
+        color={'#F7F7F9'}
         alignItems={'center'}
         justifyContent={'center'}
         position={'relative'}
         flexDirection={'column'}
-        backgroundColor={'#E6E6E6'}
-        h={'100vh'}
-        w={'100vw'}>
-          
-        <Flex flexDir={'column'} p={10} border={'1px solid black'} h={'90vh'} w={'96vw'}>
-          <Heading size={'3xl'} fontWeight={200} mb={4}>Dylan Toporek</Heading>
-          <Heading size={'md'} fontWeight={300}>Full Stack Engineer & Developer</Heading>
-          
-          <Flex mt={10}>
-            <Navbar/>
-          </Flex>
+        backgroundColor={'#1D1D20'}
+        minH={'100vh'}
+        minW={'100vw'}>
+
+        <Flex flexDir={'column'} p={10} h={'100vh'} w={'100vw'}>
+          <Contact/>
+          <Routes>
+              <Route path='/' element={<Home changePage={changePage}/>}/>
+              <Route path='/projects' element={<ProjectItem changePage={changePage}/>}/>
+              <Route path='/experience' element={<InteractiveResume changePage={changePage}/>}/>
+          </Routes>
         </Flex>
 
        
-        <Routes>
-          <Route path='/' element={<Home changePage={changePage}/>}/>
-          <Route path='/projects' element={<ProjectItem changePage={changePage}/>}/>
-          <Route path='/experience' element={<InteractiveResume changePage={changePage}/>}/>
-        </Routes>
+        
       </Stack>
     </ChakraProvider>
 

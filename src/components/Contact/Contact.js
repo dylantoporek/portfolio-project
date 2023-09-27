@@ -25,24 +25,14 @@ const openInNewTab = url => {
     }
 
   return (
-    <Stack 
-      height={'30%'}
-      className="contact-bar" 
-      ml={'30px'} 
-      alignItems={'center'}
-      width={'60px'}
-      position={'fixed'}
-      bottom={10}
-      zIndex={1}
-      left={0}>
-        <Flex mb={10} mt={1}> 
+    <Stack flexDir={'horizontal'} gap={10} justifyContent={'flex-end'}>
+        <Flex 
+          onMouseOver={handleHover} 
+          onMouseOut={handleLeave}> 
           <Link
-            onMouseEnter={handleHover} 
-            onMouseLeave={handleLeave} 
             onClick={()=> openInNewTab("https://www.linkedin.com/in/dylan-toporek-bb3491106/")}>
-            <FontAwesomeIcon id='linkedin' icon={faLinkedin} color={isHovered === 'linkedin' ? '#061A40' : "#4B88A2"} style={{
+            <FontAwesomeIcon   id='linkedin' icon={faLinkedin} color={isHovered === 'linkedin' ? 'white' : "#4B88A2"} style={{
               position: 'relative',
-              top: isHovered === 'linkedin' ? '-5px' : '0px',
               width: '30px',
               height: '30px',
               transition: "all .3s ease",
@@ -51,15 +41,14 @@ const openInNewTab = url => {
             }}/>
           </Link>
         </Flex>
-        <Flex mb={10}>
+        <Flex
+          onMouseOver={handleHover}
+          onMouseOut={handleLeave}>
           <Link
-            onMouseEnter={handleHover}
-            onMouseLeave={handleLeave} 
             onClick={()=> openInNewTab("https://github.com/dylantoporek")}>
-            <FontAwesomeIcon id='github' icon={faGithub} color={isHovered === 'github' ? '#061A40' : "#4B88A2"} style={{
+            <FontAwesomeIcon id='github' icon={faGithub} color={isHovered === 'github' ? 'white' : "#4B88A2"} style={{
               position: 'relative',
-              top: isHovered === 'github' ? '-5px' : '0px',
-              width: '30px',
+              width: isHovered === 'github' ? '30px':'30px',
               height: '30px',
               transition: "all .3s ease",
               WebkitTransition: "all .3s ease",
@@ -68,15 +57,14 @@ const openInNewTab = url => {
             </Link> 
         </Flex>
 
-        <Flex mb={10}>
+        <Flex
+          onMouseOver={handleHover} 
+          onMouseOut={handleLeave} >
           <Link
-            onMouseEnter={handleHover} 
-            onMouseLeave={handleLeave} 
             onClick={()=> openInNewTab("https://medium.com/@dylantoporek")}>
-            <FontAwesomeIcon id='medium' icon={faMedium} color={isHovered === 'medium' ? '#061A40' : "#4B88A2"} style={{
+            <FontAwesomeIcon id='medium' icon={faMedium} color={isHovered === 'medium' ? 'white' : "#4B88A2"} style={{
               position: 'relative',
-              top: isHovered === 'medium' ? '-5px' : '0px',
-              width: '30px',
+              width: isHovered === 'medium' ? '30px':'30px',
               height: '30px',
               transition: "all .3s ease",
               WebkitTransition: "all .3s ease",
@@ -84,7 +72,6 @@ const openInNewTab = url => {
             }} /> 
           </Link>
         </Flex>
-        <Flex maxW={'2px'} w={'1%'} minH={'100%'} backgroundColor={"#4B88A2"}></Flex>
     </Stack>
   )
 }

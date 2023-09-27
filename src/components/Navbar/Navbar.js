@@ -10,7 +10,7 @@ function Navbar({selectedPage}){
     const [animation, setAnimation] = useState(false)
     const [isMobile] = useMediaQuery("(max-width: 768px)")
     const [isDesktop] = useMediaQuery("(min-width: 1550px)")
-    const navbarItems = ['Home', 'Projects', 'Experience', 'Contact']
+    const navbarItems = ['Home', 'Projects', 'Experience']
     
     function handleClick(){
         const section = document.getElementById('home-container')
@@ -31,7 +31,7 @@ function Navbar({selectedPage}){
     }
 
     function handleNavigate(string) {
-
+      console.log(string)
         if (string === 'Home') {
             navigate('/')
         } else {
@@ -41,33 +41,21 @@ function Navbar({selectedPage}){
         
     }
 
-    function handleNavbarItemText(string){
-
-    let lowercaseString = string.toLowerCase()
-       if(window.location.href.includes(lowercaseString)){
-        return <Flex width={'10px'} h={'10px'} borderRadius={'50%'} backgroundColor={'black'}></Flex>
-       } else if(string === 'Home' && window.location.href[window.location.href.length - 1] === '/'){
-        return <Flex width={'10px'} h={'10px'} borderRadius={'50%'} backgroundColor={'black'}></Flex>
-       } else return string
-         
-        // : 
-        // string
-    }
     
     return (
         <Stack>
-            <Flex flexDir={'column'}>
+            <Flex>
                 {navbarItems.map((item) => <Flex 
                     key={item}
                     cursor={'pointer'} 
                     mb={5} 
                     fontSize={12} 
                     fontWeight={700}
-                    color={selectedNav === item ? '#0A81D1' : 'black'}
+                    color={selectedNav === item ? '#41E2BA' : '#F7F7F9'}
                     onMouseOver={(e) => setSelectedNav(e.target.innerText) }
                     onMouseOut={() => setSelectedNav(null)}
                     onClick={(e) => handleNavigate(`${e.target.innerText}`)}>
-                        {handleNavbarItemText(item)}
+                        {item} //
                     </Flex>
                 )}
             </Flex>
