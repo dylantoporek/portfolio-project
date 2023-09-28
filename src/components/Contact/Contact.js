@@ -10,7 +10,7 @@ import {
 import { Flex, Stack, Link } from "@chakra-ui/react";
 import {HamburgerIcon} from '@chakra-ui/icons'
 
-function Contact(){
+function Contact({toggleNavbar, setToggleNavbar}){
 const [isHovered, setIsHovered] = useState('')
 const contactMethods = ['github', 'linkedin', 'medium']
 
@@ -50,15 +50,16 @@ const openInNewTab = string => {
     }
 
   return (
-    <Stack flexDir={'horizontal'} gap={5} justifyContent={'space-between'} alignItems={'center'}>
-       <Flex p={1}>
+    <Stack flexDir={'horizontal'} gap={5} justifyContent={'space-between'} alignItems={'center'} minH={'80px'}>
+       <Flex onClick={() => setToggleNavbar(!toggleNavbar)} cursor={'pointer'} ml={2}>
           <HamburgerIcon boxSize={8}/>
         </Flex>
-        <Flex gap={5}>
+        <Flex gap={5} alignSelf={'center'} mr={'2'}>
         {contactMethods.map((method) => {
           return (
             <Flex
-              p={1}
+              cursor={'pointer'}
+              ml={'20px'}
               zIndex={1}
               onMouseOver={handleHover} 
               onMouseLeave={handleLeave}>
