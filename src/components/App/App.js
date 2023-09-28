@@ -27,14 +27,20 @@ function App() {
         color={'#F7F7F9'}
         alignItems={'center'}
         justifyContent={'center'}
-        position={'relative'}
         flexDirection={'column'}
         backgroundColor={'#1D1D20'}
-        minH={'100vh'}
-        minW={'100vw'}>
+        p={isMobile ? 2: 10}
+        minW={'100vw'}
+        maxH={'-webkit-fit-content'}>
           
-          <Flex flexDir={'column'} p={20} alignSelf={'center'}>
-            <Contact/>
+          <Flex 
+            flexDir={'column'} 
+            p={isMobile ? 2: 10}
+            alignSelf={'center'}
+            minH={'90vh'}
+            maxW={'90vw'}>
+              <Navbar/>
+              <Contact/>
             <Routes>
                 <Route path='/' element={<Home changePage={changePage}/>}/>
                 <Route path='/projects' element={<ProjectItem changePage={changePage}/>}/>

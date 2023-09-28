@@ -8,6 +8,7 @@ import {
   faMedium
 } from '@fortawesome/free-brands-svg-icons'
 import { Flex, Stack, Link } from "@chakra-ui/react";
+import {HamburgerIcon} from '@chakra-ui/icons'
 
 function Contact(){
 const [isHovered, setIsHovered] = useState('')
@@ -49,7 +50,11 @@ const openInNewTab = string => {
     }
 
   return (
-    <Stack flexDir={'horizontal'} gap={10} justifyContent={'flex-end'}>
+    <Stack flexDir={'horizontal'} gap={5} justifyContent={'space-between'} alignItems={'center'}>
+       <Flex p={1}>
+          <HamburgerIcon boxSize={8}/>
+        </Flex>
+        <Flex gap={5}>
         {contactMethods.map((method) => {
           return (
             <Flex
@@ -73,6 +78,8 @@ const openInNewTab = string => {
             </Flex>
           )
         })}
+        </Flex>
+          
     </Stack>
   )
 }
