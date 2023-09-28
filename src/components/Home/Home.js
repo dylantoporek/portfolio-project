@@ -20,30 +20,31 @@ function Home({}){
         fallback: false,
     })
     return (
-        <Stack mt={10}>
+        <Stack mt={10} transition={'all ease-in .2s'}>
             <Flex 
              flexDir={'column'} 
              alignSelf={'center'}
              p={5}
              fontSize={14}
+             fontWeight={300}
              maxW={'100%'}>
-                <Heading fontSize={isMobile ? 40:70} mb={4}>
+                <Heading fontSize={isMobile ? 40:70} fontWeight={200} mb={4}>
                     Welcome.
                 </Heading>
-                <Flex>
+                <Flex ml={isMobile ? 0:3} maxW={isMobile ? '100%' : '60%'}>
                     <Flex 
                         background={'linear-gradient(to top,  #90EE90 0%, #67D89A 20%, #34BEA5 40%, #1EA9AC 60%, #1D80AF 80%, #1C61B1 100%)'} 
-                        w={isMobile ? '10px' : '2px'}
-                        minH={'95%'}
-                        maxH={'95%'}
-                        marginTop={2}
-                        marginBottom={2}>
+                        minW={'3px'}
+                        borderRadius={'5em'}
+                        marginRight={1}
+                        mt={5}
+                        mb={5}>
                     </Flex>
                     <Flex p={4} flexDir={'column'}>
-                        <Text mb={2}>
+                        <Text mb={4}>
                             My name is Dylan Toporek and I am a fullstack engineer & developer based in Syracuse, New York. I taught math to middle and high school students for a several years before transitioning careers to software engineering.
                         </Text>
-                        <Text mb={2}>
+                        <Text mb={4}>
                             I am passionate about developing pixel perfect interfaces, intuitive UX, and well structured systems. 
                         </Text>
                         <Text>
