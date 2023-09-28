@@ -11,67 +11,68 @@ import { Flex, Stack, Link } from "@chakra-ui/react";
 
 function Contact(){
 const [isHovered, setIsHovered] = useState('')
+const contactMethods = ['github', 'linkedin', 'medium']
 
 
-const openInNewTab = url => {
-  window.open(url, '_blank', 'noopener,noreferrer');
+const openInNewTab = string => {
+  if (string === 'github'){
+    let url = "https://github.com/dylantoporek"
+    window.open(url, '_blank', 'noopener,noreferrer');
+  } else if (string === 'linkedin'){
+    let url = "https://www.linkedin.com/in/dylan-toporek-bb3491106/"
+    window.open(url, '_blank', 'noopener,noreferrer');
+  } else if (string === 'medium'){
+    let url = "https://medium.com/@dylantoporek"
+    window.open(url, '_blank', 'noopener,noreferrer');
+  }
+
 };
     function handleHover(e){
       setIsHovered(e.target.id)
     }
 
     function handleLeave(){
-      setIsHovered('')
+      setTimeout(() => {
+        setIsHovered('')
+      }, 100)
+      
+    }
+
+    function iconPicker(string){
+      if (string === 'github'){
+        return faGithub
+      } else if (string === 'linkedin'){
+        return faLinkedin
+      } else if (string === 'medium'){
+        return faMedium
+      }
     }
 
   return (
     <Stack flexDir={'horizontal'} gap={10} justifyContent={'flex-end'}>
-        <Flex 
-          onMouseOver={handleHover} 
-          onMouseOut={handleLeave}> 
-          <Link
-            onClick={()=> openInNewTab("https://www.linkedin.com/in/dylan-toporek-bb3491106/")}>
-            <FontAwesomeIcon   id='linkedin' icon={faLinkedin} color={isHovered === 'linkedin' ? 'white' : "#4B88A2"} style={{
+        {contactMethods.map((method) => {
+          return (
+            <Flex
+              p={1}
+              zIndex={1}
+              onMouseOver={handleHover} 
+              onMouseLeave={handleLeave}>
+              <FontAwesomeIcon
+              onClick={() =>  openInNewTab(method)}  
+              id={method}
+              icon={iconPicker(method)} 
+              color={isHovered === method ? 'white' : "#4B88A2"} 
+              style={{
               position: 'relative',
-              width: '30px',
-              height: '30px',
+              width: '25px',
+              height: '25px',
               transition: "all .3s ease",
               WebkitTransition: "all .3s ease",
               MozTransition: "all .3s ease",
             }}/>
-          </Link>
-        </Flex>
-        <Flex
-          onMouseOver={handleHover}
-          onMouseOut={handleLeave}>
-          <Link
-            onClick={()=> openInNewTab("https://github.com/dylantoporek")}>
-            <FontAwesomeIcon id='github' icon={faGithub} color={isHovered === 'github' ? 'white' : "#4B88A2"} style={{
-              position: 'relative',
-              width: isHovered === 'github' ? '30px':'30px',
-              height: '30px',
-              transition: "all .3s ease",
-              WebkitTransition: "all .3s ease",
-              MozTransition: "all .3s ease",
-            }}/>
-            </Link> 
-        </Flex>
-
-        <Flex
-          onMouseOver={handleHover} 
-          onMouseOut={handleLeave} >
-          <Link
-            onClick={()=> openInNewTab("https://medium.com/@dylantoporek")}>
-            <FontAwesomeIcon id='medium' icon={faMedium} color={isHovered === 'medium' ? 'white' : "#4B88A2"} style={{
-              position: 'relative',
-              width: isHovered === 'medium' ? '30px':'30px',
-              height: '30px',
-              transition: "all .3s ease",
-              WebkitTransition: "all .3s ease",
-              MozTransition: "all .3s ease",
-            }} /> 
-          </Link>
-        </Flex>
+            </Flex>
+          )
+        })}
     </Stack>
   )
 }

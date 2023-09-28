@@ -32,15 +32,18 @@ function App() {
         backgroundColor={'#1D1D20'}
         minH={'100vh'}
         minW={'100vw'}>
+          
+          <Flex flexDir={'column'} p={20} alignSelf={'center'}>
+            <Contact/>
+            <Routes>
+                <Route path='/' element={<Home changePage={changePage}/>}/>
+                <Route path='/projects' element={<ProjectItem changePage={changePage}/>}/>
+                <Route path='/experience' element={<InteractiveResume changePage={changePage}/>}/>
+            </Routes>
+          </Flex>
 
-        <Flex flexDir={'column'} p={10} h={'100vh'} w={'100vw'}>
-          <Contact/>
-          <Routes>
-              <Route path='/' element={<Home changePage={changePage}/>}/>
-              <Route path='/projects' element={<ProjectItem changePage={changePage}/>}/>
-              <Route path='/experience' element={<InteractiveResume changePage={changePage}/>}/>
-          </Routes>
-        </Flex>
+
+        
 
        
         
