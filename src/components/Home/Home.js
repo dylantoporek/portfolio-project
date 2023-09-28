@@ -41,7 +41,7 @@ function Home({}){
                     </Flex>
                     <Flex p={4} flexDir={'column'}>
                         <Text mb={2}>
-                            My name is Dylan Toporek and I am a fullstack enginner & developer based in Syracuse, New York. I taught math to middle and high school students for a several years before transitioning careers to software engineering.
+                            My name is Dylan Toporek and I am a fullstack engineer & developer based in Syracuse, New York. I taught math to middle and high school students for a several years before transitioning careers to software engineering.
                         </Text>
                         <Text mb={2}>
                             I am passionate about developing pixel perfect interfaces, intuitive UX, and well structured systems. 
