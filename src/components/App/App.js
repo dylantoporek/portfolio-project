@@ -3,7 +3,10 @@ import { Route, Routes } from 'react-router-dom';
 import Navbar from '../../components/Navbar/Navbar';
 import Home from '../../components/Home/Home'
 import Contact from '../../components/Contact/Contact';
-import { ChakraProvider, Stack, useMediaQuery } from '@chakra-ui/react'
+import { ChakraProvider, Stack, useMediaQuery, Flex, Heading } from '@chakra-ui/react'
+import '../../index.scss'
+import ProjectItem from '../ProjectItem/ProjectItem';
+import InteractiveResume from '../InteractiveResume/InteracticeResume';
 
 
 function App() {
@@ -20,16 +23,34 @@ function App() {
 
   return (
     <ChakraProvider>
-    <Stack 
-      flexDir={'column'}
-      background-color={'#FFF9FB'}>
-      <Navbar selectedPage={selectedPage}/>
-      {isMobile ? null : <Contact/>}
-      <Routes>
-        <Route path='/' element={<Home changePage={changePage}/>}/>
-      </Routes>
-    </Stack>
+      <Stack
+        color={'#F7F7F9'}
+        alignItems={'center'}
+        justifyContent={'center'}
+        position={'relative'}
+        flexDirection={'column'}
+        backgroundColor={'#1D1D20'}
+        minH={'100vh'}
+        minW={'100vw'}>
+          
+          <Flex flexDir={'column'} p={20} alignSelf={'center'}>
+            <Contact/>
+            <Routes>
+                <Route path='/' element={<Home changePage={changePage}/>}/>
+                <Route path='/projects' element={<ProjectItem changePage={changePage}/>}/>
+                <Route path='/experience' element={<InteractiveResume changePage={changePage}/>}/>
+            </Routes>
+          </Flex>
+
+
+        
+
+       
+        
+      </Stack>
     </ChakraProvider>
+
+
   );
 }
 

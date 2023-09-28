@@ -14,6 +14,16 @@ function InteractiveResume(){
     let w = window.screen.width - 65
     const experienceDetails = [
         {
+            company: 'GivtMe',
+            jobTitle: 'Software Engineer',
+            details: [
+                'iOS development using Swift',
+                'Android development using Kotlin',
+                'Updated UI elements to create a more cohesive experience',
+            ],
+            dates: '08/2023 - Present'
+        },
+        {
             company: 'Rhabit Analytics',
             jobTitle: 'Junior Software Engineer',
             details: [
