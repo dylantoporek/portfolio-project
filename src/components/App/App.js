@@ -15,12 +15,12 @@ function App() {
     ssr: true,
     fallback: false,
 })
-
+const [toggleNavbar, setToggleNavbar] = useState(false)
   function changePage(str){
     setSelectedPage(str)
   }
 
-
+console.log(toggleNavbar)
   return (
     <ChakraProvider>
       <Stack
@@ -29,18 +29,18 @@ function App() {
         justifyContent={'center'}
         flexDirection={'column'}
         backgroundColor={'#1D1D20'}
-        p={isMobile ? 2: 10}
+        p={isMobile ? 2: 0}
         minW={'100vw'}
-        maxH={'-webkit-fit-content'}>
-          
+        minH={'100vh'}>
+        <Navbar toggleNavbar={toggleNavbar} setToggleNavbar={setToggleNavbar}/>  
           <Flex 
             flexDir={'column'} 
-            p={isMobile ? 2: 10}
+            p={isMobile ? 2: 0}
             alignSelf={'center'}
             minH={'90vh'}
             maxW={'90vw'}>
-              <Navbar/>
-              <Contact/>
+              
+              <Contact toggleNavbar={toggleNavbar} setToggleNavbar={setToggleNavbar}/>
             <Routes>
                 <Route path='/' element={<Home changePage={changePage}/>}/>
                 <Route path='/projects' element={<ProjectItem changePage={changePage}/>}/>
