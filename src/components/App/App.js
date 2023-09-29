@@ -35,13 +35,14 @@ const [toggleNavbar, setToggleNavbar] = useState(false)
         minW={'100vw'}
         minH={'100vh'}>
           <Flex
+            justifyContent={'center'}
             transition={'all ease-in .2s'} 
-            flexDir={'column'} 
+            flexDir={'column'}
+            mt={isMobile ? 0 : 2} 
             p={isMobile ? 5: 0}
             alignSelf={'center'}
-            h={'96vh'}
-            maxW={'100vw'}>
-              
+            minH={isMobile ? '85vh':'80vh'}
+            maxW={'90vw'}>
               {/* <Contact toggleNavbar={toggleNavbar} setToggleNavbar={setToggleNavbar}/> */}
             <Routes>
                 <Route path='/' element={<Home changePage={changePage}/>}/>
