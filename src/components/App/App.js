@@ -20,27 +20,29 @@ const [toggleNavbar, setToggleNavbar] = useState(false)
     setSelectedPage(str)
   }
 
-console.log(toggleNavbar)
   return (
     <ChakraProvider>
+      <Flex w={'100vw'} color={'#F7F7F9'} position={'fixed'} zIndex={1}>
+        <Navbar toggleNavbar={toggleNavbar} setToggleNavbar={setToggleNavbar}/>
+      </Flex>
       <Stack
         color={'#F7F7F9'}
         alignItems={'center'}
         justifyContent={'center'}
         flexDirection={'column'}
         backgroundColor={'#1D1D20'}
-        p={isMobile ? 2: 0}
+        p={isMobile ? 5: 0}
         minW={'100vw'}
         minH={'100vh'}>
-        <Navbar toggleNavbar={toggleNavbar} setToggleNavbar={setToggleNavbar}/>  
-          <Flex 
+          <Flex
+            transition={'all ease-in .2s'} 
             flexDir={'column'} 
-            p={isMobile ? 2: 0}
+            p={isMobile ? 5: 0}
             alignSelf={'center'}
-            minH={'90vh'}
-            maxW={'90vw'}>
+            h={'96vh'}
+            maxW={'100vw'}>
               
-              <Contact toggleNavbar={toggleNavbar} setToggleNavbar={setToggleNavbar}/>
+              {/* <Contact toggleNavbar={toggleNavbar} setToggleNavbar={setToggleNavbar}/> */}
             <Routes>
                 <Route path='/' element={<Home changePage={changePage}/>}/>
                 <Route path='/projects' element={<ProjectItem changePage={changePage}/>}/>
