@@ -46,18 +46,10 @@ function Navbar({toggleNavbar, setToggleNavbar}){
                 <Flex justifyContent={'flex-end'} gap={'10px'}>
                     {navbarItems.map((item) => {
                         return (
-                            <Flex
-                                cursor={'pointer'} 
-                                key={item} 
-                                backgroundColor={() => checkURl(item)} 
-                                p={2} 
-                                paddingLeft={'10px'} 
-                                paddingRight={'10px'} 
-                                borderRadius={'5em'}>
-                                <Text color={() => handleColorPicker(item)} 
-                                      onClick={() => handleNavigate(item)}>
+                            <Flex>
+                                <Button cursor={'pointer'} key={item} _hover={{ bg: '#90EE90', color: 'black'}} backgroundColor={() => checkURl(item)} p={2} paddingLeft={'10px'} paddingRight={'10px'} borderRadius={'5em'} color={() => handleColorPicker(item)} onClick={() => handleNavigate(item)}>
                                     {item}
-                                </Text>
+                                </Button>
                             </Flex>
                         )
                     })}
@@ -70,7 +62,7 @@ function Navbar({toggleNavbar, setToggleNavbar}){
                     {navbarItems.map((item) => {
                         return (
                             <Flex>
-                                <Button cursor={'pointer'} key={item} _hover={{ bg: '#67D89A', color: 'black'}} backgroundColor={() => checkURl(item)} p={2} paddingLeft={'10px'} paddingRight={'10px'} borderRadius={'5em'} color={() => handleColorPicker(item)} onClick={() => handleNavigate(item)}>
+                                <Button cursor={'pointer'} key={item} _hover={{ bg: '#90EE90', color: 'black'}} backgroundColor={() => checkURl(item)} p={2} paddingLeft={'10px'} paddingRight={'10px'} borderRadius={'5em'} color={() => handleColorPicker(item)} onClick={() => handleNavigate(item)}>
                                     {item}
                                 </Button>
                             </Flex>
