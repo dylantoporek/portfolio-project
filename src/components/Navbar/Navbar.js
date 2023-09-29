@@ -58,11 +58,11 @@ function Navbar({toggleNavbar, setToggleNavbar}){
         )
     } else return (
         <Stack w={'100%'} p={4}>
-                <Flex justifyContent={'flex-end'} mr={10} mt={5} gap={'10px'} fontSize={'14px'}>
+                <Flex justifyContent={'flex-end'} mr={10} mt={5} gap={'20px'} fontSize={'14px'}>
                     {navbarItems.map((item) => {
                         return (
                             <Flex>
-                                <Button cursor={'pointer'} key={item} _hover={{ bg: '#90EE90', color: 'black'}} backgroundColor={() => checkURl(item)} p={2} paddingLeft={'10px'} paddingRight={'10px'} borderRadius={'5em'} color={() => handleColorPicker(item)} onClick={() => handleNavigate(item)}>
+                                <Button cursor={'pointer'} key={item} _hover={{  bg: '#90EE90', color: 'black'}} backgroundColor={() => checkURl(item)} p={2} paddingLeft={'10px'} paddingRight={'10px'} borderRadius={'5em'} color={() => handleColorPicker(item)} onClick={() => handleNavigate(item)}>
                                     {item}
                                 </Button>
                             </Flex>
