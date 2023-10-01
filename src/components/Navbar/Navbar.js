@@ -46,8 +46,18 @@ function Navbar({toggleNavbar, setToggleNavbar}){
                 <Flex justifyContent={'flex-end'} gap={'10px'}>
                     {navbarItems.map((item) => {
                         return (
-                            <Flex>
-                                <Button cursor={'pointer'} key={item} _hover={{ bg: '#90EE90', color: 'black'}} backgroundColor={() => checkURl(item)} p={2} paddingLeft={'10px'} paddingRight={'10px'} borderRadius={'5em'} color={() => handleColorPicker(item)} onClick={() => handleNavigate(item)}>
+                            <Flex key={item + 'mobile'}>
+                                <Button 
+                                    cursor={'pointer'} 
+                                    key={item} 
+                                    _hover={{ bg: '#90EE90', color: 'black'}} 
+                                    backgroundColor={() => checkURl(item)} 
+                                    p={2} 
+                                    paddingLeft={'10px'} 
+                                    paddingRight={'10px'}
+                                    borderRadius={'5em'} 
+                                    color={() => handleColorPicker(item)} 
+                                    onClick={() => handleNavigate(item)}>
                                     {item}
                                 </Button>
                             </Flex>
@@ -61,7 +71,7 @@ function Navbar({toggleNavbar, setToggleNavbar}){
                 <Flex justifyContent={'flex-end'} mr={10} mt={5} gap={'20px'} fontSize={'14px'}>
                     {navbarItems.map((item) => {
                         return (
-                            <Flex>
+                            <Flex key={item}>
                                 <Button cursor={'pointer'} key={item} _hover={{  bg: '#90EE90', color: 'black'}} backgroundColor={() => checkURl(item)} p={2} paddingLeft={'10px'} paddingRight={'10px'} borderRadius={'5em'} color={() => handleColorPicker(item)} onClick={() => handleNavigate(item)}>
                                     {item}
                                 </Button>

@@ -9,6 +9,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 import { Flex, Stack, Link } from "@chakra-ui/react";
 import {HamburgerIcon} from '@chakra-ui/icons'
+import { motion } from "framer-motion"
 
 function Contact({toggleNavbar, setToggleNavbar}){
 const [isHovered, setIsHovered] = useState('')
@@ -50,33 +51,35 @@ const openInNewTab = string => {
     }
 
   return (
-    <Stack flexDir={'horizontal'} gap={5} justifyContent={'space-between'} alignItems={'center'} minH={'80px'}>
-       <Flex onClick={() => setToggleNavbar(!toggleNavbar)} cursor={'pointer'} ml={2}>
-          <HamburgerIcon boxSize={8}/>
-        </Flex>
+    <Stack flexDir={'horizontal'} gap={5} minH={'80px'} w={'100%'}>
         <Flex gap={5} alignSelf={'center'} mr={'2'}>
         {contactMethods.map((method) => {
           return (
-            <Flex
-              cursor={'pointer'}
-              ml={'20px'}
-              zIndex={1}
-              onMouseOver={handleHover} 
-              onMouseLeave={handleLeave}>
+            <motion.div 
+            key={method}
+            whileHover={{scale: 1.1 }}
+            style={{
+              cursor: 'pointer',
+              h: '100%',
+              marginLeft: '20px'
+
+            }}>
               <FontAwesomeIcon
+              onMouseOver={() => setIsHovered(method)}
+              onMouseOut={() => setIsHovered('')}
               onClick={() =>  openInNewTab(method)}  
               id={method}
               icon={iconPicker(method)} 
               color={isHovered === method ? 'white' : "#4B88A2"} 
               style={{
               position: 'relative',
-              width: '25px',
-              height: '25px',
+              width: '20px',
+              height: '20px',
               transition: "all .3s ease",
               WebkitTransition: "all .3s ease",
               MozTransition: "all .3s ease",
             }}/>
-            </Flex>
+            </motion.div>
           )
         })}
         </Flex>
