@@ -6,7 +6,7 @@ import Contact from '../../components/Contact/Contact';
 import { ChakraProvider, Stack, useMediaQuery, Flex, Heading } from '@chakra-ui/react'
 import '../../index.scss'
 import ProjectItem from '../ProjectItem/ProjectItem';
-import InteractiveResume from '../InteractiveResume/InteracticeResume';
+import Experience from '../Experience/Experience';
 
 
 function App() {
@@ -35,27 +35,22 @@ const [toggleNavbar, setToggleNavbar] = useState(false)
         minW={'100vw'}
         minH={'100vh'}>
           <Flex
-            justifyContent={'center'}
-            transition={'all ease-in .2s'} 
+            backgroundColor={'#1D1D20'}
             flexDir={'column'}
-            mt={isMobile ? 0 : 2} 
             p={isMobile ? 5: 0}
-            alignSelf={'center'}
-            minH={isMobile ? '85vh':'80vh'}
-            maxW={'90vw'}>
-              {/* <Contact toggleNavbar={toggleNavbar} setToggleNavbar={setToggleNavbar}/> */}
+            h={isMobile ? '85vh':'80vh'}
+            maxW={'90vw'}
+            minW={'90vw'}
+            > 
             <Routes>
                 <Route path='/' element={<Home changePage={changePage}/>}/>
                 <Route path='/projects' element={<ProjectItem changePage={changePage}/>}/>
-                <Route path='/experience' element={<InteractiveResume changePage={changePage}/>}/>
+                <Route path='/experience' element={<Experience changePage={changePage}/>}/>
             </Routes>
           </Flex>
-
-
-        
-
-       
-        
+          <Flex position={'fixed'} bottom={0} w={'100%'}>
+            <Contact toggleNavbar={toggleNavbar} setToggleNavbar={setToggleNavbar}/>
+          </Flex>
       </Stack>
     </ChakraProvider>
 

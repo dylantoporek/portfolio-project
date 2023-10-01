@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import InteractiveResume from "../InteractiveResume/InteracticeResume";
+import InteractiveResume from "../Experience/Experience";
 import {useNavigate} from 'react-router-dom'
 import botw from '../../images/botw.png'
 import nintendo from '../../images/nintendo.png'
@@ -12,15 +12,40 @@ import Landing from '../Landing/Landing'
 import About from "../About/About";
 import ProjectItem from "../ProjectItem/ProjectItem";
 import { Flex, Stack, Text, Heading, useMediaQuery } from "@chakra-ui/react";
-
+import { motion } from "framer-motion"
 
 function Home({}){
+    const [loading, setLoading] = useState(true)
     const [isMobile] = useMediaQuery("(max-width: 768px)", {
         ssr: true,
         fallback: false,
     })
-    return (
-        <Stack mt={10} transition={'all ease-in .2s'}>
+
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         setLoading(false)
+    //     }, 200)
+    // })
+
+    const loadingOverlay = <motion.div
+    style={{
+        position: 'absolute',
+        w: '50px',
+        h: '50px',
+        backgroundColor: 'white'
+    }}
+    animate={{
+      scale: [1, 1, 1, 1, 1],
+      rotate: [0, 45, 90, 180, 360],
+      borderRadius: ["50%", "50%", "50%", "50%", "50%"],
+    }}
+  />
+
+return (
+        <motion.div initial={{ opacity: 0, scale: 1 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.2 }}>
+        <Stack>
             <Flex 
              flexDir={'column'} 
              alignSelf={'center'}
@@ -52,9 +77,10 @@ function Home({}){
                         </Text>
                     </Flex>
                 </Flex>
-                  
             </Flex>
         </Stack>
+        </motion.div>
+        
       );
 }
 
