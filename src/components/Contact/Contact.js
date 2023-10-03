@@ -7,14 +7,17 @@ import {
   faGithub,
   faMedium
 } from '@fortawesome/free-brands-svg-icons'
-import { Flex, Stack, Link } from "@chakra-ui/react";
+import { Flex, Stack, Link, useMediaQuery } from "@chakra-ui/react";
 import {HamburgerIcon} from '@chakra-ui/icons'
 import { motion } from "framer-motion"
 
 function Contact({toggleNavbar, setToggleNavbar}){
 const [isHovered, setIsHovered] = useState('')
 const contactMethods = ['github', 'linkedin', 'medium']
-
+const [isMobile] = useMediaQuery("(max-width: 768px)", {
+  ssr: true,
+  fallback: false,
+})
 
 const openInNewTab = string => {
   if (string === 'github'){
@@ -51,8 +54,8 @@ const openInNewTab = string => {
     }
 
   return (
-    <Stack flexDir={'horizontal'} gap={5} minH={'80px'} w={'100%'}>
-        <Flex gap={5} alignSelf={'center'} mr={'2'}>
+    <Stack gap={5} minH={'40px'} w={'100%'}>
+        <Flex flexDir={'row'} gap={5} alignSelf={'flex-start'}>
         {contactMethods.map((method) => {
           return (
             <motion.div 
@@ -61,7 +64,9 @@ const openInNewTab = string => {
             style={{
               cursor: 'pointer',
               h: '100%',
-              marginLeft: '20px'
+              marginLeft: isMobile ? '10px':'20px',
+              marginTop: isMobile ? '10px':'5px',
+              justifyItems:'center'
 
             }}>
               <FontAwesomeIcon

@@ -1,16 +1,5 @@
-import React, {useState, useEffect} from "react";
-import InteractiveResume from "../Experience/Experience";
-import {useNavigate} from 'react-router-dom'
-import botw from '../../images/botw.png'
-import nintendo from '../../images/nintendo.png'
-import lactate from '../../images/lactate_1.png'
-import poke from '../../images/poke.png'
-import pO from '../../images/promise_object.gif'
-import Skills from '../../components/Skills/Skills'
+import React, {useState} from "react";
 import '../Home/index.scss'
-import Landing from '../Landing/Landing'
-import About from "../About/About";
-import ProjectItem from "../ProjectItem/ProjectItem";
 import { Flex, Stack, Text, Heading, useMediaQuery } from "@chakra-ui/react";
 import { motion } from "framer-motion"
 
@@ -20,68 +9,49 @@ function Home({}){
         ssr: true,
         fallback: false,
     })
-
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //         setLoading(false)
-    //     }, 200)
-    // })
-
-    const loadingOverlay = <motion.div
-    style={{
-        position: 'absolute',
-        w: '50px',
-        h: '50px',
-        backgroundColor: 'white'
-    }}
-    animate={{
-      scale: [1, 1, 1, 1, 1],
-      rotate: [0, 45, 90, 180, 360],
-      borderRadius: ["50%", "50%", "50%", "50%", "50%"],
-    }}
-  />
-
-return (
-        <motion.div initial={{ opacity: 0, scale: 1 }}
+    
+    return (
+        <motion.div 
+        initial={{ opacity: 0, scale: 1 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.2 }}>
-        <Stack>
-            <Flex 
-             flexDir={'column'} 
-             alignSelf={'center'}
-             p={5}
-             fontSize={14}
-             fontWeight={300}
-             maxW={'100%'}>
-                <Heading fontSize={isMobile ? 40:70} fontWeight={200} mb={4}>
-                    Welcome.
-                </Heading>
-                <Flex ml={isMobile ? 0:3} maxW={isMobile ? '100%' : '60%'}>
-                    <Flex 
-                        background={'linear-gradient(to top,  #90EE90 0%, #67D89A 20%, #34BEA5 40%, #1EA9AC 60%, #1D80AF 80%, #1C61B1 100%)'} 
-                        minW={'3px'}
-                        borderRadius={'5em'}
-                        marginRight={1}
-                        mt={5}
-                        mb={5}>
-                    </Flex>
-                    <Flex p={4} flexDir={'column'}>
-                        <Text mb={4}>
-                            My name is Dylan Toporek and I am a fullstack engineer & developer based in Syracuse, New York. I taught math to middle and high school students for a several years before transitioning careers to software engineering.
-                        </Text>
-                        <Text mb={4}>
-                            I am passionate about developing pixel perfect interfaces, intuitive UX, and well structured systems. 
-                        </Text>
-                        <Text>
-                            Outside of work, my hobbies include playing games, cooking, hiking, and spending time with my dogs, Lily and Oaki.
-                        </Text>
+        transition={{ duration: 0.2 }}
+        >
+            <Stack>
+                <Flex 
+                flexDir={'column'} 
+                alignSelf={'center'}
+                p={isMobile ? 1 : 5}
+                fontSize={14}
+                fontWeight={300}
+                maxW={'100%'}>
+                    <Heading fontSize={isMobile ? 40:70} fontWeight={200} mb={4}>
+                        Welcome.
+                    </Heading>
+                    <Flex ml={isMobile ? 0:3} maxW={isMobile ? '100%' : '60%'}>
+                        <Flex 
+                            background={'linear-gradient(to top,  #90EE90 0%, #67D89A 20%, #34BEA5 40%, #1EA9AC 60%, #1D80AF 80%, #1C61B1 100%)'} 
+                            minW={'3px'}
+                            borderRadius={'5em'}
+                            marginRight={1}
+                            mt={5}
+                            mb={5}>
+                        </Flex>
+                        <Flex p={4} flexDir={'column'}>
+                            <Text mb={4}>
+                                My name is Dylan Toporek and I am a fullstack engineer & developer based in Syracuse, New York. I taught math to middle and high school students for a several years before transitioning careers to software engineering.
+                            </Text>
+                            <Text mb={4}>
+                                I am passionate about developing pixel perfect interfaces, intuitive UX, and well structured systems. 
+                            </Text>
+                            <Text>
+                                Outside of work, my hobbies include playing games, cooking, hiking, and spending time with my dogs, Lily and Oaki.
+                            </Text>
+                        </Flex>
                     </Flex>
                 </Flex>
-            </Flex>
-        </Stack>
+            </Stack>
         </motion.div>
-        
-      );
+    );
 }
 
 export default Home

@@ -5,7 +5,7 @@ import Home from '../../components/Home/Home'
 import Contact from '../../components/Contact/Contact';
 import { ChakraProvider, Stack, useMediaQuery, Flex, Heading } from '@chakra-ui/react'
 import '../../index.scss'
-import ProjectItem from '../ProjectItem/ProjectItem';
+import Projects from '../Projects/Projects';
 import Experience from '../Experience/Experience';
 
 
@@ -39,12 +39,12 @@ const [toggleNavbar, setToggleNavbar] = useState(false)
             flexDir={'column'}
             p={isMobile ? 5: 0}
             h={isMobile ? '85vh':'80vh'}
-            maxW={'90vw'}
-            minW={'90vw'}
+            maxW={'85vw'}
+            w={'85vw'}
             > 
             <Routes>
                 <Route path='/' element={<Home changePage={changePage}/>}/>
-                <Route path='/projects' element={<ProjectItem changePage={changePage}/>}/>
+                <Route path='/projects' element={<Projects changePage={changePage}/>}/>
                 <Route path='/experience' element={<Experience changePage={changePage}/>}/>
             </Routes>
           </Flex>
