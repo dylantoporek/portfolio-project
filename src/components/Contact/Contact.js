@@ -19,29 +19,19 @@ const [isMobile] = useMediaQuery("(max-width: 768px)", {
   fallback: false,
 })
 
-const openInNewTab = string => {
-  if (string === 'github'){
-    let url = "https://github.com/dylantoporek"
-    window.open(url, '_blank', 'noopener,noreferrer');
-  } else if (string === 'linkedin'){
-    let url = "https://www.linkedin.com/in/dylan-toporek-bb3491106/"
-    window.open(url, '_blank', 'noopener,noreferrer');
-  } else if (string === 'medium'){
-    let url = "https://medium.com/@dylantoporek"
-    window.open(url, '_blank', 'noopener,noreferrer');
-  }
-
-};
-    function handleHover(e){
-      setIsHovered(e.target.id)
+  const openInNewTab = string => {
+    if (string === 'github'){
+      let url = "https://github.com/dylantoporek"
+      window.open(url, '_blank', 'noopener,noreferrer');
+    } else if (string === 'linkedin'){
+      let url = "https://www.linkedin.com/in/dylan-toporek-bb3491106/"
+      window.open(url, '_blank', 'noopener,noreferrer');
+    } else if (string === 'medium'){
+      let url = "https://medium.com/@dylantoporek"
+      window.open(url, '_blank', 'noopener,noreferrer');
     }
 
-    function handleLeave(){
-      setTimeout(() => {
-        setIsHovered('')
-      }, 100)
-      
-    }
+  };
 
     function iconPicker(string){
       if (string === 'github'){

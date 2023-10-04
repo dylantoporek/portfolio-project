@@ -25,18 +25,18 @@ function Navbar({toggleNavbar, setToggleNavbar}){
     function checkURl(string){
         let url = window.location.href
         if (url.includes(string.toLowerCase())){
-            return '#90EE90'
+            return 'rgba(255, 255, 255, .1)'
         } else if (url[url.length - 1] === '/' && string === 'Home'){
-            return '#90EE90'
+            return 'rgba(255, 255, 255, .1)'
         } else return 'transparent'  
     }
 
     function handleColorPicker(string){
         let url = window.location.href
         if (url.includes(string.toLowerCase())){
-            return 'black'
+            return '#F7F7F9'
         } else if (url[url.length - 1] === '/' && string === 'Home'){
-            return 'black'
+            return '#F7F7F9'
         } else return null  
     }
 
@@ -46,11 +46,11 @@ function Navbar({toggleNavbar, setToggleNavbar}){
                 <Flex justifyContent={'flex-end'} gap={'10px'}>
                     {navbarItems.map((item) => {
                         return (
-                            <Flex key={item + 'mobile'}>
+                            <Flex key={item + 'mobile'} borderRadius={'.5em'}>
                                 <Button 
                                     cursor={'pointer'} 
                                     key={item} 
-                                    _hover={{ bg: '#90EE90', color: 'black'}} 
+                                    _hover={{  bg: 'rgba(255, 255, 255, .1)', color: '#F7F7F9'}} 
                                     backgroundColor={() => checkURl(item)} 
                                     p={2} 
                                     paddingLeft={'10px'} 
@@ -72,7 +72,17 @@ function Navbar({toggleNavbar, setToggleNavbar}){
                     {navbarItems.map((item) => {
                         return (
                             <Flex key={item}>
-                                <Button cursor={'pointer'} key={item} _hover={{  bg: '#90EE90', color: 'black'}} backgroundColor={() => checkURl(item)} p={2} paddingLeft={'10px'} paddingRight={'10px'} borderRadius={'5em'} color={() => handleColorPicker(item)} onClick={() => handleNavigate(item)}>
+                                <Button 
+                                 cursor={'pointer'}  
+                                 key={item} 
+                                 _hover={{  bg: 'rgba(255, 255, 255, .1)', color: '#F7F7F9'}} 
+                                 backgroundColor={() => checkURl(item)} 
+                                 p={2} 
+                                 paddingLeft={'10px'} 
+                                 paddingRight={'10px'} 
+                                 borderRadius={'5em'} 
+                                 color={() => handleColorPicker(item)} 
+                                 onClick={() => handleNavigate(item)}>
                                     {item}
                                 </Button>
                             </Flex>

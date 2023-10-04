@@ -50,7 +50,7 @@ export default function CaptionCarousel() {
   const cards = [
     {
       title: 'Breath of the Wild Cooking App',
-      text: 'A cooking mini-game with an online shop. Buy ingredients and cook them!',
+      text: 'A cooking mini-game with an in-game shop. Buy ingredients and cook them!',
       image: botw
     },
     {

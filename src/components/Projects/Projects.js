@@ -7,11 +7,10 @@ import './index.scss'
 import {Flex, Stack, Text, Image, Heading, Link, useMediaQuery, Button} from '@chakra-ui/react'
 import { motion } from "framer-motion"
 import CaptionCarousel from "../CaptionCarousel/CaptionCarousel";
+import ProjectItems from "../ProjectItems/ProjectItems";
 
 
 function Projects(){
-    const [showProjectDetails, setShowProjectDetails] = useState('Breath of the Wild Cooking App')
-    const [isShown, setIsShown] = useState('Breath of the Wild Cooking App');
     const [isMobile] = useMediaQuery("(max-width: 768px)", {
         ssr: true,
         fallback: false,
@@ -74,189 +73,6 @@ function Projects(){
         
     ])
 
-    function handleProjectClick(e){
-        if (showProjectDetails !== e.target.innerText){
-        let wasSelected = document.getElementById(`${showProjectDetails}`)
-        wasSelected.style.backgroundColor = 'aliceblue'
-        wasSelected.style.color = 'black'
-        e.target.style.backgroundColor = '#4B88A2'
-        e.target.style.color = 'white'
-        let details = document.getElementById('project-details-item')
-        details.className = 'animate__animated animate__fadeOut animate__fast'
-
-        let animationDirectionCheck = (wasSelected.value - e.target.value)
-        
-        setTimeout(()=>{
-         setShowProjectDetails(e.target.innerText)
-         let newDetails = document.getElementById('project-details-item')
-         if (animationDirectionCheck < 0){
-            newDetails.className = 'animate__animated animate__fadeIn'
-        } else {
-            newDetails.className = 'animate__animated animate__fadeIn'
-        }
-        }, 350)
-        
-     } else {
-        return null
-     }
-    }
-
-    function handleProjectHover(e){
-        setIsShown(e.target.value)
-        if(showProjectDetails === e.target.innerText){
-            e.target.style.backgroundColor = '#4B88A2'
-        }
-        else {
-            e.target.style.backgroundColor = 'lightblue'
-        }
-    }
-
-    function handleProjectLeave(e){
-        if(showProjectDetails === e.target.innerText){
-            e.target.style.backgroundColor = '#4B88A2'
-        }
-        else {
-            e.target.style.backgroundColor = '#FFF9FB'
-        }
-    }
-    const targetedProject = projects.find((project) => {
-        return project.title === showProjectDetails
-    })
-
-    function handleFontSizing(tag){
-        if (tag === 'heading') {
-          if(isDesktop){
-              return 45
-          } else if (isMobile){
-              return 18
-          } else return 20
-        } else if (tag === 'details'){
-          if(isDesktop){
-              return 30
-          } else if (isMobile){
-              return 14
-          } else return 16
-        } else if (tag === 'dates'){
-          if(isDesktop){
-              return 30
-          } else if (isMobile){
-              return 14
-          } else return 16
-        } else if (tag === 'links'){
-            if(isDesktop){
-                return 18
-            } else if (isMobile){
-                return 8
-            } else return 10
-          }
-          else if (tag === 'text-heading'){
-            if(isDesktop){
-                return 25
-            } else if (isMobile){
-                return 12
-            } else return 14
-          }
-          else if (tag === 'text'){
-            if(isDesktop){
-                return 22
-            } else if (isMobile){
-                return 10
-            } else return 12
-          }
-
-          
-      }
-
-
-    const projectButtonDisplay = projects.map((project)=>{
-        return <Button 
-            fontSize={isDesktop ? '20px' : undefined}
-            cursor={'pointer'}
-            mr={isMobile ? 5 : 0}
-            p={5}
-            minW={'fit-content'}
-            h={isDesktop ? '100px':'50px'}
-            key={project.title}
-            id={project.title} 
-            value={project.num}
-            onClick={handleProjectClick}
-            onMouseEnter={handleProjectHover}
-            onMouseLeave={handleProjectLeave}
-            style={{
-                backgroundColor: showProjectDetails === project.title ? '#4B88A2' : '#FFF9FB',
-                color: showProjectDetails === project.title ? 'white' : 'black', 
-            }}>
-                {project.title}
-            </Button> 
-    })
-
-    const projectDisplay = <Flex
-     id='project-details-item' 
-     key={targetedProject.title}
-     flexDirection={'column'}>
-        <Flex id='wriiten-info' flexDirection={'column'} p={10} w={'100%'}>
-            <Flex>
-                <Heading mb={2} fontSize={handleFontSizing('heading')}>{targetedProject.title}</Heading>
-            </Flex>
-            <Flex id='more-info' flexDir={'column'} justifyContent={'center'}>
-                <Text fontWeight={'600'} fontSize={handleFontSizing("dates")} mb={8}>{targetedProject.description}</Text>
-                    <Flex flexDir={'column'} alignItems={'center'} justifyItems={'center'} justifyContent={'center'} mt={isDesktop ? 10: 0} mb={isDesktop ? 20: 6}>
-                            <Image maxW={isMobile ? '200px': '35%'} src={targetedProject.image}/>
-                            <Flex mt={3} fontSize={handleFontSizing('links')}>
-                                <Link className="project-link" href={targetedProject.link} mr={3}>Demo</Link>
-                                <Text mr={3}>|</Text>
-                                <Link mr={3} className="project-link" href={targetedProject.frontend}>Frontend Repo</Link>
-                                <Text mr={3}>|</Text>
-                                <Link className="project-link" href={targetedProject.backend}>Backend Repo</Link>
-                            </Flex>
-                            
-                            <Flex mt={1} fontSize={handleFontSizing('links')}>
-                                <Text>Stage: {targetedProject.stage}</Text>
-                            </Flex>
-                    </Flex>
-                    <Flex mb={5}>
-                        <Flex flexDir={isMobile ? 'column':'row'} gap={2}>
-                            <Flex flexDir={'column'} alignItems={'center'} maxW={isMobile ? '100%':'33%'} textAlign={'left'}>
-                                <Text fontSize={handleFontSizing('text-heading')}>Goal</Text>
-                                <Text fontSize={handleFontSizing('text')} p={4} fontWeight={'400'} mb={3}>{targetedProject.goal}</Text>
-                            </Flex>
-                            <Flex flexDir={'column'} alignItems={'center'} maxW={isMobile ? '100%':'33%'}>
-                                <Text fontSize={handleFontSizing('text-heading')}>Issue</Text>
-                                <Text fontSize={handleFontSizing('text')} p={4} fontWeight={'400'} mb={3}>{targetedProject.issue}</Text>
-                            </Flex>
-                            <Flex flexDir={'column'} alignItems={'center'} maxW={isMobile ? '100%':'33%'}>
-                                <Text fontSize={handleFontSizing('text-heading')}>Solution</Text>
-                                <Text fontSize={handleFontSizing('text')} p={4} fontWeight={'400'} mb={3}>{targetedProject.solution}</Text>
-                            </Flex>
-                        </Flex>
-                    </Flex>
-                </Flex> 
-            </Flex>
-        </Flex>
-
-const gap = isDesktop ? 102.5: 52.5  
-const start = 0  
-    const animatedDisplay =
-    <div id='button-nav-animated'
-        style={{
-        position: 'absolute',
-        width: '5px',
-        height: '100%%',
-        borderRadius: '10px',
-        transition: "all .5s ease",
-        WebkitTransition: "all .5s ease",
-        MozTransition: "all .5s ease",   
-    }}> 
-        <div className="scroll-section" style={{
-            height: isDesktop ? '100px' : '50px',
-            backgroundColor:'#061A40',
-            top: 
-            showProjectDetails === 'Breath of the Wild Cooking App' ? -3 : null ||
-            showProjectDetails === 'Nintendo-Land' ? -3 + gap : null ||
-            showProjectDetails === 'Endurance Lactate Analyzer' ? -3 + (gap*2) : null ||
-            showProjectDetails === 'Pokemon Minigame App' ? -3 + (gap*3) : null
-        }}></div>              
-    </div>
 
     return (
         <motion.div 
@@ -271,88 +87,15 @@ const start = 0
                 fontSize={14}
                 fontWeight={300}
                 maxW={'100%'}>
-                    <Heading fontSize={isMobile ? 40:70} fontWeight={200} mb={4}>
+                    <Heading fontSize={isMobile ? 40:70} fontWeight={200} mb={isMobile ? 0:7}>
                         Projects
                     </Heading>
-                    <Flex ml={isMobile ? 0:3} maxW={isMobile ? '100%' : '60%'}>
-                        {/* <Flex 
-                            background={'linear-gradient(to top,  #90EE90 0%, #67D89A 20%, #34BEA5 40%, #1EA9AC 60%, #1D80AF 80%, #1C61B1 100%)'} 
-                            minW={'3px'}
-                            borderRadius={'5em'}
-                            marginRight={1}
-                            mt={5}
-                            mb={5}>
-                        </Flex> */}
-                        <Flex maxH={'80vh'}>
-                            <CaptionCarousel/>
-                        </Flex>
+                    <Flex ml={isMobile ? 0:3}>
+                        <ProjectItems/>
                     </Flex>
                 </Flex>
             </Stack>
         </motion.div>
-        // <Stack 
-        //  mt={isDesktop ? '250px' : 10}
-        //  padding={5}
-        //  id='home-projects'
-        //  position={'relative'}
-        //  width={'100%'}
-        //  flexDir={'column'}
-        //  alignSelf={'center'}>
-        //     <Flex 
-        //      justifyItems={'center'}
-        //      padding={5}
-        //      id='portfolio-container'
-        //      position={'relative'}
-        //      flexDirection={'column'}
-        //      w={'100%'}
-        //      borderRadius={'4%'}>
-                
-        //         <Flex id='projects-container' paddingTop={5} mt={10} justifyContent={'center'} ml={isMobile ? 0:10}>
-        //         {isMobile ? (
-        //                 <Flex flexDir={'column'} maxW={w}>
-        //                     <Heading className='section-title' id='project-title' color={'#016BA6'} py={5} fontSize={35} mb={0}>
-        //                         Projects
-        //                     </Heading>
-        //                     <Flex overflowX={'scroll'} scrollBehavior={'smooth'} mr={5}>
-        //                         {projectButtonDisplay}
-        //                     </Flex>
-        //                     <Flex id='work-details' backgroundColor={'#EBEBEB'} borderRadius={'.5em'}>
-        //                         {projectDisplay}
-        //                     </Flex>
-        //                 </Flex>
-
-        //             ) : (
-        //             <Flex w={isDesktop ? '71%' : '80%'} justifyContent={'center'} flexDir={'column'}>
-        //                     <Heading 
-        //                      className='section-title' 
-        //                      id='project-title' 
-        //                      color={'#016BA6'} 
-        //                      py={2} 
-        //                      fontSize={isDesktop ? 60: 35}
-        //                       mb={10}>
-        //                             Projects
-        //                         </Heading>
-        //                     <Flex mt={10}>
-        //                     <Flex w={'5px'} mr={isDesktop ? 10: 5}>
-        //                         {animatedDisplay}
-        //                     </Flex>
-
-        //                     <Flex id='project-buttons' mr={isDesktop ? 10: 5} gap={1}>
-        //                         {projectButtonDisplay}
-        //                     </Flex>
-                    
-        //                     <Flex 
-        //                     id='project-details' 
-        //                     p={isDesktop ? 16: 4} backgroundColor={'#EBEBEB'} borderRadius={'.5em'} h={isDesktop ? '1000px':'500px'} w={'100%'}>
-        //                         {projectDisplay}
-        //                     </Flex>
-        //                 </Flex>
-                             
-        //             </Flex>
-        //             )}
-        //         </Flex>
-        //     </Flex>
-        // </Stack>
     );
 }
 

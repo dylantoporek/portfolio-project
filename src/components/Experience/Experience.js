@@ -34,7 +34,7 @@ function Experience(){
                 'Kotlin',
                 'Firebase',
                 'iOS Development',
-                'Andriod Development'
+                'Android Development'
             ]
         },
         {
@@ -108,7 +108,7 @@ function Experience(){
 
     const variants = {
         open: { opacity: 1 },
-        closed: { opacity: [1, 0], x: -100},  
+        closed: { opacity: [1, 0], x: isMobile ? 0: -100, y: isMobile ? 0: 0},  
     }
 
 
@@ -244,23 +244,6 @@ function Experience(){
             return '#90EE90'
             // 144 238 144
         }
-    }
-    function findMyBackground(string){
-            if (string === 'GIVTme') {
-                return 'rgba(28, 97, 177, 0.1)'
-            }
-            if (string === 'Rhabit Analytics') {
-                return 'rgba(29, 128, 175, 0.1)'
-            }
-            if (string === 'Expedience Software') {
-                return 'rgba(30, 169, 172, 0.1)'
-            }
-            if (string === 'Flatiron School') {
-                return 'rgba(103, 216, 154, 0.1)'
-            }
-            if (string === 'Math Teacher') {
-                return 'rgba(144, 238, 144, 0.1)'
-            }
     }
     
     return ( 
