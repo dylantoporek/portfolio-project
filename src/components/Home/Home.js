@@ -27,7 +27,7 @@ function Home({}){
                     <Heading fontSize={isMobile ? 40:70} fontWeight={200} mb={4}>
                         Welcome.
                     </Heading>
-                    <Flex ml={isMobile ? 0:3} maxW={isMobile ? '100%' : '60%'}>
+                    <Flex ml={isMobile ? 0:0} w={'100%'} minW={'80vw'}>
                         <Flex 
                             background={'linear-gradient(to top,  #90EE90 0%, #67D89A 20%, #34BEA5 40%, #1EA9AC 60%, #1D80AF 80%, #1C61B1 100%)'} 
                             minW={'3px'}

@@ -90,7 +90,8 @@ function Projects(){
                     <Heading fontSize={isMobile ? 40:70} fontWeight={200} mb={isMobile ? 0:7}>
                         Projects
                     </Heading>
-                    <Flex ml={isMobile ? 0:3}>
+                    
+                    <Flex ml={isMobile ? 0:0} flexDir={isMobile ? 'column':'row'}>
                         <ProjectItems/>
                     </Flex>
                 </Flex>

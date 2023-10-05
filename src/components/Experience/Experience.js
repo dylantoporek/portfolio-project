@@ -18,7 +18,6 @@ function Experience(){
         fallback: false,
     })
     const [isDesktop] = useMediaQuery("(min-width: 1550px)")
-    let w = window.screen.width - 65
     const experienceDetails = [
         {
             company: 'GIVTme',
@@ -265,7 +264,7 @@ function Experience(){
                         Experience
                     </Heading>
                     <Flex
-                     ml={isMobile ? 0:3}
+                     ml={isMobile ? 0:0}
                      flexDir={isMobile? 'column' : 'row'} w={'100%'} minW={'80vw'}>
                         <Flex h={'fit-content'} flexDir={isMobile? 'column':'row'}>
                         {isMobile ? (
@@ -355,6 +354,7 @@ function Experience(){
                                 })}
                             </Flex>
                         </Flex>
+                        {showExperienceDetails !== '' ?
                         <motion.div
                             style={{
                                 marginLeft: isMobile ? 0: '10%',
@@ -379,7 +379,8 @@ function Experience(){
                              transition={'all ease-in .2s'}>
                                 {experienceDetailsContainer}
                             </Flex>
-                        </motion.div>
+                        </motion.div> : null
+                        }
                     </Flex>
                     
                 </Flex>
