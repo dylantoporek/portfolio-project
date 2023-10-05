@@ -7,36 +7,31 @@ import {
   faGithub,
   faMedium
 } from '@fortawesome/free-brands-svg-icons'
-import { Flex, Stack, Link } from "@chakra-ui/react";
+import { Flex, Stack, Link, useMediaQuery } from "@chakra-ui/react";
+import {HamburgerIcon} from '@chakra-ui/icons'
+import { motion } from "framer-motion"
 
-function Contact(){
+function Contact({toggleNavbar, setToggleNavbar}){
 const [isHovered, setIsHovered] = useState('')
 const contactMethods = ['github', 'linkedin', 'medium']
+const [isMobile] = useMediaQuery("(max-width: 768px)", {
+  ssr: true,
+  fallback: false,
+})
 
-
-const openInNewTab = string => {
-  if (string === 'github'){
-    let url = "https://github.com/dylantoporek"
-    window.open(url, '_blank', 'noopener,noreferrer');
-  } else if (string === 'linkedin'){
-    let url = "https://www.linkedin.com/in/dylan-toporek-bb3491106/"
-    window.open(url, '_blank', 'noopener,noreferrer');
-  } else if (string === 'medium'){
-    let url = "https://medium.com/@dylantoporek"
-    window.open(url, '_blank', 'noopener,noreferrer');
-  }
-
-};
-    function handleHover(e){
-      setIsHovered(e.target.id)
+  const openInNewTab = string => {
+    if (string === 'github'){
+      let url = "https://github.com/dylantoporek"
+      window.open(url, '_blank', 'noopener,noreferrer');
+    } else if (string === 'linkedin'){
+      let url = "https://www.linkedin.com/in/dylan-toporek-bb3491106/"
+      window.open(url, '_blank', 'noopener,noreferrer');
+    } else if (string === 'medium'){
+      let url = "https://medium.com/@dylantoporek"
+      window.open(url, '_blank', 'noopener,noreferrer');
     }
 
-    function handleLeave(){
-      setTimeout(() => {
-        setIsHovered('')
-      }, 100)
-      
-    }
+  };
 
     function iconPicker(string){
       if (string === 'github'){
@@ -49,30 +44,41 @@ const openInNewTab = string => {
     }
 
   return (
-    <Stack flexDir={'horizontal'} gap={10} justifyContent={'flex-end'}>
+    <Stack gap={5} minH={'40px'} w={'100%'}>
+        <Flex flexDir={'row'} gap={5} alignSelf={'flex-start'}>
         {contactMethods.map((method) => {
           return (
-            <Flex
-              p={1}
-              zIndex={1}
-              onMouseOver={handleHover} 
-              onMouseLeave={handleLeave}>
+            <motion.div 
+            key={method}
+            whileHover={{scale: 1.1 }}
+            style={{
+              cursor: 'pointer',
+              h: '100%',
+              marginLeft: isMobile ? '10px':'20px',
+              marginTop: isMobile ? '10px':'5px',
+              justifyItems:'center'
+
+            }}>
               <FontAwesomeIcon
+              onMouseOver={() => setIsHovered(method)}
+              onMouseOut={() => setIsHovered('')}
               onClick={() =>  openInNewTab(method)}  
               id={method}
               icon={iconPicker(method)} 
               color={isHovered === method ? 'white' : "#4B88A2"} 
               style={{
               position: 'relative',
-              width: '25px',
-              height: '25px',
+              width: '20px',
+              height: '20px',
               transition: "all .3s ease",
               WebkitTransition: "all .3s ease",
               MozTransition: "all .3s ease",
             }}/>
-            </Flex>
+            </motion.div>
           )
         })}
+        </Flex>
+          
     </Stack>
   )
 }
