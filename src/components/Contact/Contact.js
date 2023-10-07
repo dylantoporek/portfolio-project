@@ -43,6 +43,16 @@ const [isMobile] = useMediaQuery("(max-width: 768px)", {
       }
     }
 
+    function link(string){
+      if (string === 'github'){
+        return "https://github.com/dylantoporek"
+      } else if (string === 'linkedin'){
+        return "https://www.linkedin.com/in/dylan-toporek-bb3491106/"
+      } else if (string === 'medium'){
+        return  "https://medium.com/@dylantoporek"
+      }
+    }
+
   return (
     <Stack gap={5} minH={'40px'} w={'100%'}>
         <Flex flexDir={'row'} gap={5} alignSelf={'flex-start'}>
@@ -59,21 +69,23 @@ const [isMobile] = useMediaQuery("(max-width: 768px)", {
               justifyItems:'center'
 
             }}>
-              <FontAwesomeIcon
-              onMouseOver={() => setIsHovered(method)}
-              onMouseOut={() => setIsHovered('')}
-              onClick={() =>  openInNewTab(method)}  
-              id={method}
-              icon={iconPicker(method)} 
-              color={isHovered === method ? 'white' : "#4B88A2"} 
-              style={{
-              position: 'relative',
-              width: '20px',
-              height: '20px',
-              transition: "all .3s ease",
-              WebkitTransition: "all .3s ease",
-              MozTransition: "all .3s ease",
-            }}/>
+              <Link href={link(method)} isExternal>
+                <FontAwesomeIcon
+                onMouseOver={() => setIsHovered(method)}
+                onMouseOut={() => setIsHovered('')}
+                id={method}
+                icon={iconPicker(method)} 
+                color={isHovered === method ? 'white' : "#4B88A2"} 
+                style={{
+                position: 'relative',
+                width: '20px',
+                height: '20px',
+                transition: "all .3s ease",
+                WebkitTransition: "all .3s ease",
+                MozTransition: "all .3s ease",
+                }}/>
+              </Link>
+              
             </motion.div>
           )
         })}

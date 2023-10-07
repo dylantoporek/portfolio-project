@@ -12,6 +12,7 @@ import {
   useMediaQuery,
   Link
 } from '@chakra-ui/react'
+import { ExternalLinkIcon } from '@chakra-ui/icons'
 // Here we have used react-icons package for the icons
 // And react-slick as our Carousel Lib
 import {motion, AnimatePresence} from 'framer-motion'
@@ -36,10 +37,17 @@ export default function ProjectItems() {
     fallback: false,
 })
 
+const [isDesktop] = useMediaQuery("(min-width: 1450px)", {
+    ssr: true,
+    fallback: false,
+})
+
     useEffect(() => {
         setTimeout(() => {
             setLoading(false)
-        })
+            setSelectedProject(cards[0])
+            setIsShown(true)
+        }, 600)
         
     }, [])
   // This list contains all the data for carousels
@@ -50,7 +58,7 @@ export default function ProjectItems() {
       text: 'A cooking mini-game with an in-game shop. Buy ingredients and cook them!',
       image: botw,
       frontend: 'https://github.com/dylantoporek/botw-recipe-app',
-      backend: 'https://github.com/dylantoporek/botw-recipe-app-backend'
+      backend: 'https://github.com/dylantoporek/botw-recipe-app-backend',
     },
     {
       title: 'Nintendo-Land',
@@ -74,170 +82,118 @@ export default function ProjectItems() {
     const variants = {
         open: { 
             opacity: 1, 
-            height: isMobile ? '200px' : 'unset', 
-            transition: 'all ease-in'},
+        },
         close: { 
             opacity:  0,
-            height: isMobile ? '20px' : 'unset', 
-            transition: 'all ease-in' },  
+        }
     }
+
     const draw = {
         hidden: { pathLength: 0, opacity: 0 },
         visible: (i) => {
-          const delay = 1 + i * 0.5;
+          const delay = 0;
           return {
-            pathLength: 10,
+            pathLength: 1,
             opacity: 1,
             transition: {
-              pathLength: { delay, type: "spring", duration: 1.5, bounce: 0 },
+              pathLength: { delay, type: "spring", duration: 1, bounce: 0 },
               opacity: { delay, duration: 0.01 }
             }
           };
         }
-      };
+    };
     return (
-        <AnimatePresence>
+        <motion.div
+         initial={{ opacity: 0, scale: 1 }}
+         animate={{ opacity: 1, scale: 1 }}
+         transition={{ duration: 0.2 }}>
         <Stack>
                 <Flex
-                    flexDir={isMobile ? 'column':'row'} 
+                    flexDir={ 'column'} 
                     alignSelf={'flex-start'}
                     p={isMobile ? 1 : 0}
                     fontSize={isMobile ? '12px' : '14px'}
                     fontWeight={300}
                     >
                     <Flex 
-                     flexDir={isMobile ? 'column':'row'} 
-                     fontSize={isMobile ? 10: 12} 
+                     flexDir={'column'} 
+                     fontSize={isMobile ? 14: 16} 
                      gap={isMobile ? 10:5} 
-                     w={isMobile ? '79vw':'85vw'}
-                     justifyContent={'space-between'}>
-                        {cards.map((card, i) => {
-                            // DESKTOP
-                           if (!isMobile){
+                     w={isMobile ? '75vw':'85vw'}
+                     h={isMobile ? '65vh':'55vh'}
+                     align={'center'}
+                     >
+                    {selectedProject !== '' ? 
+                        <motion.div
+                         initial={{opacity: 0}}
+                         animate={isShown ? 'open': 'close'}
+                         variants={variants}
+                         transition={{delayChildren: 1}}>
+                            <Flex 
+                             fontSize={isMobile ? '14px' : '16px'}
+                             flexDir={'column'}
+                             mt={isMobile ? 10:0}
+                             w={'80vw'}
+                             minH={'60vh'}
+                             alignItems={'center'}
+                             mr={10}
+                             ml={10}
+                             p={5}>  
+                                <Text fontWeight={'bold'}>{selectedProject.title}</Text>
+                                <Text mb={5}>{selectedProject.text}</Text>
+                                <Image mb={5} w={isMobile ? '300px':'500px'} src={selectedProject.image} borderRadius={'.5em'}/>
+                                <Flex gap={5}>
+                                    <Link href={selectedProject.frontend} isExternal>
+                                        Frontend Repo <ExternalLinkIcon mx='2px' />
+                                    </Link>
+                                    <Link href={selectedProject.backend} isExternal>
+                                        Backend Repo <ExternalLinkIcon mx='2px' />
+                                    </Link>
+                                </Flex>
+                            </Flex>  
+                        </motion.div>
+                        :
+                        null
+                    }
+                    </Flex>
+                    <Flex alignSelf={'center'}>
+                        {cards.map((card) => {
                             return (
-                                <motion.div
-                                    onClick={() => {
-                                        setIsShown(false)
-                                        setTimeout(() => {
-                                            selectedProject.title === card.title ? setSelectedProject(''):setSelectedProject(card)
-                                            setIsShown(true)
-                                        }, 100)
+                                    <motion.svg
+                                        width="50"
+                                        height="30"
+                                        viewBox={'0, 0, 120, 120'}
+                                        initial="hidden"
+                                        animate="visible"
+                                     >
+                                        <motion.circle
+                                        onClick={() => {
+                                            setIsShown(false)
+                                            setTimeout(() => {
+                                                selectedProject.title === card.title ? setSelectedProject(''):setSelectedProject(card)
+                                                setIsShown(true)
+                                            }, 200)
                                         }}
-                                    style={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    transition: 'all ease-in',
-                                    height: 'fit-content',
-                                    minHeight: '300px',
-                                    width: '300px',
-                                    cursor: 'pointer',
-                                    borderRadius: '.5em',
-                                    backgroundColor: 'rgba(255, 255, 255, .1)',
-                                    }}>
-                                        <Text alignSelf={'center'} p={5} fontWeight={'bold'}>
-                                            {card.title}
-                                        </Text>
-                                        {selectedProject.title === card.title && isShown ? 
-                                        <motion.div 
-                                        animate={selectedProject.title === card.title && !loading ? 'open' : 'close'}
-                                        variants={variants}
+                                        stroke-width={ '10px'}
+                                        stroke-linecap={ 'round'}
                                         style={{
-                                            transition: 'all ease-in',
-                                            marginTop: 0,
-                                            }}>
-                                            <Flex flexDir={'column'} p={5}>
-                                                <Text mb={5}>
-                                                    {card.text}
-                                                </Text>
-                                                <Image alignSelf={'center'} w={'20vw'} src={card.image}/>
-                                            </Flex>
-                                        </motion.div>
-                                        : 
-                                        <motion.div 
-                                        animate={selectedProject.title === card.title ? 'open' : 'close'}
-                                        variants={variants}
-                                        initial={{opacity: 0, }}
-                                        style={{
-                                            transition: 'all ease-in',
-                                            marginTop: 0,
-                                            }}>
-                                            <Flex flexDir={'column'} p={5}>
-                                                <Text mb={5}>
-                                                    {card.text}
-                                                </Text>
-                                                <Image alignSelf={'center'} w={'20vw'} src={card.image}/>
-                                            </Flex>
-                                        </motion.div>
-                                        }
-                                </motion.div>
+                                            cursor: 'pointer'
+                                        }}
+                                        fill={selectedProject.title === card.title ? 'rgba(255, 255, 255, 1)':'transparent'}
+                                        cx="50"
+                                        cy="60"
+                                        r="30"
+                                        stroke="grey"
+                                        variants={draw}
+                                        custom={1}
+                                    />
+                            </motion.svg>
                             )
-                           } else return (
-                            // MOBILE
-                            <motion.div
-                                id={card.title}
-                                onClick={() => {
-                                selectedProject.title === card.title ? setSelectedProject(''):setSelectedProject(card)
-                                }}
-                                style={{
-                                cursor: 'pointer',
-                                borderRadius: '.5em',
-                                backgroundColor: 'rgba(255, 255, 255, .1)',
-                                }}
-                                >
-                                        <Text fontWeight={'bold'} p={5}>
-                                            {card.title}
-                                        </Text>
-                                    {selectedProject.title === card.title ? 
-                                        <motion.div
-                                         initial={{opacity: 0}}
-                                         animate={ selectedProject.title === card.title ? 'open' : 'close'}
-                                         variants={variants}
-                                         transition={{
-                                            delay: 1,
-                                            staggerChildren: 1
-                                        }}
-                                        >
-                                            <Flex flexDir={'column'} p={5}>
-                                                <Text mb={5}>
-                                                    {card.text}
-                                                </Text>
-                                               
-                                                    <Image 
-                                                        borderRadius={'.5em'}
-                                                        mb={5} 
-                                                        alignSelf={'center'} 
-                                                        maxW={'250px'} 
-                                                        src={card.image}/>
-                                                
-                                            </Flex>
-                                        </motion.div>
-                                     :
-                                     <motion.div
-                                     transition={{delay: 0}} 
-                                     animate={ selectedProject.title === card.title ? 'open' : 'close'}
-                                     initial={{opacity: 0}}
-                                     variants={variants}
-                                    >
-                                        <Flex flexDir={'column'} p={5}>
-                                            {/* <Text mb={5}>
-                                            </Text>
-                                                <Image
-                                                    borderRadius={'.5em'}
-                                                    mb={5} 
-                                                    alignSelf={'center'} 
-                                                    maxW={'0px'} 
-                                                    src={card.image}/> */}
-                                            
-                                        </Flex>
-                                    </motion.div>
-                                    }
-                                </motion.div>
-                           )
                         })}
                     </Flex>
                 </Flex>
             </Stack>
-        </AnimatePresence>
+        </motion.div>
     )
 }
 
