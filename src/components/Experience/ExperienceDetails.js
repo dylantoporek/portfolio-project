@@ -13,7 +13,9 @@ return (
      style={{
         background: 'rgba(255, 255, 255, .1)', 
         borderRadius: '.5em',
-        width: isMobile ? '100%' : '100%'
+        width: isMobile ? '100%' : '100%',
+        maxHeight: isMobile ? '55vh' : '65vh',
+        overflowY: 'scroll'
      }}>
         <Flex fontSize={isMobile ? '12px' : '14px'} flexDir={'column'} p={5} gap={isMobile ? 2:5}>
                 <Flex mb={2}>

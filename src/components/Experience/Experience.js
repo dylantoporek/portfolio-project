@@ -23,9 +23,8 @@ function Experience(){
             company: 'GIVTme',
             jobTitle: 'Software Engineer',
             details: [
-                'iOS development using Swift',
-                'Android development using Kotlin',
-                'Updated UI elements to create a more cohesive experience',
+                    'Expertise in Swift for iOS development and Kotlin for Android app development.',
+                    'Utilized Firebase for backend services to ensure real-time functionality and data security.'
             ],
             dates: '08/2023 - Present',
             skills: [
@@ -34,15 +33,19 @@ function Experience(){
                 'Firebase',
                 'iOS Development',
                 'Android Development'
-            ]
+            ],
+            url: 'https://givtme.com/ '
         },
         {
             company: 'Rhabit Analytics',
             jobTitle: 'Associate Software Engineer',
             details: [
-                'Wrote Cypress tests to reflect changes to the app and updated existing tests',
-                'Implemented screen reader friendly code to allow for a better experience for visually impaired users',
-                'Developed a Slackbot to send demo links either through slack or text message'
+                'Collaborated on GitHub to develop new features, resolve bugs, and maintain applications.',
+                'Built responsive web pages and components from scratch using React and TypeScript.',
+                'Implemented comprehensive Cypress tests to validate app functionality and enhance quality.',
+                'Ensured adherence to design templates created in Figma, delivering a seamless user experience.',
+                'Enhanced accessibility with screen reader-friendly code for visually impaired users.',
+                'Developed a Slackbot for sending demo links via Slack or text messages.'
             ],
             dates: '09/2022 - 06/2023',
             skills: [
@@ -52,22 +55,24 @@ function Experience(){
                 'Apollo GraphQL',
                 'SQL',
                 'Full Stack Development'
-            ]
+            ],
+            url: 'https://www.rhabitanalytics.com/'  
         },
         {
             company: 'Expedience Software',
             jobTitle: 'Contractor',
             details: [
-                'Assisted with updating RFP Inspection software',
-                'React based development within Microsoft Office Addins',
-                'Created custom explorations and reports with Google Analytics',
+                'Assisted in updating RFP Inspection Software, optimizing its functionality.',
+                'Employed React for development within Microsoft Office applications.',
+                'Created customized Google Analytics reports to extract valuable data insights.'
             ],
             dates: '04/2022 -  07/2022',
             skills: [
                 'React',
                 'Typescript',
                 'Google Analytics'
-            ]
+            ],
+            url: 'https://expediencesoftware.com/'  
         },
         {
             company: 'Flatiron School',

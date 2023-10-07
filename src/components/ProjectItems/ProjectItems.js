@@ -156,7 +156,7 @@ const [isDesktop] = useMediaQuery("(min-width: 1450px)", {
                         null
                     }
                     </Flex>
-                    <Flex alignSelf={'center'}>
+                    <Flex alignSelf={'center'} mt={isMobile ? '-50px': 10}>
                         {cards.map((card) => {
                             return (
                                     <motion.svg
