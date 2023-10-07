@@ -5,6 +5,7 @@ import 'animate.css'
 import {ArrowLeftIcon, ArrowRightIcon} from '@chakra-ui/icons'
 import { useNavigate } from "react-router-dom"
 import {Stack, Flex, Text, useMediaQuery, Button} from '@chakra-ui/react'
+import { motion } from "framer-motion"
 
 function Navbar({toggleNavbar, setToggleNavbar}){
     const navigate = useNavigate()
@@ -47,19 +48,24 @@ function Navbar({toggleNavbar, setToggleNavbar}){
                     {navbarItems.map((item) => {
                         return (
                             <Flex key={item + 'mobile'} borderRadius={'.5em'}>
-                                <Button 
-                                    cursor={'pointer'} 
+                               <motion.div
+                                    style={{
+                                        cursor: 'pointer',
+                                        backgroundColor: checkURl(item), 
+                                        p: 2 ,
+                                        paddingLeft: '10px',
+                                        paddingRight: '10px',
+                                        borderRadius: '5em' ,
+                                        color: handleColorPicker(item)
+                                    }}
                                     key={item} 
-                                    _hover={{  bg: 'rgba(255, 255, 255, .1)', color: '#F7F7F9'}} 
-                                    backgroundColor={() => checkURl(item)} 
-                                    p={2} 
-                                    paddingLeft={'10px'} 
-                                    paddingRight={'10px'}
-                                    borderRadius={'5em'} 
-                                    color={() => handleColorPicker(item)} 
+                                    whileHover={{  bg: 'rgba(255, 255, 255, .1)', color: '#F7F7F9', scale: 1.1}}
+                                    whileTap={{scale: .9}}  
                                     onClick={() => handleNavigate(item)}>
-                                    {item}
-                                </Button>
+                                        <Text fontSize={'14px'}>
+                                            {item}
+                                        </Text>
+                                </motion.div>
                             </Flex>
                         )
                     })}
@@ -68,23 +74,29 @@ function Navbar({toggleNavbar, setToggleNavbar}){
         )
     } else return (
         <Stack w={'100%'} p={4}>
-                <Flex justifyContent={'flex-end'} mr={10} mt={5} gap={'20px'} fontSize={'14px'}>
+                <Flex justifyContent={'flex-end'} mr={10} mt={5} gap={'20px'}>
                     {navbarItems.map((item) => {
                         return (
                             <Flex key={item}>
-                                <Button 
-                                 cursor={'pointer'}  
-                                 key={item} 
-                                 _hover={{  bg: 'rgba(255, 255, 255, .1)', color: '#F7F7F9'}} 
-                                 backgroundColor={() => checkURl(item)} 
-                                 p={2} 
-                                 paddingLeft={'10px'} 
-                                 paddingRight={'10px'} 
-                                 borderRadius={'5em'} 
-                                 color={() => handleColorPicker(item)} 
-                                 onClick={() => handleNavigate(item)}>
-                                    {item}
-                                </Button>
+                                <motion.div
+                                    style={{
+                                        fontSize: '18px',
+                                        cursor: 'pointer',
+                                        backgroundColor: checkURl(item), 
+                                        p: 2 ,
+                                        paddingLeft: '10px',
+                                        paddingRight: '10px',
+                                        borderRadius: '5em' ,
+                                        color: handleColorPicker(item)
+                                    }}
+                                    key={item} 
+                                    whileHover={{  bg: 'rgba(255, 255, 255, .1)', color: '#F7F7F9', scale: 1.1}}
+                                    whileTap={{scale: .9}}  
+                                    onClick={() => handleNavigate(item)}>
+                                        <Text fontSize={'16px'}>
+                                            {item}
+                                        </Text>
+                                </motion.div>
                             </Flex>
                         )
                     })}

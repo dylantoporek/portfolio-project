@@ -36,7 +36,7 @@ function Home({}){
                             mt={5}
                             mb={5}>
                         </Flex>
-                        <Flex p={4} flexDir={'column'}>
+                        <Flex p={4} flexDir={'column'} fontSize={isMobile ? '14px' : '16px'}>
                             <Text mb={4}>
                                 My name is Dylan Toporek and I am a fullstack engineer & developer based in Syracuse, New York. I taught math to middle and high school students for a several years before transitioning careers to software engineering.
                             </Text>
