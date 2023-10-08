@@ -54,8 +54,8 @@ const [isMobile] = useMediaQuery("(max-width: 768px)", {
     }
 
   return (
-    <Stack gap={5} minH={'40px'} w={'100%'}>
-        <Flex flexDir={'row'} gap={5} alignSelf={'flex-start'}>
+    <Stack gap={5} minH={'40px'} w={'100%'} flexDir={'row'} justifyContent={'space-between'}>
+        <Flex  gap={5} alignSelf={'flex-start'}>
         {contactMethods.map((method) => {
           return (
             <motion.div 
@@ -66,7 +66,7 @@ const [isMobile] = useMediaQuery("(max-width: 768px)", {
               h: '100%',
               marginLeft: isMobile ? '10px':'20px',
               marginTop: isMobile ? '10px':'5px',
-              justifyItems:'center'
+              justifyItems:'center',
 
             }}>
               <Link href={link(method)} isExternal>
@@ -89,8 +89,12 @@ const [isMobile] = useMediaQuery("(max-width: 768px)", {
             </motion.div>
           )
         })}
+       
+         
         </Flex>
-          
+        <Flex gap={1} justifySelf={'flex-end'} mr={10} mt={5}>
+          <a target="_blank" href="https://icons8.com/icon/102439/ghost">Ghost</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+        </Flex>
     </Stack>
   )
 }

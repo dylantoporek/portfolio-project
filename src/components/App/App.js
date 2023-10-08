@@ -19,11 +19,11 @@ const [toggleNavbar, setToggleNavbar] = useState(false)
   function changePage(str){
     setSelectedPage(str)
   }
-
+  const [animation, setAnimation] = useState(false)
   return (
     <ChakraProvider>
       <Flex w={'100vw'} color={'#F7F7F9'} position={'fixed'} zIndex={1}>
-        <Navbar toggleNavbar={toggleNavbar} setToggleNavbar={setToggleNavbar}/>
+        <Navbar animation={animation} setAnimation={setAnimation}/>
       </Flex>
       <Stack
         color={'#F7F7F9'}

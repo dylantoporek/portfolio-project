@@ -87,7 +87,7 @@ function Projects(){
                 fontSize={14}
                 fontWeight={300}
                 maxW={'100%'}>
-                    <Heading fontSize={isMobile ? 40:70} fontWeight={200} mb={isMobile ? 0:7}>
+                    <Heading fontSize={isMobile ? 40:70} fontWeight={200} mb={isMobile ? 0:7} transition={'all ease-in .1s'}>
                         Projects
                     </Heading>
                     
