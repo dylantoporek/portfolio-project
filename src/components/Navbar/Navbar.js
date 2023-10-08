@@ -49,36 +49,38 @@ function Navbar({animation, setAnimation}){
         } else return null  
     }
 
-    const variants = {
-        on: {
-            transition: {
-                ease: "linear",
-                duration: 60,
-                x: { duration: 60 },
-                y: {duration: 60}
-            },
-            opacity: isMobile ? [1, .5, 0, .5, 0, .5, 0, .5, 1 ] : [1, .5, 0, .5, 0, .5, 0, .5, 1, 0, 0, .5, 1, 0, 1] , 
-            x: isMobile ? 
-                [0, 5, 15, 5, 200, 300, 310, 250, 10, 0]
-                :
-                [0, 5, 15, 5, 200, 300, 310, 500, 700, 1050, 750, 600, 400, 100, 0], 
+    // const variants = {
+    //     on: {
+    //         transition: {
+    //             ease: "linear",
+    //             duration: 10,
+    //             x: { duration: 10 },
+    //             y: {duration: 10}
+    //         },
+    //         opacity: [1, .5, 0, .5, 1],
+    //         x: [0, 10, 300, 300, 0],
+    //         y: [0, 300, 305, 0, 0]
+    //         // opacity: isMobile ? [1, .5, 0, .5, 0, .5, 0, .5, 1 ] : [1, .5, 0, .5, 0, .5, 0, .5, 1, 0, 0, .5, 1, 0, 1] , 
+    //         // x: isMobile ? 
+    //         //     [0, 5, 15, 5, 200, 300, 310, 250, 10, 0]
+    //         //     :
+    //         //     [0, 5, 15, 5, 200, 300, 310, 500, 700, 1050, 750, 600, 400, 100, 0], 
 
-            y: isMobile ? 
-                [0, 150, 400, 500, 550, 530, 550, 100, 20, 0]
-            : 
-                [0, 150, 400, 500, 550, 530, 550, 600, 700, 400, 200, 50, 10, 5, 0],
-        }, 
-        off: {
-            opacity: [1]
-        }
-    }
+    //         // y: isMobile ? 
+    //         //     [0, 150, 400, 500, 550, 530, 550, 100, 20, 0]
+    //         // : 
+    //         //     [0, 150, 400, 500, 550, 530, 550, 600, 700, 400, 200, 50, 10, 5, 0],
+    //     }, 
+    //     off: {
+    //         opacity: [1]
+    //     }
+    // }
 
     if (isMobile){
         return (
             <Stack w={'100%'} p={4} flexDir={'row'} justifyContent={'space-between'}>
                 <motion.div
-             animate={animation ? 'on' : 'off'}
-             variants={variants}>
+             whileTap={{opacity: 0, duration: .5}}>
                 <Image
                  cursor={'pointer'}
                  onClick={() => setAnimation(!animation)} 
@@ -118,9 +120,7 @@ function Navbar({animation, setAnimation}){
     } else return (
         <Stack w={'100%'} p={4} flexDir={'row'} justifyContent={'space-between'}>
             <motion.div
-             animate={animation ? 'on' : 'off'}
-             onAnimationEnd={() => setAnimation(false)}
-             variants={variants}>
+             whileTap={{opacity: 0, duration: .5}}>
                 <Image
                  cursor={'pointer'}
                  onClick={() => setAnimation(!animation)} 
