@@ -16,7 +16,7 @@ import { ExternalLinkIcon } from '@chakra-ui/icons'
 // Here we have used react-icons package for the icons
 // And react-slick as our Carousel Lib
 import {motion, AnimatePresence} from 'framer-motion'
-import botw from '../../images/botw.png'
+import botw from '../../images/botw1.png'
 import nintendo from '../../images/nintendo.png'
 import lactate from '../../images/lactate_1.png'
 import poke from '../../images/poke.png'
@@ -57,6 +57,7 @@ const [isDesktop] = useMediaQuery("(min-width: 1450px)", {
       title: 'Breath of the Wild Cooking App',
       text: 'A cooking mini-game with an in-game shop. Buy ingredients and cook them!',
       image: botw,
+      url: 'https://lit-sierra-35647-76462c49572d.herokuapp.com/',
       frontend: 'https://github.com/dylantoporek/botw-recipe-app',
       backend: 'https://github.com/dylantoporek/botw-recipe-app-backend',
     },
@@ -143,6 +144,10 @@ const [isDesktop] = useMediaQuery("(min-width: 1450px)", {
                                 <Text mb={5}>{selectedProject.text}</Text>
                                 <Image mb={5} w={isMobile ? '300px':'500px'} src={selectedProject.image} borderRadius={'.5em'}/>
                                 <Flex gap={5}>
+                                    {selectedProject.url ? 
+                                    <Link href={selectedProject.url} isExternal>
+                                        Demo <ExternalLinkIcon mx='2px' />
+                                    </Link> : null}
                                     <Link href={selectedProject.frontend} isExternal>
                                         Frontend Repo <ExternalLinkIcon mx='2px' />
                                     </Link>
