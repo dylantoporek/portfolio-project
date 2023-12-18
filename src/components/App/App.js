@@ -26,7 +26,7 @@ const [toggleNavbar, setToggleNavbar] = useState(false)
   useEffect(() => {
     setTimeout(() => {
       setFirstLoad(false)
-    }, 1000)
+    }, 2000)
   }, []) 
   
   return (
@@ -41,7 +41,10 @@ const [toggleNavbar, setToggleNavbar] = useState(false)
       ):(
       <motion.div
        inital={{opacity: 0}}
-       animate={{opacity: 1}}>
+       animate={{
+        opacity: 1,
+      }}
+       >
       <Flex w={'100vw'} color={'#F7F7F9'} position={'fixed'} zIndex={1}>
         <Navbar animation={animation} setAnimation={setAnimation}/>
       </Flex>

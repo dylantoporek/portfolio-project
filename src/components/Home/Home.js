@@ -13,8 +13,9 @@ function Home(){
     return (
         <motion.div 
         initial={{ opacity: 0, scale: 1 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.2 }}
+        animate={{ opacity: 1, scale: 1}}
+        transition={{ duration: 0.2}}
+        
         >
             <Stack>
                 <Flex 
@@ -30,6 +31,10 @@ function Home(){
                         </Heading>
                     </Flex>
                     
+                    <motion.div 
+                     initial={{opacity: 0}}
+                     animate={{opacity: 1}}
+                     transition={{delay: .5}}>
                     <Flex ml={isMobile ? 0:0} w={'100%'} minW={'80vw'}>
                         <Flex 
                             background={'linear-gradient(to top,  #90EE90 0%, #67D89A 20%, #34BEA5 40%, #1EA9AC 60%, #1D80AF 80%, #1C61B1 100%)'} 
@@ -51,6 +56,8 @@ function Home(){
                             </Text>
                         </Flex>
                     </Flex>
+                    </motion.div>
+                    
                 </Flex>
             </Stack>
         </motion.div>
