@@ -169,6 +169,10 @@ function Experience(){
                     <Heading fontSize={isMobile ? 40:70} fontWeight={200} mb={isMobile ? 0:7} transition={'all ease-in .1s'}>
                         Experience
                     </Heading>
+                    <motion.div
+                    initial={{opacity: 0}}
+                    animate={{opacity: 1}}
+                    transition={{delay: .5}}>
                     <Flex
                      ml={isMobile ? 0:0}
                      flexDir={isMobile? 'column' : 'row'} w={'100%'} minW={'80vw'}>
@@ -291,6 +295,8 @@ function Experience(){
                         </motion.div> : null
                         }
                     </Flex>
+                    </motion.div>
+                    
                 </Flex>
             </Stack>
         </motion.div>   
