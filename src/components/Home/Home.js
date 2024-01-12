@@ -14,7 +14,7 @@ function Home(){
         <motion.div 
         initial={{ opacity: 0, scale: 1 }}
         animate={{ opacity: 1, scale: 1}}
-        transition={{ duration: 0.2}}
+        transition={{ duration: 0.3}}
         
         >
             <Stack>
@@ -26,7 +26,9 @@ function Home(){
                 fontWeight={300}
                 maxW={'100%'}>
                     <Flex>
-                        <Heading fontSize={isMobile ? 40:70} fontWeight={200} mb={4} transition={'all ease-in .1s'}>
+                        <Heading fontSize={isMobile ? 40:70} fontWeight={200} mb={4} 
+                        // transition={'all ease-in .1s'}
+                        >
                             Welcome.
                         </Heading>
                     </Flex>
