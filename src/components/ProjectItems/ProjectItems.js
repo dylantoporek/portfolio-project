@@ -142,7 +142,7 @@ const [isDesktop] = useMediaQuery("(min-width: 1450px)", {
                              p={5}>  
                                 <Text fontWeight={'bold'}>{selectedProject.title}</Text>
                                 <Text mb={5}>{selectedProject.text}</Text>
-                                <Image mb={5} w={isMobile ? '300px':'500px'} src={selectedProject.image} borderRadius={'.5em'}/>
+                                <Image mb={5} w={isMobile ? '300px':'500px'} src={selectedProject !== '' ? selectedProject.image : null} borderRadius={'.5em'}/>
                                 <Flex gap={5}>
                                     {selectedProject.url ? 
                                     <Link href={selectedProject.url} isExternal>

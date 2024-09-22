@@ -20,13 +20,29 @@ function Experience(){
     const [isDesktop] = useMediaQuery("(min-width: 1550px)")
     const experienceDetails = [
         {
+            company: 'Coconut Tree Software Inc',
+            jobTitle: 'Contract Front End Engineer',
+            details: [
+                    'Developed responsive and interactive UI for online real estate market place, Bidmax, using React.',
+                    "Delivered project in three months to meet customer's strict timeline.",
+                    "Integrated the front end with companies existing backend services, enabling the company to launch the project on time."
+            ],
+            dates: '04/2024 - 07/2024',
+            skills: [
+                'React',
+                'Javascript',
+                'Front End Development',
+            ],
+            url: 'https://bidmax.com/ '
+        },
+        {
             company: 'GIVTme',
             jobTitle: 'Software Engineer',
             details: [
-                    'Expertise in Swift for iOS development and Kotlin for Android app development.',
-                    'Utilized Firebase for backend services to ensure real-time functionality and data security.'
+                    'Fixed stripe payment functionality to deliver correct gift amount to recipient, and transferring the stripe fee to the customer.',
+                    'Development using Swift for iOS and Kotlin for Android for the front end and utilized Firebase for backend services to ensure real-time functionality and data security.'
             ],
-            dates: '08/2023 - Present',
+            dates: '08/2023 - 07/2024',
             skills: [
                 'Swift',
                 'Kotlin',
@@ -40,10 +56,8 @@ function Experience(){
             company: 'Rhabit Analytics',
             jobTitle: 'Associate Software Engineer',
             details: [
-                'Collaborated on GitHub to develop new features, resolve bugs, and maintain applications.',
-                'Built responsive web pages and components from scratch using React and TypeScript.',
-                'Implemented comprehensive Cypress tests to validate app functionality and enhance quality.',
-                'Ensured adherence to design templates created in Figma, delivering a seamless user experience.',
+                'Updated sales demo to showcase product advancements made by the company since developing the previous demo.',
+                'Developed new product features with front end written in React, backend written in Ruby on Rails, and testing with Cypress.',
                 'Enhanced accessibility with screen reader-friendly code for visually impaired users.',
                 'Developed a Slackbot for sending demo links via Slack or text messages.'
             ],
@@ -62,9 +76,8 @@ function Experience(){
             company: 'Expedience Software',
             jobTitle: 'Contractor',
             details: [
-                'Assisted in updating RFP Inspection Software, optimizing its functionality.',
-                'Employed React for development within Microsoft Office applications.',
-                'Created customized Google Analytics reports to extract valuable data insights.'
+                'Modified RFP automation software, written in React and Typescript, increasing its processing speed from google office documents.',
+                'Upgraded application from Google Analytics 3 to use Google Analytics 4 in order to extract valuable data for reports.',
             ],
             dates: '04/2022 -  07/2022',
             skills: [
@@ -78,9 +91,9 @@ function Experience(){
             company: 'Flatiron School',
             jobTitle: 'Student',
             details: [
-                'Full-Stack web application development, created with React and Ruby on Rails',
-                "Studied Object-oriented programming, REST API's, and PostgreSQL databases",
-                'Utilized Heroku and Netlify to deploy and test projects'
+                'Full-Stack web application development, created with React and Ruby on Rails.',
+                "Studied Object-oriented programming, REST API's, and PostgreSQL databases.",
+                'Utilized Heroku and Netlify to deploy and test projects.'
             ],
             dates: '09/2021 - 03/2022',
             skills: [
@@ -129,8 +142,11 @@ function Experience(){
     })
 
     function findMyColor(string){
-        if (string === 'GIVTme') {
+        if (string === 'Coconut Tree Software Inc'){
             return '#1C61B1'
+        }
+        if (string === 'GIVTme') {
+            return '#1D80AF'
             // (28, 97, 177)
         }
         if (string === 'Rhabit Analytics') {
