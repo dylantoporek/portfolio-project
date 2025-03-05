@@ -20,6 +20,23 @@ function Experience(){
     const [isDesktop] = useMediaQuery("(min-width: 1550px)")
     const experienceDetails = [
         {
+            company: 'SkySlope',
+            jobTitle: 'Customer Support Technician',
+            details: [
+                    'Assisted real estate professionals with navigating SkySlope’s software, helping them efficiently complete transactions, upload documents, and manage workflows.',
+                    "Collaborated with cross-functional teams, including product and engineering, to escalate and resolve complex customer concerns.",
+                    "Created and managed Jira tickets for technical issues and feature requests, ensuring clear communication between customer support, product, and development teams to facilitate timely resolutions."
+            ],
+            dates: '07/2024 - Present',
+            skills: [
+                'Troubleshooting',
+                'CRM Systems',
+                'Problem-Solving',
+                'Multitasking'
+            ],
+            url: 'https://skyslope.com/'
+        },
+        {
             company: 'Coconut Tree Software Inc',
             jobTitle: 'Contract Front End Engineer',
             details: [
@@ -142,6 +159,9 @@ function Experience(){
     })
 
     function findMyColor(string){
+        if (string === 'SkySlope'){
+            return '#1C61B1'
+        }
         if (string === 'Coconut Tree Software Inc'){
             return '#1C61B1'
         }
